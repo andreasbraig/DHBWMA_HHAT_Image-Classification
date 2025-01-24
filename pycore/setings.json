@@ -1,13 +1,6 @@
 {
-    "database": {
-        "host": "localhost",
-        "port": 5432,
-        "username": "admin",
-        "password": "secret"
-    },
-    "api": {
-        "base_url": "https://api.example.com",
-        "timeout": 30
-    },
-    "debug": true
+    "filepaths": {
+        "good": "../../Bilder/Good_Pictures",
+        "bad": "../../Bilder/Bad_Pictures"
+    }
 }
