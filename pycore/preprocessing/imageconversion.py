@@ -3,13 +3,10 @@ import json
 import os
 
  #Bild laden (im unterordner)
+ 
 config_path = "../../pycore/setings.json"
 
-def load_config(file_path):
-    """Lädt die Konfigurationsparameter aus der JSON-Datei."""
-    with open(file_path, 'r') as file:
-        config = json.load(file)
-    return config
+cf = json.load(open(config_path, 'r'))
 
 
 
@@ -26,7 +23,6 @@ def show_image(text, image):
 #Ausführbarer Bereich
 
 
-cf = load_config(config_path)
 
 image=cv2.imread(cf['filepaths']['good']+"/Good (1).jpg")
 
