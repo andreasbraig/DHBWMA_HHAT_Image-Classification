@@ -1,6 +1,34 @@
 {
     "filepaths": {
-        "good": "../../Bilder/Good_Pictures",
-        "bad": "../../Bilder/Bad_Pictures"
+        "good": "Bilder/Good_Pictures",
+        "bad": "Bilder/Bad_Pictures",
+        "good_gray": "Bilder/Good_Grayscale",
+        "bad_gray": "Bilder/Bad_Grayscale",
+        "train": "Bilder/train",
+        "test":"Bilder/test",
+        "validate":"Bilder/validate",
+        "new": "Bilder/new"
+    },
+    "ttsplit": {
+        "test_size": 0.2,
+        "random_state" : 36
+        
+    },
+    "imagecfg":{
+        "FAST_RUN": false,
+        "IMG_W": 224,
+        "IMG_H": 224,
+        "IMG_CH": 1
+    },
+    "mobilnet":{
+        "weights":"imagenet",
+        "include_top":false,
+        "density1": 1024,
+        "density2": 1024,
+        "density3": 1024,
+        "density4": 512,
+        "activation_x": "relu",
+        "activation_preds": "softmax"
     }
+
 }

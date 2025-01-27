@@ -1,12 +1,35 @@
 import cv2
 import json
 import os
+from PIL import Image
 
  #Bild laden (im unterordner)
- 
-config_path = "../../pycore/setings.json"
 
-cf = json.load(open(config_path, 'r'))
+
+def folder_to_grayscale(Origin_Path, Destination_Path):
+
+#Check for existing Folder Othervise Create them
+  if not os.path.exists(Destination_Path):
+    os.makedirs(Destination_Path)
+
+  for filename in os.listdir(Origin_Path):
+    if filename.endswith(('.jpg', 'jpeg', 'png', 'bmp', 'tiff', 'gif')):
+      image_path = os.path.join(Origin_Path, filename)
+
+      single_to_grayscale(image_path,Destination_Path,filename)
+      
+
+  print("Conversion Complete")
+
+#for use in the Later Version 
+def single_to_grayscale(image_path,Destination,filename):
+    
+    img = Image.open(image_path).convert('L')
+
+    output_path = os.path.join(Destination, filename)
+    img.save(output_path)
+
+    return output_path
 
 
 
@@ -21,10 +44,3 @@ def show_image(text, image):
 
 
 #Ausführbarer Bereich
-
-
-
-image=cv2.imread(cf['filepaths']['good']+"/Good (1).jpg")
-
-
-show_image("test",image)
