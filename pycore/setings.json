@@ -29,6 +29,12 @@
         "density4": 512,
         "activation_x": "relu",
         "activation_preds": "softmax"
+    },
+    "train_augmentation":{
+        "batch_size": 15
+    },
+    "validation_augmentation":{
+
     }
 
 }

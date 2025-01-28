@@ -1,8 +1,14 @@
 import shutil
+import json
 import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
+
+config_path = "../pycore/setings.json"
+
+cf = json.load(open(config_path, 'r'))
 
 
 def split_data(source,destination1,destination2,test_size,random_state):
@@ -48,3 +54,27 @@ def make_df(images):
     df = pd.DataFrame({'filename': images, 'label': labels})
 
     return df
+
+#Ab hier imagedatagen ##TODO
+
+def data_augmentation(df,filepath):
+    datagen = ImageDataGenerator(
+    rotation_range=20, #15
+    rescale=1./255,
+    shear_range=0.1,
+    zoom_range=0.2, #0.2
+    horizontal_flip=True,
+    width_shift_range=0.1, #0.1
+    height_shift_range=0.1 #0.1
+    )
+
+    generator = datagen.flow_from_dataframe(
+    df,
+    filepath,
+    x_col='filename',
+    y_col='label',
+    target_size=[cf["imagecfg"]["IMG_W"],cf["imagecfg"]["IMG_H"]],
+    class_mode='categorical',
+    batch_size=cf["train_augmentation"]["batch_size"]
+    )
+    return generator
