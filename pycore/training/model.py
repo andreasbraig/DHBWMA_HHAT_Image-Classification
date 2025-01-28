@@ -1,6 +1,8 @@
 import ssl
 from tensorflow.keras.applications.mobilenet import MobileNet
 from tensorflow.keras.layers import Dense, GlobalAveragePooling2D, Dropout
+from tensorflow.keras.models import Model
+from tensorflow.keras.optimizers import Adam
 
 
 def Setup_MobilNet(weights,include_top,Density1,Density2,Density3,Density4,activationx,activationpreds):
@@ -20,3 +22,14 @@ def Setup_MobilNet(weights,include_top,Density1,Density2,Density3,Density4,activ
     preds = Dense(Density4,activationpreds)(x)
 
     return base_model, x, preds   
+
+def get_Model(base_model,preds,optimizer,loss,metrics,layers):
+    model = Model(inputs=base_model.input, outputs=preds)
+    model.compile(optimizer=optimizer, loss=loss, metrics=['accuracy'])
+
+    for layer in model.layers[:layers]:
+        layer.trainable = False
+    for layer in model.layers[layers:]:
+        layer.trainable = True
+
+    return model
