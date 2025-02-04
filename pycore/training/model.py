@@ -25,7 +25,7 @@ def Setup_MobilNet(weights,include_top,Density1,Density2,Density3,Density4,activ
 
 def get_Model(base_model,preds,optimizer,loss,metrics,layers):
     model = Model(inputs=base_model.input, outputs=preds)
-    model.compile(optimizer=optimizer, loss=loss, metrics=['accuracy'])
+    model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
 
     for layer in model.layers[:layers]:
         layer.trainable = False

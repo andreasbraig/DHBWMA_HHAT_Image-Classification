@@ -6,11 +6,6 @@ from sklearn.model_selection import train_test_split
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 
-config_path = "../pycore/setings.json"
-
-cf = json.load(open(config_path, 'r'))
-
-
 def split_data(source,destination1,destination2,test_size,random_state):
 
   if not os.path.exists(destination2):
@@ -47,34 +42,55 @@ def make_df(images):
     for filename in images:
         label = filename.split(' ')[0]
         if label == 'Good':
-            labels.append(0)
+            labels.append("good")
         else:
-            labels.append(1)
+            labels.append("bad")
 
     df = pd.DataFrame({'filename': images, 'label': labels})
 
     return df
 
-#Ab hier imagedatagen ##TODO
+#Ab hier imagedatagen
 
-def data_augmentation(df,filepath):
-    datagen = ImageDataGenerator(
-    rotation_range=20, #15
-    rescale=1./255,
-    shear_range=0.1,
-    zoom_range=0.2, #0.2
-    horizontal_flip=True,
-    width_shift_range=0.1, #0.1
-    height_shift_range=0.1 #0.1
+def data_gen(mode, df, filepath, x_col, y_col, target_size, batch_size, config,shuffle=True,):
+    """
+    Erstellt einen ImageDataGenerator basierend auf den Parametern aus einer JSON-Datei.
+    
+    :param mode: 'train_augmentation', 'validation_augmentation' oder 'test_augmentation'
+    :param df: DataFrame mit Bildinformationen
+    :param filepath: Pfad zu den Bildern
+    :param x_col: Spaltenname mit den Dateinamen
+    :param y_col: Spaltenname mit den Labels (oder None für Testdaten)
+    :param target_size: Zielgröße der Bilder (z. B. (150, 150))
+    :param batch_size: Größe der Batches
+    :param shuffle: Ob die Daten durchmischt werden sollen (für Test False setzen)
+    :param config_path: Pfad zur JSON-Datei mit den Augmentationsparametern
+    :return: ImageDataGenerator-Flow
+    """
+    if mode not in config:
+        raise ValueError(f"Ungültiger Modus: {mode}. Erwarte 'train_augmentation', 'validation_augmentation' oder 'test_augmentation'.")
+
+    # Erstelle den Generator mit den aus der JSON geladenen Parametern
+    datagen = ImageDataGenerator(**config[mode])
+
+    # Bestimme den class_mode
+    class_mode = 'categorical' if y_col else None
+
+    print(df)
+
+    return datagen.flow_from_dataframe(
+        df,
+        filepath,
+        x_col=x_col,
+        y_col=y_col,
+        target_size=target_size,
+        class_mode=class_mode,
+        batch_size=batch_size,
+        shuffle=shuffle
     )
 
-    generator = datagen.flow_from_dataframe(
-    df,
-    filepath,
-    x_col='filename',
-    y_col='label',
-    target_size=[cf["imagecfg"]["IMG_W"],cf["imagecfg"]["IMG_H"]],
-    class_mode='categorical',
-    batch_size=cf["train_augmentation"]["batch_size"]
-    )
-    return generator
+
+# Nutzung:
+# train_generator = create_data_generator("train_augmentation", df, filepath, "filename", "label", IMAGE_SIZE, batch_size)
+# validation_generator = create_data_generator("validation_augmentation", df_validate, validation_filepath, "filename", "label", IMAGE_SIZE, batch_size)
+# test_generator = create_data_generator("test_augmentation", test_df, test_filepath, "filename", None, IMAGE_SIZE, batch_size, shuffle=False)

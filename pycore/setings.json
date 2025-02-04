@@ -30,11 +30,25 @@
         "activation_x": "relu",
         "activation_preds": "softmax"
     },
-    "train_augmentation":{
-        "batch_size": 15
+    "batch":{
+        "size":15,
+        "y_col":"label",
+        "x_col":"filename",
+        "class_mode":"categorical"
     },
-    "validation_augmentation":{
-
+    "train_augmentation": {
+        "rotation_range": 20,
+        "rescale": 0.00392156862745098,  
+        "shear_range": 0.1,
+        "zoom_range": 0.2,
+        "horizontal_flip": true,
+        "width_shift_range": 0.1,
+        "height_shift_range": 0.1
+    },
+    "validation_augmentation": {
+        "rescale": 0.00392156862745098  
+    },
+    "test_augmentation": {
+        "rescale": 0.00392156862745098 
     }
-
 }

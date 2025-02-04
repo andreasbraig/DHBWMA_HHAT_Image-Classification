@@ -24,6 +24,35 @@ base,x,preds = tm.Setup_MobilNet(weights= cf["mobilnet"]["weights"],
                                  activationpreds= cf["mobilnet"]["activation_x"],
                                  activationx= cf["mobilnet"]["activation_preds"],)
 
+# Data Augmentation und DataFlowGen
 
-# Vorbereitung für Training 
+train_data=ufm.data_gen(mode="train_augmentation",
+                        df=train_df,
+                        filepath=cf["filepaths"]["train"],
+                        x_col="filename",
+                        y_col="label",
+                        target_size=(cf["imagecfg"]["IMG_W"],cf["imagecfg"]["IMG_H"]),
+                        batch_size=cf["batch"]["size"],
+                        config=cf,
+                        shuffle=True)
+
+print("train Data Prepared.")
+print(train_data)
+
+validation_data=ufm.data_gen(mode="validation_augmentation",
+                        df=validate_df,
+                        filepath=cf["filepaths"]["validate"],
+                        x_col="filename",
+                        y_col="label",
+                        target_size=(cf["imagecfg"]["IMG_W"],cf["imagecfg"]["IMG_H"]),
+                        batch_size=cf["batch"]["size"],
+                        config=cf,
+                        shuffle=True)
+
+print("validation Data Prepared.")
+print(validation_data)
+
+# Modell Komplilieren und Einstellung finalisieren
+
+# Training 
 
