@@ -25,10 +25,24 @@
         "include_top":false,
         "density1": 1024,
         "density2": 1024,
-        "density3": 1024,
-        "density4": 512,
+        "density3": 512,
+        "density4": 2,
         "activation_x": "relu",
-        "activation_preds": "softmax"
+        "activation_preds": "softmax",
+        "layers":20
+    },
+    "model_compile":{
+        "optimizer":"Adam",
+        "loss":"categorical_crossentropy",
+        "metrics": "accuracy"
+    },
+    "callbacks":{
+        "monitor":"val_accuracy",
+        "espatience":10,
+        "RLRPpatience":2,
+        "verbose":1,
+        "factor":0.5,
+        "min_lr": 0.00001
     },
     "batch":{
         "size":15,

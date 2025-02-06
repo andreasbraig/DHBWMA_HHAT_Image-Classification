@@ -3,6 +3,7 @@ import os
 import pycore.preprocessing.filemanagement as ufm
 import pycore.training.model as tm
 
+
 config_path = "pycore/setings.json"
 
 cf = json.load(open(config_path, 'r'))
@@ -21,8 +22,8 @@ base,x,preds = tm.Setup_MobilNet(weights= cf["mobilnet"]["weights"],
                                  Density2= cf["mobilnet"]["density2"],
                                  Density3= cf["mobilnet"]["density3"],
                                  Density4= cf["mobilnet"]["density4"],
-                                 activationpreds= cf["mobilnet"]["activation_x"],
-                                 activationx= cf["mobilnet"]["activation_preds"],)
+                                 activationpreds= cf["mobilnet"]["activation_preds"],
+                                 activationx= cf["mobilnet"]["activation_x"],)
 
 # Data Augmentation und DataFlowGen
 
@@ -54,5 +55,33 @@ print(validation_data)
 
 # Modell Komplilieren und Einstellung finalisieren
 
+model = tm.get_Model(base_model=base,
+                     preds=preds,
+                     optimizer=cf["model_compile"]["optimizer"],
+                     loss=cf["model_compile"]["loss"],
+                     metrics=[cf["model_compile"]["metrics"]],
+                     layers=cf["mobilnet"]["layers"])
+
+#callbacks
+
+callbacks = tm.set_Callbacks(monitor=cf["callbacks"]["monitor"],
+                             espatience=cf["callbacks"]["espatience"],
+                             RLRPpatience=cf["callbacks"]["RLRPpatience"],
+                             verbose=cf["callbacks"]["verbose"],
+                             factor=cf["callbacks"]["factor"],
+                             min_lr=cf["callbacks"]["min_lr"])
+
 # Training 
 
+batch_size = cf["batch"]["size"]
+
+epochs=3 if cf["imagecfg"]["FAST_RUN"] else 50
+history = model.fit(train_data,
+                    epochs=epochs,
+                    validation_data=validation_data,
+                    validation_steps=validate_df.shape[0]//batch_size,
+                    steps_per_epoch=train_df.shape[0]//batch_size,
+                    callbacks=callbacks
+)
+
+model.save("mobilenet_v1.h5")
