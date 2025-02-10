@@ -3,7 +3,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import json
 
-config_path = "/pycore/setings.json"
+config_path = "pycore/setings.json"
 
 cf = json.load(open(config_path, 'r'))
 

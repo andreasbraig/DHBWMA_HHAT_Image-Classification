@@ -1,61 +1,66 @@
-from flask import Flask, request, send_file, render_template, jsonify
-from flask_restful import Resource, Api
-from imagewatchdog import folder_monitor
+from flask import Flask, send_file, render_template
+import time
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
+from flask_socketio import SocketIO 
 import threading
+import json
+import os
+
+config_path = "pycore/setings.json"
+
+cf = json.load(open(config_path, 'r'))
+
+global latest_image
+latest_image = None  # Variable zum Speichern des neuesten Bildpfads
+
+def update_latest_image(image_path):
+    print("new image Detected")
+    global latest_image
+    latest_image = image_path
+    socketio.emit('update_image', {'image_url': '/latest_image'})
+
+class NewFileHandler(FileSystemEventHandler):
+    def on_created(self, event):
+        if not event.is_directory:  # Sicherstellen, dass es keine Ordner sind
+            update_latest_image(event.src_path)
+
+def folder_monitor():
+    path_to_watch = cf['filepaths']['bad']  # Pfad zum zu überwachenden Ordner kommt aus JSON
+
+    event_handler = NewFileHandler()
+    observer = Observer()
+    observer.schedule(event_handler, path=path_to_watch, recursive=False)
+
+    print(f"Überwache Ordner: {path_to_watch}")
+
+    try:
+        observer.start()
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        observer.stop()
+        print("Beendet.")
+    observer.join()
 
 app = Flask(__name__)
-api = Api(app)
-
-class NameResource(Resource):
-    def post(self):
-        first_name = request.form.get('first_name')
-        last_name = request.form.get('last_name')
-
-        # Rufe Klassifikation Rundown(name, vorname) auf
-        
-        folder_monitor()
-
-
-        result = "test"
-        insert = True
-        
-        # Gib das Ergebnis als JSON zurück, inklusive Erfolgswert
-        response_data = {
-            'message': result,
-            'success': insert
-        }
-
-        return jsonify(response_data)
-
-class SaveNameResource(Resource):
-    def post(self):
-        data = request.get_json()  # Hole die Daten aus dem JSON-Request
-
-        name = data.get('name')
-        vorname = data.get('vorname')
-
-        # Rufe deine Funktion Rundown_Save(name, vorname) auf
-        result = Rundown_Save(name, vorname)
-
-        # Gib das Ergebnis als JSON zurück, inklusive Erfolgswert
-        response_data = {
-            'message': result,
-            'success': True
-        }
-
-        return jsonify(response_data)
-
-api.add_resource(NameResource, '/add_name')
-api.add_resource(SaveNameResource, '/save_name')
+socketio = SocketIO(app)
 
 @app.route('/')
 def main_page():
-    return send_file('Main.html')
+    return render_template('main.html')
+
+@app.route('/latest_image')
+def get_latest_image():
+    if latest_image and os.path.exists(latest_image):
+        return send_file(latest_image, mimetype='image/jpeg')
+    return "No image available", 404
+
+def start_watchdog():
+    folder_monitor()
 
 if __name__ == '__main__':
-    watchdog_thread = threading.Thread(target=folder_monitor, daemon=True)
+    watchdog_thread = threading.Thread(target=start_watchdog, daemon=True)
     watchdog_thread.start()
     
-    from waitress import serve
-    
-    serve(app,host="127.0.0.1",port=5000)
+    socketio.run(app, host="127.0.0.1", port=5000,debug=True)

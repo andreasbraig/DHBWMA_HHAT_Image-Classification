@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formular</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
     <style>
         /* Stil für den schwarzen Balken */
         .header {
@@ -18,7 +19,7 @@
             background-color: white;
             padding: 20px;
             border-radius: 10px;
-            width: 40%;
+            width: 60%;
             margin: 0 auto;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -47,6 +48,14 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        #latestImage {
+        max-width: 100%;  /* Bild passt sich an die Breite des Containers an */
+        max-height: 500px; /* Begrenze die Höhe */
+        display: block;  /* Verhindert unerwünschte Leerzeichen */
+        margin: 20px auto; /* Zentriert das Bild */
+        border-radius: 1px; /* Abgerundete Ecken für einen besseren Look */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optionaler Schatten */
+    }
     </style>
 </head>
 <body>
@@ -63,14 +72,21 @@
             2. Die Bilder der Werkstücke werden von diesem System Klassifiziert. <br>
              <br>
             3. Unten wird angezeigt, ob es sich um eine "defekte" oder "funktionierende" Platine handelt. <br>
-             <br>
-             <br>
-             <br>
+
         </body>
 
+        <img id="latestImage" src="/latest_image" alt="Wird geladen...">
+
+        <script>
+            var socket = io();
+            socket.on('update_image', function(data) {
+                console.log("📥 Neues Bild-Event empfangen:", data);  // Debugging
+                document.getElementById('latestImage').src = data.image_url + "?t=" + new Date().getTime();
+            });
+        </script>
 
 
-    
+    </div>
 
 </body>
 </html>
