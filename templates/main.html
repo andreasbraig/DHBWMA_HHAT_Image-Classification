@@ -80,7 +80,7 @@
         <script>
             var socket = io();
             socket.on('update_image', function(data) {
-                console.log("📥 Neues Bild-Event empfangen:", data);  // Debugging
+                console.log("Neues Bild-Event empfangen:", data);  // Debugging
                 document.getElementById('latestImage').src = data.image_url + "?t=" + new Date().getTime();
             });
         </script>

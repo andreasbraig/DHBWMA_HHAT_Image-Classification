@@ -1,7 +1,8 @@
 import cv2
-import json
+import numpy as np
 import os
 from PIL import Image
+from tensorflow.keras.preprocessing import image as im
 
  #Bild laden (im unterordner)
 
@@ -32,8 +33,16 @@ def single_to_grayscale(image_path,Destination,filename):
     return output_path
 
 
-
-
+#Image in Numpy Array Wandeln, sodass Klassifizierbar
+def preprocess_image(image_path, target_size=(224, 224)):
+    """
+    Lädt ein Bild, skaliert es und bereitet es für das Modell vor.
+    """
+    img = im.load_img(image_path, target_size=target_size, color_mode="rgb")  # WICHTIG: Graustufen-Modus
+    img_array = im.img_to_array(img)  # In NumPy-Array umwandeln
+    img_array = np.expand_dims(img_array, axis=0)  # Batch-Dimension hinzufügen (TensorFlow erwartet 4D-Shape)
+    img_array = img_array / 255.0  # Normalisierung (je nach Modell evtl. notwendig)
+    return img_array
 
 
 #Utilities 

@@ -1,4 +1,6 @@
 from flask import Flask, send_file, render_template
+from pycore.preprocessing import imageconversion as uic
+from pycore.classification import classification as cls
 import time
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
@@ -11,14 +13,31 @@ config_path = "pycore/setings.json"
 
 cf = json.load(open(config_path, 'r'))
 
+model_loaded_event = threading.Event()
+
+model = None
+
 global latest_image
 latest_image = None  # Variable zum Speichern des neuesten Bildpfads
 
-def update_latest_image(image_path):
+def load_model():
+    global model
+    print("Lade Modell...")
+    model = cls.get_Model(cf["model"]["path"])
+    print("Modell geladen")
+    model_loaded_event.set()
+
+def update_latest_image(image_path,):
     print("new image Detected")
     global latest_image
     latest_image = image_path
     socketio.emit('update_image', {'image_url': '/latest_image'})
+
+    img = uic.preprocess_image(image_path)
+
+    result = cls.classify_image(img,model)
+
+    print(result)
 
 class NewFileHandler(FileSystemEventHandler):
     def on_created(self, event):
@@ -60,6 +79,10 @@ def start_watchdog():
     folder_monitor()
 
 if __name__ == '__main__':
+
+    model_thread = threading.Thread(target=load_model, daemon=True)
+    model_thread.start()
+
     watchdog_thread = threading.Thread(target=start_watchdog, daemon=True)
     watchdog_thread.start()
     
