@@ -77,11 +77,17 @@
 
         <img id="latestImage" src="/latest_image" alt="Wird geladen...">
 
+        <h2>Ergebnis:</h2>
+        <p id="classification-result">Wird noch nicht klassifiziert...</p>
+
         <script>
             var socket = io();
             socket.on('update_image', function(data) {
                 console.log("Neues Bild-Event empfangen:", data);  // Debugging
                 document.getElementById('latestImage').src = data.image_url + "?t=" + new Date().getTime();
+            });
+            socket.on('classification_result', function(data) {
+            document.getElementById("classification-result").innerText = data.result;
             });
         </script>
 

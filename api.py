@@ -37,7 +37,9 @@ def update_latest_image(image_path,):
 
     result = cls.classify_image(img,model)
 
-    print(result)
+    socketio.emit('classification_result', {'result':result})
+
+    #print(result)
 
 class NewFileHandler(FileSystemEventHandler):
     def on_created(self, event):
@@ -86,4 +88,4 @@ if __name__ == '__main__':
     watchdog_thread = threading.Thread(target=start_watchdog, daemon=True)
     watchdog_thread.start()
     
-    socketio.run(app, host="127.0.0.1", port=5000,debug=True)
+    socketio.run(app, host="127.0.0.1", port=5000,debug=True,use_reloader=False)

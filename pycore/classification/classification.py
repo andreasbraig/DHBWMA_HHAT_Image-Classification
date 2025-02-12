@@ -15,9 +15,12 @@ def get_Model(path):
 def classify_image(image,model):
 
     prediction = model.predict(image)[0][0]  # Annahme: Binäre Klassifikation (eine Zahl als Output)
+
+
     
     # Falls das Modell eine Wahrscheinlichkeitsausgabe macht, kannst du einen Schwellenwert setzen:
-    result = False if prediction > 0.5 else True
+    result = "Das PCB ist Defekt" if prediction > 0.5 else "Das PCB Funktioniert"
+
     
-    print(f"Klassifizierung: {result} (Wert: {prediction:.4f})")
+    #print(f"Klassifizierung: {result} (Wert: {prediction:.4f})")
     return result
