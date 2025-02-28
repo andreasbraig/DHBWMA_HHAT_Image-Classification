@@ -1,0 +1,55 @@
+\pagestyle{empty}
+
+%===========Logos============================================
+%DHBW_Logo
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north east,inner xsep=2.5cm, inner ysep=1.5cm] at (current page.north east)
+	{\includegraphics[scale=0.25]{dhbw-logo.png}};
+\end{tikzpicture}
+
+%Firmen Logo
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north west,inner xsep=2.5cm, inner ysep=2cm] at (current page.north west)
+	{\includegraphics[scale=1]{ABB_Logo.png}};
+\end{tikzpicture}
+
+%===========Inhalt===========================================
+\vspace{2cm}
+
+\begin{center}
+	\LARGE{\textbf{\Titel}} \\
+	\vspace{0.5cm}
+	\large{\textbf{\Art}}
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+	des Studienganges \Studiengang \\
+	an der Dualen Hochschule Baden-Württemberg Mannheim
+\end{center}
+
+\vspace{0.75cm}
+
+\begin{center}
+	von \\
+	\Vorname{} \Nachname
+\end{center}
+
+\vspace{0.75cm}
+
+\begin{center}
+	\Abgabedatum
+\end{center}
+
+\vspace{1.5cm}
+
+\begin{tabularx}{\textwidth}{l@{\hspace{2cm}}X}
+	Bearbeitungszeitraum:            & \Bearbeitungszeitraum        \\
+	Matrikelnummer, Kurs:            & \Matrikelnummer, \Kurskrzl   \\
+	Ausbildungsfirma:                & \Ausbildungsfirma            \\
+	Abteilung:                       & \Abteilung\\
+	Betreuer der Dualen Hochschule:  & \BetreuerDHBW                \\
+	& \\ & \\
+\end{tabularx}
+

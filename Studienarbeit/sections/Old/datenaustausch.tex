@@ -1,0 +1,52 @@
+\chapter{Datenaustausch zwischen App und Arduino}
+
+\section{Zielsetzung der Schnittstelle}
+Die geplante Schnittstelle soll den Datenaustausch zwischen dem Arduino und der Android-App ermöglichen. Der Arduino ist mit den Sensoren und Aktoren für die Bewässerung verbunden und sammelt Daten, die an die App übertragen werden. Als Datenstruktur wird eine \ac{json}-Datei gewählt, die sowohl vom Arduino als auch von der App gelesen und beschrieben werden soll. Diese Datei enthält die Sensordaten, Statusmeldungen und andere relevante Informationen wie Name und Icon der Pflanzen. Während der Arduino kontinuierlich Messdaten und Fehlerprotokolle übermittelt, kann die App auf diese Datei zugreifen, um Benutzereinstellungen wie das Pflanzen-Icon oder die Namen zu ändern. Zudem wird die Möglichkeit zur manuellen Bewässerung über die App vorgesehen.
+
+\section{Technische Optionen für die Umsetzung}
+Grundsätzlich gibt es mehrere Möglichkeiten, den Datenaustausch zwischen Arduino und App zu realisieren. \autoref{tab:datenaustausch} listet alle relevante Kommunikationsschnittstellen auf und wertet sie hinsichtlich Kosten, Reichweite und Implementierungsaufwand aus.
+
+\begin{table}[h!]
+	\centering
+	\caption{Übersicht der Optionen für den Datenaustausch zwischen dem Arduino und der App, Quelle: Eigene Darstellung}
+	\label{tab:datenaustausch}
+	\footnotesize
+	\renewcommand{\arraystretch}{1.5} % Erhöht den Zeilenabstand
+	\begin{tabularx}{\textwidth}{|X|X|X|>{\raggedright\arraybackslash}p{0.4\textwidth}|}
+		\hline
+		\textbf{Option} & \textbf{Kosten} & \textbf{Reichweite} & \textbf{Implementierungsaufwand} \\ \hline
+		Externer Server & Hoch & Weltweit (Internet erforderlich) & Hoch (erfordert Servereinrichtung, laufende Kosten) \\ \hline
+		Arduino als Server (\ac{wlan}) & Mittel & Lokal (nur im \ac{wlan}) & Mittel (Konfiguration des Arduino als Server) \\ \hline
+		Gleiches \ac{wlan} (Arduino und Handy) & Niedrig & Lokal (nur im \ac{wlan}) & Niedrig (einfache Integration in die App) \\ \hline
+		Bluetooth & Niedrig & Kurz (typischerweise bis 100m) & Mittel (Bluetooth-Verbindung aufbauen und stabil halten) \\ \hline
+		Direkter \ac{usb}-Anschluss & Niedrig & Sehr kurz (physische Verbindung) & Niedrig (einfache Verbindung ohne zusätzliche Hardware) \\ \hline
+		SD-Karte & Niedrig & Keine (keine Netzwerke erforderlich) & Mittel (manuelle Datenübertragung notwendig) \\ \hline
+		Cloud-Dienste & Hoch & Weltweit (Internet erforderlich) & Mittel (\ac{api}-Integration und Cloud-Setup notwendig) \\ \hline
+	\end{tabularx}
+\end{table}
+
+
+Die Verwendung eines externen Servers ermöglicht eine weltweite Verfügbarkeit der Daten und eine einfache Integration in die App. Dies erfordert jedoch eine stabile Internetverbindung und kann zusätzliche Kosten durch Serverdienste verursachen.
+
+Der Arduino kann selbst auch als Server agieren, der über ein eigenes \ac{wlan}-Netzwerk angesprochen wird. Diese Lösung ermöglicht eine direkte Verbindung zwischen der App und dem Arduino, ohne dass ein externer Server benötigt wird. Die Kommunikation ist jedoch auf das Arduino-\ac{wlan} beschränkt, was den Wechsel zwischen Netzwerken erschwert und die Benutzerfreundlichkeit einschränken kann.
+
+Eine Alternative ist es sowohl den Arduino als auch das mobile Gerät im selben WLAN zu betreiben. Diese Lösung ermöglicht eine einfache lokale Kommunikation, die ohne Internetzugang funktioniert und keine externen Server oder zusätzliche Hardware erfordert. Ein Nachteil dieser Variante ist, dass beide Geräte immer im gleichen Netzwerk sein müssen, was bei einer instabilen \ac{wlan}-Verbindung problematisch sein kann.
+
+Bluetooth ermöglicht die Kommunikation ohne WLAN und ist energieeffizient. Die Reichweite von Bluetooth ist jedoch begrenzt, und die Datenübertragungsrate ist langsamer im Vergleich zu WLAN, was diese Option für größere Datenmengen weniger geeignet macht.
+
+Ein direkter Anschluss über \ac{usb} bietet eine zuverlässige und stabile Verbindung. Allerdings ist dieser Ansatz für den Dauerbetrieb oder für mobile Anwendungen unpraktisch, da eine physische Verbindung erforderlich ist.
+
+Die Speicherung von Daten auf einer SD-Karte ermöglicht eine unabhängige Lösung, die keine Netzwerke oder Server erfordert. Der Nachteil dieser Methode ist, dass die Daten manuell übertragen werden müssen, was den täglichen Betrieb unpraktisch macht.
+
+Cloud-Dienste ermöglichen eine weltweite Verfügbarkeit der Daten und eine einfache Integration in die App. Jedoch besteht eine Abhängigkeit von externen Anbietern und potenziellen Kosten, was diese Lösung für private Anwendungen weniger attraktiv macht.
+
+Nach der Analyse der verschiedenen Optionen stellt sich die Lösung, bei der sowohl der Arduino als auch das mobile Gerät im gleichen \ac{wlan} eingebunden sind, als die praktikabelste und benutzerfreundlichste Variante heraus. Diese Lösung ermöglicht eine einfache lokale Kommunikation ohne Internetzugang und vermeidet zusätzliche Kosten durch externe Server oder Hardware. Besonders im Kontext eines privaten Bewässerungssystems, bei dem die Geräte in einem stabilen \ac{wlan} betrieben werden, bietet diese Lösung eine gute Balance zwischen Benutzerfreundlichkeit, Zuverlässigkeit und Kosteneffizienz. Daher wird diese Methode für die Umsetzung empfohlen.
+
+
+\section{Geplante Umsetzung der Kommunikation mit \ac{rest}-\ac{api}}
+
+Der Arduino wird so konfiguriert, dass er sich mit einem bestehenden \ac{wlan}-Netzwerk verbindet. Nach der Verbindung agiert der Arduino als Webserver, der \ac{http}-Anfragen empfangen kann, um Daten zu senden und zu empfangen. Die \ac{rest}-\ac{api} auf dem Arduino wird so implementiert, dass sie \ac{http}-Methoden wie \texttt{GET} und \texttt{POST} unterstützt, um das Abrufen und Schreiben der \ac{json}-Datei zu ermöglichen.
+
+In der Android-App wird ein \ac{http}-Client integriert, der die \ac{rest}-\ac{api} des Arduinos anruft. Beispielsweise kann die App mit der \texttt{GET /data}-Anfrage die aktuellen Sensordaten abrufen und mit der \texttt{POST /data}-Anfrage neue Daten an den Arduino senden. Diese Anfragen ermöglichen es der App, mit dem Arduino zu kommunizieren und das Bewässerungssystem in Echtzeit zu überwachen und zu steuern.
+
+Mit dieser Implementierung wird es der App ermöglicht, auf die \ac{rest}-\ac{api} des Arduinos zuzugreifen und Daten wie den Wasserstand in Echtzeit abzurufen. Die Verwendung von \ac{rest}-\acp{api} sorgt dabei für eine einfache und skalierbare Lösung.

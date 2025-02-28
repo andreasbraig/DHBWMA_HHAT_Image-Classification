@@ -1,0 +1,75 @@
+\chapter{Systemarchitektur und Design}
+
+Der erste wichtige Meilenstein des Projekts ist die Konzepterstellung. Hierzu wird im ersten Schritt die genaue Funktionsweise des Pflanzenbewässerungssystems definiert und anschließend alle benötigten Komponenten für die Realisierung ausgelegt. Der Umfang des Projekts soll dabei durch ein modulares System erweiterbar definiert werden, um die Möglichkeit zu bieten, das Projekt auch in weiteren Studienarbeiten weiter auszuarbeiten.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{system_overview}
+	\caption{Schematische Darstellung des Pflanzenbewässerungssystems mit Bodenfeuchtesensor, Mikrocontroller und App-Interface zur automatisierten Bewässerung, Quelle: Eigene Darstellung}
+	\label{fig:system_overview}
+\end{figure}
+
+\section{Hardware-Komponenten und Funktionen}
+Die schematische Darstellung in \autoref{fig:system_overview} illustriert die Hauptkomponenten des Systems und deren Interaktionen. Das System basiert auf mehreren funktionalen Einheiten, die nahtlos zusammenarbeiten, um eine automatisierte Bewässerung zu gewährleisten. 
+
+Der Bodenfeuchtesensor misst die Feuchtigkeit des Bodens und liefert diese Daten an den Mikrocontroller. Sobald ein festgelegter Schwellenwert unterschritten wird, löst der Sensor einen Gießvorgang aus. Der Mikrocontroller (Arduino) fungiert hierbei als zentrale Steuereinheit des Systems. Er verarbeitet die vom Sensor übermittelten Daten, steuert die Pumpe und speichert die Messwerte sowie den Systemstatus in einer Datei. Darüber hinaus ermöglicht er die Kommunikation mit der App.
+
+Die Wasserpumpe entnimmt das benötigte Wasser aus einem Behälter und leitet es zur Pflanze. Der Füllstandssensor im Wasserbehälter überprüft vor jedem Gießvorgang, ob ausreichend Wasser vorhanden ist. Bei einem zu niedrigen Wasserstand wird die Pumpe nicht aktiviert, um Schäden durch Trockenlaufen zu verhindern. 
+
+Das App-Interface dient als Benutzeroberfläche für die Visualisierung von Sensordaten und den Systemstatus. Es zeigt Warnmeldungen, wie zum Beispiel „Wasserstand niedrig“, an und bietet dem Benutzer die Möglichkeit, manuelle Eingriffe wie das Starten oder Stoppen der Pumpe vorzunehmen. 
+
+Die Datenspeicherung und Übertragung erfolgt mithilfe einer Datei auf der SD-Karte. Diese Datei enthält alle relevanten Messdaten und Statusmeldungen des Systems und wird regelmäßig zwischen dem Mikrocontroller und der App ausgetauscht.
+
+
+\section{Auswahl des Dateiformates zur Übertragung und Speicherung}
+
+Für die Übertragung und Speicherung von Daten zwischen dem Arduino und der Android-App wurde \ac{json} als geeignetes Dateiformat ausgewählt. Die Entscheidung basiert auf den Anforderungen des Systems, insbesondere der Notwendigkeit, komplexe, verschachtelte Datenstrukturen effizient zu übertragen. Die wichtigsten Kriterien für die Wahl des Dateiformates werden in Tabelle \ref{tab:dateiformate} zusammengefasst.
+
+\begin{table}[h]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|X|X|X|} 
+		\hline
+		\textbf{Kriterium} & \textbf{JSON} & \textbf{XML} & \textbf{CSV} \\ 
+		\hline
+		\textbf{Lesbarkeit} & Sehr hoch & Hoch & Niedrig \\ 
+		\hline
+		\textbf{Strukturiertheit} & Hierarchisch (verschachtelt) & Hierarchisch (verschachtelt) & Flach \\ 
+		\hline
+		\textbf{Datenkomplexität} & Hoch (verschiedene Datentypen) & Hoch (verschiedene Datentypen) & Niedrig (nur Text) \\ 
+		\hline
+		\textbf{Speicherbedarf} & Gering & Höher (Metadaten) & Sehr gering \\ 
+		\hline
+		\textbf{Verarbeitungs\-geschwindigkeit} & Schnell (in modernen Bibliotheken) & Langsam (mehr Overhead) & Sehr schnell (einfaches Format) \\ 
+		\hline
+		\textbf{Flexibilität und Erweiterbarkeit} & Sehr hoch (einfache Erweiterung) & Hoch (komplizierte Erweiterungen) & Gering (begrenzte Erweiterbarkeit) \\ 
+		\hline
+		\textbf{Kompatibilität mit Arduino} & Sehr gut (mit \texttt{ArduinoJson}-Bibliothek) & Gut (mit \texttt{TinyXML}-Bibliothek) & Eingeschränkt (komplizierte Verarbeitung) \\ 
+		\hline
+		\textbf{Kompatibilität mit Android} & Sehr gut (mit Gson) & Gut (mit DOM und SAX) & Eingeschränkt (nur einfache Daten) \\ 
+		\hline
+	\end{tabularx}
+	\caption{Vergleich von JSON, XML und CSV für die Speicherung und Übertragung von Daten im Pflanzenbewässerungssystem}
+	\label{tab:dateiformate}
+\end{table}
+
+
+Wie in Tabelle \ref{tab:dateiformate} dargestellt, ist \ac{json} besonders geeignet für das Pflanzenbewässerungssystem, da es die Anforderungen an die Datenstruktur und Verarbeitung am besten erfüllt. Das System muss komplexe, verschachtelte Daten, wie durch das Klassendiagramm in \autoref{fig:class_diagram} dargestellt, effizient verarbeiten und übertragen. \ac{json} ermöglicht dies aufgrund seiner hierarchischen Struktur und der Unterstützung für verschiedene Datentypen. 
+
+Im Vergleich zu \ac{xml} bietet \ac{json} einen geringeren Speicherbedarf, was in ressourcenbegrenzten Systemen wie dem Arduino von Vorteil ist. Auf dem Arduino, das nur begrenzten Speicher zur Verfügung hat, werden keine zusätzlichen Metadaten benötigt, die in \ac{xml} erforderlich sind. 
+
+Die Verarbeitungs­geschwindigkeit von \ac{json} ist ein weiteres entscheidendes Kriterium. In modernen Bibliotheken wie \texttt{ArduinoJson} für Arduino und \texttt{Gson} für Android ist die Verarbeitung von \ac{json}-Daten optimiert, was schnelle Datenübertragungen und -verarbeitungen ermöglicht. Dies ist besonders wichtig, da das System in Echtzeit auf Änderungen der Sensorwerte reagieren muss. 
+
+Zudem bietet \ac{json} eine hohe Flexibilität und Erweiterbarkeit. Das Format lässt sich leicht anpassen, um neue Datenfelder oder zusätzliche Sensoren zu integrieren, was für die zukünftige Erweiterbarkeit des Systems entscheidend ist. Da das System in Zukunft möglicherweise mehrere Sensoren oder zusätzliche Steuerfunktionen integrieren muss, ist diese Erweiterbarkeit von großer Bedeutung.
+
+Schließlich ist \ac{json} sowohl mit Arduino als auch mit Android gut kompatibel. Auf dem Arduino wird \ac{json} mit der \texttt{ArduinoJson}-Bibliothek effizient verarbeitet, und für Android bietet die \texttt{Gson}-Bibliothek eine schnelle und einfache Möglichkeit, \ac{json}-Daten zu parsen und zu erstellen. Diese gute Kompatibilität erleichtert die Implementierung und sorgt für eine einfache Integration der Datenverarbeitung zwischen beiden Systemen.
+
+\section{Zusammenspiel zwischen Arduino-System und Android-App}
+Das Zusammenspiel zwischen Hardware und Software bildet die Grundlage für das Pflanzenbewässerungssystem. Die App übernimmt die Überwachung und Steuerung, während der Arduino die Sensorik und Aktorik verwaltet. 
+
+Die Bodenfeuchtigkeits- und Füllstandsdaten werden stündlich vom Arduino erfasst und in einer \ac{json}-Datei gespeichert. Diese Datei wird über eine \ac{rest}-API bereitgestellt und von der App ausgelesen. Die App zeigt die erfassten Daten grafisch an und ermöglicht eine interaktive Überwachung des Systems.
+
+Zusätzlich zur Anzeige der Sensordaten soll die App die manuelle Steuerung der Pumpe erlauben. Außerdem können Nutzer das Erscheinungsbild der Pflanzen durch individuelle Icons und Namen anpassen, um eine personalisierte Benutzererfahrung zu gewährleisten.
+
+Das System synchronisiert sich regelmäßig, um sicherzustellen, dass die App stets aktuelle Informationen bereitstellt. Fehlermeldungen, wie ein niedriger Wasserstand, werden in Echtzeit angezeigt, um den Nutzer frühzeitig zu informieren und eine schnelle Reaktion zu ermöglichen.
+
+
