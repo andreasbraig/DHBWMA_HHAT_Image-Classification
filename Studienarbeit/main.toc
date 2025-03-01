@@ -12,6 +12,7 @@
 \contentsline {section}{\numberline {3.1}Ablauf der Implementierung}{8}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Installation im Labor}{8}{section.3.2}%
 \contentsline {chapter}{\numberline {4}Softwaretests}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Confusion Matrix}{9}{section.4.1}%
 \contentsline {chapter}{\numberline {5}Reevaluation des Modells}{10}{chapter.5}%
 \contentsline {chapter}{\numberline {6}Fazit und Ausblick}{11}{chapter.6}%
 \contentsline {chapter}{Literaturverzeichnis}{X}{chapter.6}%

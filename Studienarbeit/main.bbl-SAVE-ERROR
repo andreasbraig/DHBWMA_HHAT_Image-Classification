@@ -31,8 +31,8 @@
       \strng{authorbibnamehash}{81f761acf5aa13c5aae5a6a807995b98}
       \strng{authornamehash}{81f761acf5aa13c5aae5a6a807995b98}
       \strng{authorfullhash}{81f761acf5aa13c5aae5a6a807995b98}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Wie funktioniert ein Convolutional Neural Network ({CNN}) für Computer Vision? Im ersten Teil haben wir vorgestellt, was die wichtigsten Anwendungen für Computer Vision für das Finanzwesen sind. Dazu zählen u.a. die Re-Digitalisierung von Dokumenten oder die Verifizierung von biometrischen Daten u}
@@ -70,8 +70,8 @@
       \strng{authorbibnamehash}{ff97a9fdede09eaf6e1c8ec9f6a61dd5}
       \strng{authornamehash}{ff97a9fdede09eaf6e1c8ec9f6a61dd5}
       \strng{authorfullhash}{ff97a9fdede09eaf6e1c8ec9f6a61dd5}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Erfahren Sie mehr über revolutionäre neuronale Netzwerke, deren Verbindung zu Deep Learning und Computervision und ihren Wert in der Zukunft.}
@@ -93,8 +93,8 @@
       \endverb
     \endentry
     \entry{noauthor_machine_nodate-1}{online}{}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labeltitlesource}{title}
       \field{abstract}{Erfahre, wie Machine Learning Regression Geschäftsentscheidungen unterstützt. Erfahre mehr über die verschiedenen Regressionstypen und wann du sie verwenden solltest.}
       \field{langid}{german}
@@ -139,8 +139,8 @@
       \strng{authorbibnamehash}{e5df264e9f26a417144f1c623c96c72b}
       \strng{authornamehash}{e5df264e9f26a417144f1c623c96c72b}
       \strng{authorfullhash}{e5df264e9f26a417144f1c623c96c72b}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{isbn}{978-3-8348-2605-3 978-3-8348-2606-0}
@@ -180,8 +180,8 @@
       \strng{authorbibnamehash}{5c1949776c497672b7c6f25f239150b4}
       \strng{authornamehash}{5c1949776c497672b7c6f25f239150b4}
       \strng{authorfullhash}{5c1949776c497672b7c6f25f239150b4}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Lerne, wie du mit Python {HTTP}-Anfragen für die Interaktion mit {REST}-{APIs} nutzen kannst. Dieser Leitfaden behandelt {GET}- und {POST}-Anfragen, Beispiele und Best Practices für die {API}-Integration.}

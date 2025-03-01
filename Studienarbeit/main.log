@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  1 MAR 2025 18:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  1 MAR 2025 20:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1372,13 +1372,13 @@ Overfull \hbox (3.17467pt too wide) in paragraph at lines 12--17
 
 
 ]
-<resources/images/CNN.png, id=162, 752.8125pt x 308.15125pt>
+<resources/images/CNN.png, id=164, 752.8125pt x 308.15125pt>
 File: resources/images/CNN.png Graphic file (type png)
 <use resources/images/CNN.png>
 Package pdftex.def Info: resources/images/CNN.png  used on input line 26.
 (pdftex.def)             Requested size: 455.24411pt x 186.34978pt.
  [3 <./resources/images/CNN.png>]
-<resources/images/API.png, id=184, 963.6pt x 431.6125pt>
+<resources/images/API.png, id=186, 963.6pt x 431.6125pt>
 File: resources/images/API.png Graphic file (type png)
 <use resources/images/API.png>
 Package pdftex.def Info: resources/images/API.png  used on input line 49.
@@ -1402,7 +1402,7 @@ Overfull \hbox (27.45026pt too wide) in paragraph at lines 73--74
 [5]
 Package acronym Info: Label `acro:HTML' newly defined as it shall be overridden
 although it is yet undefined on input line 77.
-<resources/images/FLASK.png, id=215, 963.6pt x 542.025pt>
+<resources/images/FLASK.png, id=217, 963.6pt x 542.025pt>
 File: resources/images/FLASK.png Graphic file (type png)
 <use resources/images/FLASK.png>
 Package pdftex.def Info: resources/images/FLASK.png  used on input line 81.
@@ -1547,18 +1547,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42563 strings out of 474116
- 855545 string characters out of 5743682
+ 42566 strings out of 474116
+ 855583 string characters out of 5743682
  1945187 words of memory out of 5000000
- 64141 multiletter control sequences out of 15000+600000
+ 64143 multiletter control sequences out of 15000+600000
  598879 words of font info for 80 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,19n,107p,10983b,2730s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (23 pages, 410334 bytes).
+Output written on main.pdf (23 pages, 410630 bytes).
 PDF statistics:
- 372 PDF objects out of 1000 (max. 8388607)
- 324 compressed objects within 4 object streams
- 77 named destinations out of 1000 (max. 500000)
- 174 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 377 PDF objects out of 1000 (max. 8388607)
+ 329 compressed objects within 4 object streams
+ 78 named destinations out of 1000 (max. 500000)
+ 182 words of extra memory for PDF output out of 10000 (max. 10000000)
 
