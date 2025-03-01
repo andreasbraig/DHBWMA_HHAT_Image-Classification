@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  28 FEB 2025 23:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  1 MAR 2025 13:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1073,7 +1073,7 @@ Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 10.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
-) (./main.aux (./sections/title.aux) (./sections/erklaerung.aux) (./sections/vorwort.aux) (./sections/abstract.aux) (./resources/directories/acronyms.aux) (./sections/einleitung.aux) (./sections/theorie.aux) (./sections/softwarekonzept.aux) (./sections/SW_implementierung.aux) (./sections/SW_tests.aux) (./sections/fazit_ausblick.aux) (./sections/anhang.aux))
+) (./main.aux (./sections/title.aux) (./sections/erklaerung.aux) (./sections/vorwort.aux) (./sections/abstract.aux) (./resources/directories/acronyms.aux) (./sections/einleitung.aux) (./sections/theorie.aux) (./sections/softwarekonzept.aux) (./sections/SW_implementierung.aux) (./sections/SW_tests.aux) (./sections/newmodels.aux) (./sections/fazit_ausblick.aux) (./sections/anhang.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -1405,9 +1405,9 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 
 ]
-\openout2 = `sections/fazit_ausblick.aux'.
+\openout2 = `sections/newmodels.aux'.
 
- (./sections/fazit_ausblick.tex
+ (./sections/newmodels.tex
 chapter 5.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -1426,8 +1426,29 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 
 ]
+\openout2 = `sections/fazit_ausblick.aux'.
 
-LaTeX Warning: Empty bibliography on input line 50.
+ (./sections/fazit_ausblick.tex
+chapter 6.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+) [7
+
+
+
+
+]
+
+LaTeX Warning: Empty bibliography on input line 51.
 
 \openout2 = `sections/anhang.aux'.
 
@@ -1451,7 +1472,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 
 
-] (./main.aux (./sections/title.aux) (./sections/erklaerung.aux) (./sections/vorwort.aux) (./sections/abstract.aux) (./resources/directories/acronyms.aux) (./sections/einleitung.aux) (./sections/theorie.aux) (./sections/softwarekonzept.aux) (./sections/SW_implementierung.aux) (./sections/SW_tests.aux) (./sections/fazit_ausblick.aux) (./sections/anhang.aux))
+] (./main.aux (./sections/title.aux) (./sections/erklaerung.aux) (./sections/vorwort.aux) (./sections/abstract.aux) (./resources/directories/acronyms.aux) (./sections/einleitung.aux) (./sections/theorie.aux) (./sections/softwarekonzept.aux) (./sections/SW_implementierung.aux) (./sections/SW_tests.aux) (./sections/newmodels.aux) (./sections/fazit_ausblick.aux) (./sections/anhang.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1463,18 +1484,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42100 strings out of 474116
- 845437 string characters out of 5743682
+ 42148 strings out of 474116
+ 846688 string characters out of 5743682
  1939187 words of memory out of 5000000
- 63736 multiletter control sequences out of 15000+600000
+ 63771 multiletter control sequences out of 15000+600000
  590382 words of font info for 75 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,19n,107p,10983b,2383s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (16 pages, 65923 bytes).
+Output written on main.pdf (17 pages, 67390 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 203 PDF objects out of 1000 (max. 8388607)
+ 174 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 159 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -411,6 +411,9 @@ INPUT sections/SW_implementierung.aux
 INPUT ./sections/SW_tests.aux
 INPUT ./sections/SW_tests.aux
 INPUT sections/SW_tests.aux
+INPUT ./sections/newmodels.aux
+INPUT ./sections/newmodels.aux
+INPUT sections/newmodels.aux
 INPUT ./sections/fazit_ausblick.aux
 INPUT ./sections/fazit_ausblick.aux
 INPUT sections/fazit_ausblick.aux
@@ -582,6 +585,12 @@ OUTPUT sections/SW_tests.aux
 INPUT ./sections/SW_tests.tex
 INPUT ./sections/SW_tests.tex
 INPUT sections/SW_tests.tex
+INPUT ./sections/newmodels.tex
+INPUT ./sections/newmodels.tex
+OUTPUT sections/newmodels.aux
+INPUT ./sections/newmodels.tex
+INPUT ./sections/newmodels.tex
+INPUT sections/newmodels.tex
 INPUT ./sections/fazit_ausblick.tex
 INPUT ./sections/fazit_ausblick.tex
 OUTPUT sections/fazit_ausblick.aux
@@ -624,6 +633,9 @@ INPUT sections/SW_implementierung.aux
 INPUT ./sections/SW_tests.aux
 INPUT ./sections/SW_tests.aux
 INPUT sections/SW_tests.aux
+INPUT ./sections/newmodels.aux
+INPUT ./sections/newmodels.aux
+INPUT sections/newmodels.aux
 INPUT ./sections/fazit_ausblick.aux
 INPUT ./sections/fazit_ausblick.aux
 INPUT sections/fazit_ausblick.aux

@@ -11,6 +11,8 @@ import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
 
+import cv2
+import os
 
 import os
 import time
@@ -23,7 +25,7 @@ class CNNClassification(nn.Module):
         super().__init__()
         
         self.network = nn.Sequential(
-            nn.Conv2d(4, 16, kernel_size=3, padding=1),
+            nn.Conv2d(3, 16, kernel_size=3, padding=1),
             nn.ReLU(),
             nn.Conv2d(16, 32, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
@@ -48,7 +50,7 @@ class CNNClassification(nn.Module):
             nn.MaxPool2d(2,2),
             
             nn.Flatten(),
-            nn.Linear(256*18*25, 2048),  # Angepasste Dimension basierend auf Eingangsdaten
+            nn.Linear(256*27*20, 2048),  # Angepasste Dimension basierend auf Eingangsdaten
             nn.ReLU(),
             nn.Linear(2048, 128),
             nn.ReLU(),
@@ -180,14 +182,10 @@ def log_test_results(test_dataset, predictions, filename="test_results.csv"):
         
         print(f"Test results saved to {filename}")
 
-def rgba_loader(path):
-        from PIL import Image
-        img = Image.open(path).convert("RGBA")  # Ensure RGBA mode
-        return transforms.ToTensor()(img)  # Keep all 4 channels
 
 def train_model(data_dir, device,epochs=5,modelname = "model.state"):
 
-    train_dataset = ImageFolder(data_dir, transform=None, loader=rgba_loader) 
+    train_dataset = ImageFolder(data_dir, transform=None,loader=rgba_loader) 
     train_dl = DataLoader(train_dataset, batch_size=64, shuffle=True, num_workers=4, pin_memory=True)
 
     model = CNNClassification()
@@ -247,6 +245,12 @@ def copy_misclassified_images(csv_file, source_dir, target_dir):
                 if os.path.exists(source_path):
                     shutil.copy(source_path, target_path)
 
+def rgba_loader(path):
+        from PIL import Image
+        img = Image.open(path).convert("RGB")
+        return transforms.ToTensor()(img)
+
+
 
 def split_data(source,destination1,destination2,test_size=0.2,random_state=36):
 
@@ -279,19 +283,56 @@ def split_data(source,destination1,destination2,test_size=0.2,random_state=36):
 
 
 
-if __name__ == '__main__':
+def resize_images(input_folder, output_folder, scale_factor=0.3):
 
-    split_data(source="../../Bilder/Pytorch/Source/Bad_Pictures",
-               destination1="../../Bilder/Pytorch/Learn/bad",
-               destination2="../../Bilder/Pytorch/Test/bad")
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
     
-    split_data(source="../../Bilder/Pytorch/Source/Good_Pictures",
-               destination1="../../Bilder/Pytorch/Learn/good",
-               destination2="../../Bilder/Pytorch/Test/good")
+    for filename in os.listdir(input_folder):
+        file_path = os.path.join(input_folder, filename)
+        
+        # Überprüfen, ob es sich um eine Bilddatei handelt
+        if os.path.isfile(file_path) and filename.lower().endswith((".png", ".jpg", ".jpeg")):
+            img = cv2.imread(file_path)
+            if img is None:
+                continue  # Überspringe ungültige Bilder
+            
+            # Neue Bildgröße berechnen
+            new_width = int(img.shape[1] * scale_factor)
+            new_height = int(img.shape[0] * scale_factor)
+            resized_img = cv2.resize(img, (new_width, new_height), interpolation=cv2.INTER_AREA)
+            
+            # Bild speichern
+            output_path = os.path.join(output_folder, filename)
+            cv2.imwrite(output_path, resized_img)
+            
+        
+    print(f"Bilder wurden erfolgreich verkleinert und gespeichert.")
+
+# Beispielaufruf:
+# resize_images("input_bilder", "output_bilder", scale_factor=0.5)
+
+
+
+def pytorchmodel():
+
+    resize_images(input_folder="Bilder/Pytorch/Source/Bad_Pictures",
+                  output_folder="Bilder/Pytorch/Learn/bad")
+    
+    resize_images(input_folder="Bilder/Pytorch/Source/Good_Pictures",
+                  output_folder="Bilder/Pytorch/Learn/good")
+
+    split_data(source="Bilder/Pytorch/Learn/bad",
+               destination1="Bilder/Pytorch/Learn/bad",
+               destination2="Bilder/Pytorch/Test/bad")
+    
+    split_data(source="Bilder/Pytorch/Learn/good",
+               destination1="Bilder/Pytorch/Learn/good",
+               destination2="Bilder/Pytorch/Test/good")
     
 
-    data_dir = "../../Bilder/Pytorch/Learn"
-    test_data_dir = "../../Bilder/Pytorch/Test/"
+    data_dir = "Bilder/Pytorch/Test"
+    test_data_dir = "Bilder/Pytorch/Learn/"
      
 
     model = "model.state"
@@ -308,7 +349,7 @@ if __name__ == '__main__':
 
     print(f"Using device: {device}")
 
-    train_model(data_dir, device, epochs=40,modelname=model)
+    train_model(data_dir, device, epochs=20,modelname=model)
 
     test_model(test_data_dir, device,model,logfile)
 

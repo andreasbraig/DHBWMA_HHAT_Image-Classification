@@ -2,6 +2,7 @@
 # import numpy as np
 # from pycore.preprocessing import imageconversion as uic
 # from pycore.classification import classification as cls
+from pycore.training.pytorchmodel import pytorchmodel
 
 # config_path = "pycore/setings.json"
 
@@ -20,3 +21,7 @@
 # result = cls.classify_image(img,model)
 
 # print(result)
+
+
+if __name__ == "__main__":
+    pytorchmodel()

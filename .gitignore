@@ -1,1 +1,7 @@
 *.jpg
+
+**/*.state
+
+*.state
+
+/Bilder
