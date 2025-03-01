@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  1 MAR 2025 13:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  1 MAR 2025 16:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1176,7 +1176,15 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl)
+ (./main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                erfassung_convolutional_nodate
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 10.
 Package biblatex Info: Reference segment=0 on input line 10.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/ninecolors/ninecolors.sty
@@ -1324,17 +1332,23 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-
+Package acronym Info: Label `acro:PCB' newly defined as it shall be overridden
+although it is yet undefined on input line 3.
+Package acronym Info: Label `acro:CNN' newly defined as it shall be overridden
+although it is yet undefined on input line 3.
+Package acronym Info: Label `acro:API' newly defined as it shall be overridden
+although it is yet undefined on input line 11.
+)
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.13 \section
-             {Problemstellung} [1
+l.36 	\include{sections/einleitung}
+                                    [1
 
 
 
 
-]) [2]
+]
 \openout2 = `sections/theorie.aux'.
 
  (./sections/theorie.tex
@@ -1350,12 +1364,31 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) [3
+
+Overfull \hbox (2.59865pt too wide) in paragraph at lines 12--17
+[]\T1/phv/m/n/12 Bildverarbeitung be-schäf-tigt sich mit der Ma-ni-pu-la-ti-on und Ana-ly-se di-gi-ta-ler Bil-der durch
+ []
+
+
+Overfull \hbox (3.17467pt too wide) in paragraph at lines 12--17
+\T1/phv/m/n/12 ent-we-der zur Bild-ver-bes-se-rung oder als Vor-ver-ar-bei-tungs-schrit-te für nach-fol-gen-de Ana-
+ []
+
+
+LaTeX Warning: Citation 'erfassung_convolutional_nodate' on page 2 undefined on input line 22.
+
+[2
 
 
 
 
 ]
+<resources/images/CNN.png, id=132, 752.8125pt x 308.15125pt>
+File: resources/images/CNN.png Graphic file (type png)
+<use resources/images/CNN.png>
+Package pdftex.def Info: resources/images/CNN.png  used on input line 26.
+(pdftex.def)             Requested size: 455.24411pt x 186.34978pt.
+ [3 <./resources/images/CNN.png>]) [4] [5]
 \openout2 = `sections/softwarekonzept.aux'.
 
 
@@ -1375,7 +1408,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) [4
+) [6
 
 
 
@@ -1399,7 +1432,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) [5
+) [7
 
 
 
@@ -1420,7 +1453,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) [6
+) [8
 
 
 
@@ -1441,18 +1474,29 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) [7
+) [9
 
 
 
 
 ]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 51.
 
-LaTeX Warning: Empty bibliography on input line 51.
+Overfull \hbox (7.21521pt too wide) in paragraph at lines 51--51
+[]\T1/phv/m/n/12 S. Mit-tel-stand. ^^R  Ers-te Schrit-te mit Py-thon HTTP-Anfragen für REST-APIs.^^P (), Adres-
+ []
 
+[10
+
+
+
+
+
+]
 \openout2 = `sections/anhang.aux'.
 
-(./sections/anhang.tex
+ (./sections/anhang.tex
 chapter A.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -1465,11 +1509,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) [10
-
-
-
-
+) [11
 
 
 ] (./main.aux (./sections/title.aux) (./sections/erklaerung.aux) (./sections/vorwort.aux) (./sections/abstract.aux) (./resources/directories/acronyms.aux) (./sections/einleitung.aux) (./sections/theorie.aux) (./sections/softwarekonzept.aux) (./sections/SW_implementierung.aux) (./sections/SW_tests.aux) (./sections/newmodels.aux) (./sections/fazit_ausblick.aux) (./sections/anhang.aux))
@@ -1477,25 +1517,32 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+Package biblatex Warning: Please rerun LaTeX.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42148 strings out of 474116
- 846688 string characters out of 5743682
- 1939187 words of memory out of 5000000
- 63771 multiletter control sequences out of 15000+600000
- 590382 words of font info for 75 fonts, out of 8000000 for 9000
+ 42436 strings out of 474116
+ 853094 string characters out of 5743682
+ 1941187 words of memory out of 5000000
+ 64038 multiletter control sequences out of 15000+600000
+ 598566 words of font info for 79 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 108i,19n,107p,10983b,2383s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (17 pages, 67390 bytes).
+ 108i,19n,107p,10983b,2730s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on main.pdf (20 pages, 308719 bytes).
 PDF statistics:
- 203 PDF objects out of 1000 (max. 8388607)
- 174 compressed objects within 2 object streams
- 40 named destinations out of 1000 (max. 500000)
- 159 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 296 PDF objects out of 1000 (max. 8388607)
+ 254 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 500000)
+ 164 words of extra memory for PDF output out of 10000 (max. 10000000)
 
