@@ -316,6 +316,8 @@ def resize_images(input_folder, output_folder, scale_factor=0.3):
 
 def pytorchmodel():
 
+
+
     resize_images(input_folder="Bilder/Pytorch/Source/Bad_Pictures",
                   output_folder="Bilder/Pytorch/Learn/bad")
     
@@ -323,16 +325,16 @@ def pytorchmodel():
                   output_folder="Bilder/Pytorch/Learn/good")
 
     split_data(source="Bilder/Pytorch/Learn/bad",
-               destination1="Bilder/Pytorch/Learn/bad",
-               destination2="Bilder/Pytorch/Test/bad")
+               destination1="Bilder/Pytorch/Test/bad",
+               destination2="Bilder/Pytorch/Learn/bad")
     
     split_data(source="Bilder/Pytorch/Learn/good",
-               destination1="Bilder/Pytorch/Learn/good",
-               destination2="Bilder/Pytorch/Test/good")
+               destination1="Bilder/Pytorch/Test/good",
+               destination2="Bilder/Pytorch/Learn/good")
     
 
-    data_dir = "Bilder/Pytorch/Test"
-    test_data_dir = "Bilder/Pytorch/Learn/"
+    data_dir = "Bilder/Pytorch/Learn"
+    test_data_dir = "Bilder/Pytorch/Test/"
      
 
     model = "model.state"
