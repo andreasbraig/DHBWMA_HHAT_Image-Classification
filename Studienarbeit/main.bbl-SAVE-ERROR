@@ -58,6 +58,40 @@
       \verb https://www.finbridge.de/ml-artikel/2022/09/08/computer-vision-fuer-finance-teil-2
       \endverb
     \endentry
+    \entry{intel_convolutional_nodate}{online}{}
+      \name{author}{1}{}{%
+        {{hash=ff97a9fdede09eaf6e1c8ec9f6a61dd5}{%
+           family={Intel},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{ff97a9fdede09eaf6e1c8ec9f6a61dd5}
+      \strng{fullhash}{ff97a9fdede09eaf6e1c8ec9f6a61dd5}
+      \strng{bibnamehash}{ff97a9fdede09eaf6e1c8ec9f6a61dd5}
+      \strng{authorbibnamehash}{ff97a9fdede09eaf6e1c8ec9f6a61dd5}
+      \strng{authornamehash}{ff97a9fdede09eaf6e1c8ec9f6a61dd5}
+      \strng{authorfullhash}{ff97a9fdede09eaf6e1c8ec9f6a61dd5}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Erfahren Sie mehr über revolutionäre neuronale Netzwerke, deren Verbindung zu Deep Learning und Computervision und ihren Wert in der Zukunft.}
+      \field{langid}{german}
+      \field{title}{Convolutional Neural Networks ({CNN}) und Deep Learning}
+      \field{titleaddon}{Intel}
+      \field{urlday}{1}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:/Users/andreasbraig/Zotero/storage/NRGRMI4X/convolutional-neural-networks.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.intel.com/content/www/de/de/internet-of-things/computer-vision/convolutional-neural-networks.html
+      \endverb
+      \verb{url}
+      \verb https://www.intel.com/content/www/de/de/internet-of-things/computer-vision/convolutional-neural-networks.html
+      \endverb
+    \endentry
     \entry{noauthor_machine_nodate-1}{online}{}
       \field{sortinit}{7}
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
@@ -238,8 +272,130 @@
       \verb https://www.digitalocean.com/community/tutorials/how-to-get-started-with-the-requests-library-in-python-de
       \endverb
     \endentry
+    \entry{rodriguez_rest_2016}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{hash=64190a527e592fb0737b6f58721a35eb}{%
+           family={Rodríguez},
+           familyi={R\bibinitperiod},
+           given={Carlos},
+           giveni={C\bibinitperiod}}}%
+        {{hash=b0ba4c0ad1e5d3a1a781748a78685bf6}{%
+           family={Baez},
+           familyi={B\bibinitperiod},
+           given={Marcos},
+           giveni={M\bibinitperiod}}}%
+        {{hash=55abf2add943ddfd7f67ce4b8536b18c}{%
+           family={Daniel},
+           familyi={D\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod}}}%
+        {{hash=24e5d28857b49ba04b027167401759a0}{%
+           family={Casati},
+           familyi={C\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod}}}%
+        {{hash=6c1b22a8c7fc10c04b25805aada7e244}{%
+           family={Trabucco},
+           familyi={T\bibinitperiod},
+           given={Juan\bibnamedelima Carlos},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=681dc1002617888b0e21423fb28696d1}{%
+           family={Canali},
+           familyi={C\bibinitperiod},
+           given={Luigi},
+           giveni={L\bibinitperiod}}}%
+        {{hash=2bc467dc8ed6e895ddbc13fe5342e66d}{%
+           family={Percannella},
+           familyi={P\bibinitperiod},
+           given={Gianraffaele},
+           giveni={G\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=deffb1da8168d5f40078161cb868ab09}{%
+           family={Bozzon},
+           familyi={B\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a47ca6b46bd38e5c4fafa864cbb4447d}{%
+           family={Cudre-Maroux},
+           familyi={C\bibinithyphendelim M\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod}}}%
+        {{hash=72f4c42f181b1843dc1b20d49f768775}{%
+           family={Pautasso},
+           familyi={P\bibinitperiod},
+           given={Cesare},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{9a383ab2a31986b80efa3098c582ec62}
+      \strng{fullhash}{31471bd560e1e90c2974c410ae736c79}
+      \strng{bibnamehash}{9a383ab2a31986b80efa3098c582ec62}
+      \strng{authorbibnamehash}{9a383ab2a31986b80efa3098c582ec62}
+      \strng{authornamehash}{9a383ab2a31986b80efa3098c582ec62}
+      \strng{authorfullhash}{31471bd560e1e90c2974c410ae736c79}
+      \strng{editorbibnamehash}{a31f6866657c219e206992520a69f79d}
+      \strng{editornamehash}{a31f6866657c219e206992520a69f79d}
+      \strng{editorfullhash}{a31f6866657c219e206992520a69f79d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Quickly and dominantly, {REST} {APIs} have spread over the Web and percolated into modern software development practice, especially in the Mobile Internet where they conveniently enable offloading data and computations onto cloud services. We analyze more than 78 {GB} of {HTTP} traffic collected by Italy’s biggest Mobile Internet provider over one full day and study how big the trend is in practice, how it changed the traffic that is generated by applications, and how {REST} {APIs} are implemented in practice. The analysis provides insight into the compliance of state-of-the-art {APIs} with theoretical Web engineering principles and guidelines, knowledge that affects how applications should be developed to be scalable and robust. The perspective is that of the Mobile Internet.}
+      \field{booktitle}{Web Engineering}
+      \field{isbn}{978-3-319-38791-8}
+      \field{langid}{english}
+      \field{shorttitle}{{REST} {APIs}}
+      \field{title}{{REST} {APIs}: A Large-Scale Analysis of Compliance with Principles and Best Practices}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{pages}{21\bibrangedash 39}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1007/978-3-319-38791-8_2
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/Users/andreasbraig/Zotero/storage/NI9F2KFT/Rodríguez et al. - 2016 - REST APIs A Large-Scale Analysis of Compliance wi.pdf:application/pdf
+      \endverb
+      \keyw{{APIs},Mobile internet,{REST},{REST} principles}
+    \endentry
+    \entry{flask_welcome_nodate}{online}{}
+      \name{author}{1}{}{%
+        {{hash=9784e91c7b2657917226bc82afdd6789}{%
+           family={Flask},
+           familyi={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{9784e91c7b2657917226bc82afdd6789}
+      \strng{fullhash}{9784e91c7b2657917226bc82afdd6789}
+      \strng{bibnamehash}{9784e91c7b2657917226bc82afdd6789}
+      \strng{authorbibnamehash}{9784e91c7b2657917226bc82afdd6789}
+      \strng{authornamehash}{9784e91c7b2657917226bc82afdd6789}
+      \strng{authorfullhash}{9784e91c7b2657917226bc82afdd6789}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Welcome to Flask — Flask Documentation (3.1.x)}
+      \field{urlday}{1}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Welcome to Flask — Flask Documentation (3.1.x):/Users/andreasbraig/Zotero/storage/A9I8QWX6/stable.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://flask.palletsprojects.com/en/stable/
+      \endverb
+      \verb{url}
+      \verb https://flask.palletsprojects.com/en/stable/
+      \endverb
+    \endentry
   \enddatalist
-  \missing{erfassung_convolutional_nodate}
 \endrefsection
 \endinput
 

@@ -7,13 +7,13 @@
 \contentsline {section}{\numberline {2.1}Machine Learning und Klassifikationsprobleme}{2}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Die Funktionsweise einer API}{4}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Anfragearten einer API}{5}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}FLASK}{5}{subsection.2.2.2}%
-\contentsline {chapter}{\numberline {3}Implementierung}{6}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Ablauf der Implementierung}{6}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Installation im Labor}{6}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Softwaretests}{7}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Reevaluation des Modells}{8}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{9}{chapter.6}%
+\contentsline {subsection}{\numberline {2.2.2}FLASK}{6}{subsection.2.2.2}%
+\contentsline {chapter}{\numberline {3}Implementierung}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Ablauf der Implementierung}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Installation im Labor}{8}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Softwaretests}{9}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Reevaluation des Modells}{10}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{11}{chapter.6}%
 \contentsline {chapter}{Literaturverzeichnis}{X}{chapter.6}%
-\contentsline {chapter}{\numberline {A}Anhang}{XI}{appendix.A}%
+\contentsline {chapter}{\numberline {A}Anhang}{XII}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

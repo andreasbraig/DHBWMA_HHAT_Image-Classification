@@ -2,6 +2,8 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Aufbau eines Convolutional Neural Networks \blx@tocontentsinit {0}\cite {finbridgede_computer_2022}.}}{3}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Schematischer Aufbau der API Kommunikation}}{4}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Erweiterung der API Darstellung auf Basis von FLASK}}{6}{figure.caption.19}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -19,7 +19,7 @@ Convolutional Neural Networks \ac{CNN} sind spezialisierte Deep Learning Modelle
 Die Architektur eines CNN nutzt die räumliche Struktur von Bildern effizient, um visuelle Muster zu erkennen und zu klassifizieren.
 Ein CNN besteht hauptsächlich aus Faltungsschichten und Linearen Ebenen (siehe \autoref{fig:system_overview}). 
 Die Convolutional Layers verwenden kleine Filtermatrizen (Kernel), die über das Bild gleiten und visuelle Merkmale wie Kanten und Texturen erkennen. 
-Diese Filter werden während des Trainings optimiert, um die relevantesten Merkmale zu extrahieren \cite{finbridgede_computer_2022} \cite{erfassung_convolutional_nodate}.
+Diese Filter werden während des Trainings optimiert, um die relevantesten Merkmale zu extrahieren \cite{finbridgede_computer_2022} \cite{intel_convolutional_nodate}.
 
 \begin{figure}[h]
     \centering
@@ -40,11 +40,52 @@ Es gibt verschiedene CNN-Architekturen wie ResNet und MobileNet, die für spezif
 
 APIs stellen das Herzstück moderner Softwareentwicklung dar und ermöglichen es Programmen, miteinander zu kommunizieren und Daten auszutauschen. Dieser Datenaustausch ist wesentlich für vielfältige Anwendungen, wie etwa das Abrufen von Wetterdaten oder das Interagieren mit sozialen Netzwerken. In der Python Entwicklungsumgebung machen Bibliotheken wie requests oder http.client den Einstieg in die API-Entwicklung besonders zugänglich \cite{software_mittelstand_erste_nodate}. Die in dieser Studienarbeit verwendete FLASK Bibliothek ermöglicht es, eine komplextere API zu erstellen, die Daten aus dem Python Programm an die Webanwendung überträgt.
 
-Anwendungsprogrammierschnittstellen \ac{API} sind Software-Vermittler; ihre Aufgabe besteht darin, Anwendungen die Kommunikation untereinander zu ermöglichen. Diese subtilen Vermittler sind allgegenwärtig im täglichen Leben, ob bewusst wahrgenommen oder nicht. Wenn man beispielsweise eine Sofortnachricht verschickt, nutzt man bereits eine \ac{API} \cite{pykes_programmieren_nodate}.
+Anwendungsprogrammierschnittstellen \ac{API} sind Software-Vermittler (\autoref{fig:api_design}) ihre Aufgabe besteht darin, Anwendungen die Kommunikation untereinander zu ermöglichen. 
+Diese subtilen Vermittler sind allgegenwärtig im täglichen Leben, ob bewusst wahrgenommen oder nicht. 
+Wenn man beispielsweise eine Sofortnachricht verschickt, nutzt man bereits eine \ac{API} \cite{pykes_programmieren_nodate}.
 
-Im Kontext von Webanwendungen bieten \ac{API}s den Zugriff auf Daten und Funktionalitäten von Drittanbietern. Dies ermöglicht es Entwicklern, ihre Anwendungen um Funktionen wie Wetterinformationen, Sportergebnisse, Filmlisten, Tweets, Suchmaschinenergebnisse und Bildverarbeitung zu erweitern. Zudem können über APIs weitere Funktionalitäten wie Zahlungsabwicklung, Terminplanung, E-Mail-Versand, Übersetzungen, Kartendienste oder Dateiübertragungen integriert werden. Die Eigenentwicklung solcher Funktionen würde erhebliche Ressourcen beanspruchen, während die Nutzung von APIs eine schnelle und effiziente Integration ermöglicht\cite{digital_ocean_llc_erste_nodate}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{API.png}
+    \caption{Schematischer Aufbau der API Kommunikation}
+    \label{fig:api_design}
+\end{figure}
 
+Im Kontext von Webanwendungen bieten \ac{API}s den Zugriff auf Daten und Funktionalitäten von Drittanbietern. 
+Dies ermöglicht es Entwicklern, ihre Anwendungen um Funktionen wie Wetterinformationen, Sportergebnisse, Filmlisten, Tweets, Suchmaschinenergebnisse und Bildverarbeitung zu erweitern. 
+Die Eigenentwicklung solcher Funktionen würde erhebliche Ressourcen beanspruchen, während die Nutzung von APIs eine schnelle und effiziente Integration ermöglicht\cite{digital_ocean_llc_erste_nodate}.
 
 \subsection{Anfragearten einer API} \label{subsec:anfragearten_einer_api}  % Theorie
 
+Die Grundbausteine einer \Ac{API} sind Anfragen (Requests) und Antworten (Responses). Diese basieren oft auf dem \ac{HTTP}-Protokoll, das die Grundlage des Internets bildet \cite{software_mittelstand_erste_nodate}. 
+\ac{HTTP}-Anfragen sind die Art und Weise, wie das Web funktioniert. Jedes Mal, wenn man zu einer Webseite navigiert, stellt der Browser mehrere Anfragen an den Server der Webseite. Der Server antwortet dann mit allen Daten, die für die Darstellung der Seite erforderlich sind, woraufhin der Browser die Seite rendert \cite{digital_ocean_llc_erste_nodate}.
+
+Der generische Prozess der \Ac{API}-Kommunikation lässt sich wie folgt beschreiben: Ein Client in dieser Studienarbeit der Browser, sendet Daten an eine Uniform Resource Locator \ac{URL}. Der Server unter dieser \ac{URL} liest die Daten, entscheidet, was damit zu tun ist. Intern wird das passende Python Skript ausgeführt und gibt eine Antwort an den Client zurück. Schließlich verarbeitet der Client die empfangenen Daten entsprechend seiner Programmlogik \cite{digital_ocean_llc_erste_nodate}.
+
+Ein wesentlicher Teil der Anfrage ist die Hypertext Transfer Protocol \ac{HTTP}-Methode. Einige der gebräuchlichsten Methoden sind \cite{rodriguez_rest_2016}:
+\begin{itemize}
+    \item \textbf{GET} Dient dem Abrufen von Daten, ohne Änderungen auf dem Server vorzunehmen
+    \item \textbf{POST} Wird verwendet, um neue Daten an den Server zu senden
+    \item \textbf{PUT} Aktualisiert vorhandene Daten auf dem Server
+    \item \textbf{DELETE} Entfernt Daten vom Server
+\end{itemize}
+
+Diese Methoden bilden die Grundlage des Representational State Transfer \ac{REST}ful API-Designs, das in modernen Webanwendungen weit verbreitet ist \cite{rodriguez_rest_2016}.
+
 \subsection{FLASK} \label{subsec:flask}  % Theorie
+
+Für diese Studienarbeit ist keine Umfängliche WEB-\ac{API} notwendig. Es soll lediglich eine einzige Hypertext Markup Language \ac{HTML} Datei von der Python Anwendung an den Browser übertragen werden. Es ist für diese Anforderung kein Größeres Framework wie Beispielsweise Django notwendig. FLASK ist ein Mikroframework für Python, das sich auf einfache und schnelle Entwicklung konzentriert. Es ist besonders gut geeignet für kleine bis mittelgroße Projekte, bei denen die Verwendung eines größeren Frameworks übertrieben wäre. FLASK bietet eine Vielzahl von Erweiterungen, die die Entwicklung von Webanwendungen erleichtern. Es ist einfach zu erlernen und bietet eine Vielzahl von Funktionen, die für die Entwicklung von Webanwendungen erforderlich sind.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{FLASK.png}
+    \caption{Erweiterung der API Darstellung auf Basis von FLASK}
+    \label{fig:flask}
+\end{figure}
+
+FLASK Nutzt die \ac{WSGI} Schnittstelle von Python \cite{flask_welcome_nodate} und  \autoref{fig:flask} und Stellt in Verbindung mit der in dieser Studienarbeit Verwendeten Waitress Bibliothek den Webserver zur Verfügung.
+
+Eine Besondere Anforderung der im Folgenden vorgestellten Webanwendung liegt in der Übertragung der neu erstellten Fotos von der Kamera des FESTO \ac{cp-lab} an die 
+Webanwendung. Um eine einfachere Benutzbarkeit zu gewährleisten soll der Browser nicht jedes mal neu geladen werden müssen, wenn ein Foto geschossen und klassifiziert wird.
+
+Im Folgenden wird die neue Softwarearchitektur vorgestellt und auch die Implementierung der Webanwendung erläutert.
