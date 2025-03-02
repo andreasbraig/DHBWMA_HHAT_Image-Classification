@@ -31,8 +31,8 @@
       \strng{authorbibnamehash}{81f761acf5aa13c5aae5a6a807995b98}
       \strng{authornamehash}{81f761acf5aa13c5aae5a6a807995b98}
       \strng{authorfullhash}{81f761acf5aa13c5aae5a6a807995b98}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Wie funktioniert ein Convolutional Neural Network ({CNN}) für Computer Vision? Im ersten Teil haben wir vorgestellt, was die wichtigsten Anwendungen für Computer Vision für das Finanzwesen sind. Dazu zählen u.a. die Re-Digitalisierung von Dokumenten oder die Verifizierung von biometrischen Daten u}
@@ -70,8 +70,8 @@
       \strng{authorbibnamehash}{ff97a9fdede09eaf6e1c8ec9f6a61dd5}
       \strng{authornamehash}{ff97a9fdede09eaf6e1c8ec9f6a61dd5}
       \strng{authorfullhash}{ff97a9fdede09eaf6e1c8ec9f6a61dd5}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Erfahren Sie mehr über revolutionäre neuronale Netzwerke, deren Verbindung zu Deep Learning und Computervision und ihren Wert in der Zukunft.}
@@ -93,8 +93,8 @@
       \endverb
     \endentry
     \entry{noauthor_machine_nodate-1}{online}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labeltitlesource}{title}
       \field{abstract}{Erfahre, wie Machine Learning Regression Geschäftsentscheidungen unterstützt. Erfahre mehr über die verschiedenen Regressionstypen und wann du sie verwenden solltest.}
       \field{langid}{german}
@@ -139,8 +139,8 @@
       \strng{authorbibnamehash}{e5df264e9f26a417144f1c623c96c72b}
       \strng{authornamehash}{e5df264e9f26a417144f1c623c96c72b}
       \strng{authorfullhash}{e5df264e9f26a417144f1c623c96c72b}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{isbn}{978-3-8348-2605-3 978-3-8348-2606-0}
@@ -180,8 +180,8 @@
       \strng{authorbibnamehash}{5c1949776c497672b7c6f25f239150b4}
       \strng{authornamehash}{5c1949776c497672b7c6f25f239150b4}
       \strng{authorfullhash}{5c1949776c497672b7c6f25f239150b4}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Lerne, wie du mit Python {HTTP}-Anfragen für die Interaktion mit {REST}-{APIs} nutzen kannst. Dieser Leitfaden behandelt {GET}- und {POST}-Anfragen, Beispiele und Best Practices für die {API}-Integration.}
@@ -394,6 +394,101 @@
       \verb{url}
       \verb https://flask.palletsprojects.com/en/stable/
       \endverb
+    \endentry
+    \entry{ai_wiki_accuracy_2019}{online}{}
+      \name{author}{1}{}{%
+        {{hash=ccd676d989238b7d15eb9c39574f54d7}{%
+           family={Wiki},
+           familyi={W\bibinitperiod},
+           given={{AI}},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ccd676d989238b7d15eb9c39574f54d7}
+      \strng{fullhash}{ccd676d989238b7d15eb9c39574f54d7}
+      \strng{bibnamehash}{ccd676d989238b7d15eb9c39574f54d7}
+      \strng{authorbibnamehash}{ccd676d989238b7d15eb9c39574f54d7}
+      \strng{authornamehash}{ccd676d989238b7d15eb9c39574f54d7}
+      \strng{authorfullhash}{ccd676d989238b7d15eb9c39574f54d7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{17}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{title}{Accuracy and Loss {|} {AI} Wiki}
+      \field{urlday}{2}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://machine-learning.paperspace.com/wiki/accuracy-and-loss
+      \endverb
+      \verb{url}
+      \verb https://machine-learning.paperspace.com/wiki/accuracy-and-loss
+      \endverb
+    \endentry
+    \entry{lipton_thresholding_2014}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=c18b35b81500ac29cb1c2aa4bf30f438}{%
+           family={Lipton},
+           familyi={L\bibinitperiod},
+           given={Zachary\bibnamedelima Chase},
+           giveni={Z\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=4a515be7c49aeeb68dfe1388be237a23}{%
+           family={Elkan},
+           familyi={E\bibinitperiod},
+           given={Charles},
+           giveni={C\bibinitperiod}}}%
+        {{hash=05bd9d4866d4c36becf9db726f6d4c23}{%
+           family={Narayanaswamy},
+           familyi={N\bibinitperiod},
+           given={Balakrishnan},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{8b25a21775241ceb40ae7bbde7d3aa25}
+      \strng{fullhash}{8b25a21775241ceb40ae7bbde7d3aa25}
+      \strng{bibnamehash}{8b25a21775241ceb40ae7bbde7d3aa25}
+      \strng{authorbibnamehash}{8b25a21775241ceb40ae7bbde7d3aa25}
+      \strng{authornamehash}{8b25a21775241ceb40ae7bbde7d3aa25}
+      \strng{authorfullhash}{8b25a21775241ceb40ae7bbde7d3aa25}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper provides new insight into maximizing F1 scores in the context of binary classification and also in the context of multilabel classification. The harmonic mean of precision and recall, F1 score is widely used to measure the success of a binary classifier when one class is rare. Micro average, macro average, and per instance average F1 scores are used in multilabel classification. For any classifier that produces a real-valued output, we derive the relationship between the best achievable F1 score and the decision-making threshold that achieves this optimum. As a special case, if the classifier outputs are well-calibrated conditional probabilities, then the optimal threshold is half the optimal F1 score. As another special case, if the classifier is completely uninformative, then the optimal behavior is to classify all examples as positive. Since the actual prevalence of positive examples typically is low, this behavior can be considered undesirable. As a case study, we discuss the results, which can be surprising, of applying this procedure when predicting 26,853 labels for Medline documents.}
+      \field{day}{14}
+      \field{eprinttype}{arxiv}
+      \field{month}{5}
+      \field{number}{{arXiv}:1402.1892}
+      \field{title}{Thresholding Classifiers to Maximize F1 Score}
+      \field{urlday}{2}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1402.1892
+      \endverb
+      \verb{eprint}
+      \verb 1402.1892 [stat]
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/Users/andreasbraig/Zotero/storage/8GNRTFVL/Lipton et al. - 2014 - Thresholding Classifiers to Maximize F1 Score.pdf:application/pdf;Snapshot:/Users/andreasbraig/Zotero/storage/NTGCNLU6/1402.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1402.1892
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1402.1892
+      \endverb
+      \keyw{Computer Science - Information Retrieval,Computer Science - Machine Learning,Statistics - Machine Learning}
     \endentry
   \enddatalist
 \endrefsection

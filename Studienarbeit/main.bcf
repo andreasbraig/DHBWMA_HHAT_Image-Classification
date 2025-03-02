@@ -2365,23 +2365,31 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">resources/directories/bibliography.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="2" intorder="1">finbridgede_computer_2022</bcf:citekey>
     <bcf:citekey order="3" intorder="1">finbridgede_computer_2022</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">intel_convolutional_nodate</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">finbridgede_computer_2022</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">finbridgede_computer_2022</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">intel_convolutional_nodate</bcf:citekey>
     <bcf:citekey order="6" intorder="1">finbridgede_computer_2022</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">noauthor_machine_nodate-1</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">suse_bildverarbeitung_2014</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">finbridgede_computer_2022</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">software_mittelstand_erste_nodate</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">pykes_programmieren_nodate</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">digital_ocean_llc_erste_nodate</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">software_mittelstand_erste_nodate</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">digital_ocean_llc_erste_nodate</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">finbridgede_computer_2022</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">noauthor_machine_nodate-1</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">suse_bildverarbeitung_2014</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">finbridgede_computer_2022</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">software_mittelstand_erste_nodate</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">pykes_programmieren_nodate</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">digital_ocean_llc_erste_nodate</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">software_mittelstand_erste_nodate</bcf:citekey>
     <bcf:citekey order="15" intorder="1">digital_ocean_llc_erste_nodate</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">rodriguez_rest_2016</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">digital_ocean_llc_erste_nodate</bcf:citekey>
     <bcf:citekey order="17" intorder="1">rodriguez_rest_2016</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">flask_welcome_nodate</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">rodriguez_rest_2016</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">flask_welcome_nodate</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">gur_diskussion_2024</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">oliveira_how_2023</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">noauthor_model_2024</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">noauthor_model_2024</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">ai_wiki_accuracy_2019</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">ai_wiki_accuracy_2019</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">lipton_thresholding_2014</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">lipton_thresholding_2014</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
