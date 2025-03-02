@@ -2,7 +2,7 @@
 # import numpy as np
 # from pycore.preprocessing import imageconversion as uic
 # from pycore.classification import classification as cls
-from pycore.training.pytorchmodel import pytorchmodel
+from pycore.training.pytorchmodel3 import pytorchmodel
 
 # config_path = "pycore/setings.json"
 

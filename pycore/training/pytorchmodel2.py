@@ -19,48 +19,55 @@ import time
 import csv
 import shutil
 
+class DepthwiseSeparableConv(nn.Module):
+    def __init__(self, in_channels, out_channels, stride=1):
+        super().__init__()
+        self.depthwise = nn.Conv2d(in_channels, in_channels, kernel_size=3, stride=stride, padding=1, groups=in_channels, bias=False)
+        self.pointwise = nn.Conv2d(in_channels, out_channels, kernel_size=1, bias=False)
+        self.bn = nn.BatchNorm2d(out_channels)
+        self.relu = nn.ReLU6(inplace=True)
+
+    def forward(self, x):
+        x = self.depthwise(x)
+        x = self.pointwise(x)
+        x = self.bn(x)
+        return self.relu(x)
+
+
 # Definiert eine CNN-Klassifikation für Bilddatensätze
 class CNNClassification(nn.Module):
-    def __init__(self):
+
+    def __init__(self, num_classes=2):
         super().__init__()
+        self.conv1 = nn.Sequential(
+            nn.Conv2d(1, 32, kernel_size=3, stride=1, padding=1, bias=False),  # 1 -> 32 Kanäle
+            nn.BatchNorm2d(32),
+         nn.ReLU6(inplace=True),
+     )
+        self.conv2 = DepthwiseSeparableConv(32, 64)
+        self.conv3 = DepthwiseSeparableConv(64, 128)
+        self.conv4 = DepthwiseSeparableConv(128, 256)
+        self.conv5 = DepthwiseSeparableConv(256, 256)
+        self.pool = nn.AdaptiveAvgPool2d(1)  # Global Average Pooling
+        self.fc = nn.Linear(256, num_classes)
+
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.conv2(x)
+        x = self.conv3(x)
+        x = self.conv4(x)
+        x = self.conv5(x)
+        x = self.pool(x)
+        x = torch.flatten(x, 1)
+        return self.fc(x)
+
+    def _get_flatten_size(self, input_shape):
+        """Berechnet die Anzahl der Features nach den Conv- und Pooling-Schichten."""
+        with torch.no_grad():
+            dummy_input = torch.zeros(1, *input_shape)  # Erzeugt einen leeren Tensor mit Eingangsgröße
+            output = self.network[:-1](dummy_input)  # Ohne Flatten durch Netzwerk leiten
+            return output.view(1, -1).size(1)  # Anzahl der Features berechnen
         
-        self.network = nn.Sequential(
-            nn.Conv2d(1, 16, kernel_size=3, padding=1),
-            nn.ReLU(),
-            nn.Conv2d(16, 32, kernel_size=3, stride=1, padding=1),
-            nn.ReLU(),
-            nn.MaxPool2d(2, 2),  # Reduziert die Höhe und Breite um die Hälfte
-
-            nn.Conv2d(32, 64, kernel_size=3, padding=1),
-            nn.ReLU(),
-            nn.Conv2d(64, 64, kernel_size=3, stride=1, padding=1),
-            nn.ReLU(),
-            nn.MaxPool2d(2, 2),  # Reduziert die Höhe und Breite um die Hälfte
-
-            nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1),
-            nn.ReLU(),
-            nn.Conv2d(128, 128, kernel_size=3, stride=1, padding=1),
-            nn.ReLU(),
-            nn.MaxPool2d(2, 2),
-
-            nn.Conv2d(128, 256, kernel_size = 3, stride = 1, padding = 1),
-            nn.ReLU(),
-            nn.Conv2d(256,256, kernel_size = 3, stride = 1, padding = 1),
-            nn.ReLU(),
-            nn.MaxPool2d(2,2),
-            
-            nn.Flatten(),
-            nn.Linear(256*27*20, 2048),  # Angepasste Dimension basierend auf Eingangsdaten
-            nn.ReLU(),
-            nn.Linear(2048, 128),
-            nn.ReLU(),
-            nn.Linear(128,2) #letzter schritt auf zwei vektoren umziehen 
-        )
-
-
-    def forward(self, xb):
-        return self.network(xb)
-
     @torch.no_grad()  # Deaktiviert das Gradienten-Tracking (nützlich für Inferenz)
     def inferenzSet(self, dataset, device,logfile):
 
@@ -88,18 +95,19 @@ class CNNClassification(nn.Module):
         return preds,accuracy
 
 
-    def trainStart(self, epochs, lr, train_loader, device,modelname, opt_func=torch.optim.Adam, patience=5, lr_patience=3, lr_decay_factor=0.5):
+    def trainStart(self, epochs, lr, train_loader, device, modelname, opt_func=torch.optim.Adam, patience=5, lr_patience=3, lr_decay_factor=0.5):
+
         optimizer = opt_func(self.parameters(), lr)
-        self.to(device)  # Verschiebt das Modell auf das angegebene Gerät
+        scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', factor=lr_decay_factor, patience=lr_patience, verbose=True)
+
+        self.to(device)  # Modell auf das Gerät verschieben
         self.train()
 
         best_acc = 0.0
         epochs_no_improve = 0
-        lr_stagnation = 0
-    
-        
-        log_file= modelname[:-6]+".csv"
-        print("log saved to:",log_file)
+
+        log_file = modelname[:-6] + ".csv"
+        print("Log saved to:", log_file)
 
         with open(log_file, mode='a', newline='') as file:
             writer = csv.writer(file)
@@ -126,26 +134,20 @@ class CNNClassification(nn.Module):
                     timestamp = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
                     print(f"Epoch {epoch}, loss: {epoch_loss}, acc: {epoch_acc}, Timestamp: {timestamp}")
                     writer.writerow([epoch, epoch_loss, epoch_acc, timestamp])
-            
 
-                        #Early Stopping & Reduce LR
+                    scheduler.step(epoch_acc)  # **Neue Zeile: Update der Lernrate basierend auf der Accuracy**
+
+                    # Early Stopping
                     if epoch_acc > best_acc:
                         best_acc = epoch_acc
-                        epochs_no_improve = 0  # Reset counter
-                        lr_stagnation = 0
-                    elif epoch_acc>0.9:
+                        epochs_no_improve = 0  
+                    else:
                         epochs_no_improve += 1
-                        lr_stagnation += 1
 
-                        if lr_stagnation >= lr_patience:
-                            for param_group in optimizer.param_groups:
-                                param_group['lr'] *= lr_decay_factor
-                            print(f"Reducing LR to {optimizer.param_groups[0]['lr']}")
-                            lr_stagnation = 0  # Reset LR stagnation counter
+                    if epochs_no_improve >= patience:
+                        print("Early stopping triggered!")
+                        break
 
-                        if epochs_no_improve >= patience:
-                            print("Early stopping triggered!")
-                            break
 
                     
 
@@ -167,13 +169,13 @@ class CNNClassification(nn.Module):
 
 def apply_augmentation(image):
     augmentation = transforms.Compose([
-        transforms.RandomAffine(degrees=30, translate=(0.2, 0.2), scale=(0.8, 1.2), shear=15),  # Rotation, Verschiebung, Skalierung, Scherung
+        #transforms.RandomAffine(degrees=30, translate=(0.2, 0.2), scale=(0.8, 1.2), shear=15),  # Rotation, Verschiebung, Skalierung, Scherung
         transforms.RandomHorizontalFlip(p=0.5),  # Horizontales Spiegeln
-        transforms.RandomVerticalFlip(p=0.2),  # Vertikales Spiegeln mit geringerer Wahrscheinlichkeit
+        #transforms.RandomVerticalFlip(p=0.2),  # Vertikales Spiegeln mit geringerer Wahrscheinlichkeit
         #transforms.RandomResizedCrop(size=(40, 40), scale=(0.7, 1.0), ratio=(0.75, 1.33)),  # Zufälliger Ausschnitt und Skalierung
-        transforms.ColorJitter(brightness=0.5, contrast=0.5),  # Helligkeit und Kontrast variieren
-        transforms.GaussianBlur(kernel_size=3, sigma=(0.1, 2.0)),  # Leichte Unschärfe hinzufügen
-        transforms.RandomInvert(p=0.2),  # Zufälliges Invertieren von Pixelwerten
+        transforms.ColorJitter(brightness=0.2, contrast=0.2),  # Helligkeit und Kontrast variieren
+        #transforms.GaussianBlur(kernel_size=3, sigma=(0.1, 2.0)),  # Leichte Unschärfe hinzufügen
+        #transforms.RandomInvert(p=0.2),  # Zufälliges Invertieren von Pixelwerten
     ])
     return augmentation(image)
 
@@ -190,6 +192,8 @@ def log_test_results(test_dataset, predictions, filename="test_results.csv"):
 
 
 def train_model(data_dir, device,epochs=5,modelname = "model.state"):
+
+    torch.cuda.empty_cache()
 
     trans = [
         #transforms.Resize((40, 40)),  # Bildgröße ändern (optional)
@@ -209,14 +213,14 @@ def train_model(data_dir, device,epochs=5,modelname = "model.state"):
 
     trainEpochs = epochs
     if trainEpochs > 0:
-        model.trainStart(trainEpochs, 0.001, train_dl, device,modelname)
+        model.trainStart(trainEpochs, 0.01, train_dl, device,modelname)
         torch.save(model.state_dict(), modelname)
 
 
 def test_model(test_data_dir, device,modelname,logfile):
     trans = [
         #transforms.Resize((40, 40)),
-        transforms.Grayscale(num_output_channels=1),
+        #transforms.Grayscale(num_output_channels=1),
         transforms.ToTensor()
     ]
 
@@ -233,7 +237,6 @@ def test_model(test_data_dir, device,modelname,logfile):
         return
 
     preds,_ = model.inferenzSet(test_dataset, device,logfile)
-
 
 
 def get_device(preferred_device=None):
@@ -310,6 +313,7 @@ def resize_images(input_folder, output_folder, scale_factor=0.3):
         if os.path.isfile(file_path) and filename.lower().endswith((".png", ".jpg", ".jpeg")):
             img = cv2.imread(file_path)
             
+            img_gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
             if img is None:
                 continue  # Überspringe ungültige Bilder
@@ -317,7 +321,7 @@ def resize_images(input_folder, output_folder, scale_factor=0.3):
             # Neue Bildgröße berechnen
             new_width = int(img.shape[1] * scale_factor)
             new_height = int(img.shape[0] * scale_factor)
-            resized_img = cv2.resize(img, (new_width, new_height), interpolation=cv2.INTER_AREA)
+            resized_img = cv2.resize(img_gray, (new_width, new_height), interpolation=cv2.INTER_AREA)
 
             #img_gray=cv2.cvtColor(resized_img, cv2.COLOR_BGR2GRAY)
             
@@ -335,28 +339,26 @@ def resize_images(input_folder, output_folder, scale_factor=0.3):
 
 def pytorchmodel():
 
-
-
-    # resize_images(input_folder="Bilder/Pytorch/Source/Bad_Pictures",
-    #               output_folder="Bilder/Pytorch/Learn/bad")
+    resize_images(input_folder="Bilder/Pytorch/Source/Bad_Pictures",
+                  output_folder="Bilder/Pytorch/Learn/bad")
     
-    # resize_images(input_folder="Bilder/Pytorch/Source/Good_Pictures",
-    #               output_folder="Bilder/Pytorch/Learn/good")
+    resize_images(input_folder="Bilder/Pytorch/Source/Good_Pictures",
+                 output_folder="Bilder/Pytorch/Learn/good")
 
-    # split_data(source="Bilder/Pytorch/Learn/bad",
-    #            destination1="Bilder/Pytorch/Test/bad",
-    #            destination2="Bilder/Pytorch/Learn/bad")
+    split_data(source="Bilder/Pytorch/Learn/bad",
+               destination1="Bilder/Pytorch/Test/bad",
+               destination2="Bilder/Pytorch/Learn/bad")
     
-    # split_data(source="Bilder/Pytorch/Learn/good",
-    #            destination1="Bilder/Pytorch/Test/good",
-    #            destination2="Bilder/Pytorch/Learn/good")
+    split_data(source="Bilder/Pytorch/Learn/good",
+               destination1="Bilder/Pytorch/Test/good",
+               destination2="Bilder/Pytorch/Learn/good")
     
 
     data_dir = "Bilder/Pytorch/Learn"
     test_data_dir = "Bilder/Pytorch/Test/"
      
 
-    model = "model50_EXTAUG.state"
+    model = "model_NewArc.state"
 
     logfile = model[:-6]+"_testlog.csv"
 
@@ -371,7 +373,6 @@ def pytorchmodel():
     print(f"Using device: {device}")
 
     train_model(data_dir, device, epochs=50,modelname=model)
-
     test_model(test_data_dir, device,model,logfile)
 
     #Sorge dafür, dass alle Bilder, bei denen es nicht geklappt hat, wegsortiert werden. 

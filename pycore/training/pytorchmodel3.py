@@ -25,24 +25,19 @@ class CNNClassification(nn.Module):
         super().__init__()
         
         self.network = nn.Sequential(
-            nn.Conv2d(1, 16, kernel_size=3, padding=1),
+            
+            nn.Conv2d(1, 32, kernel_size = 3, padding = 1),
             nn.ReLU(),
-            nn.Conv2d(16, 32, kernel_size=3, stride=1, padding=1),
+            nn.Conv2d(32,64, kernel_size = 3, stride = 1, padding = 1),
             nn.ReLU(),
-            nn.MaxPool2d(2, 2),  # Reduziert die Höhe und Breite um die Hälfte
-
-            nn.Conv2d(32, 64, kernel_size=3, padding=1),
+            nn.MaxPool2d(2,2),
+        
+            nn.Conv2d(64, 128, kernel_size = 3, stride = 1, padding = 1),
             nn.ReLU(),
-            nn.Conv2d(64, 64, kernel_size=3, stride=1, padding=1),
+            nn.Conv2d(128 ,128, kernel_size = 3, stride = 1, padding = 1),
             nn.ReLU(),
-            nn.MaxPool2d(2, 2),  # Reduziert die Höhe und Breite um die Hälfte
-
-            nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1),
-            nn.ReLU(),
-            nn.Conv2d(128, 128, kernel_size=3, stride=1, padding=1),
-            nn.ReLU(),
-            nn.MaxPool2d(2, 2),
-
+            nn.MaxPool2d(2,2),
+            
             nn.Conv2d(128, 256, kernel_size = 3, stride = 1, padding = 1),
             nn.ReLU(),
             nn.Conv2d(256,256, kernel_size = 3, stride = 1, padding = 1),
@@ -50,11 +45,9 @@ class CNNClassification(nn.Module):
             nn.MaxPool2d(2,2),
             
             nn.Flatten(),
-            nn.Linear(256*27*20, 2048),  # Angepasste Dimension basierend auf Eingangsdaten
+            nn.Linear(200704,128),
             nn.ReLU(),
-            nn.Linear(2048, 128),
-            nn.ReLU(),
-            nn.Linear(128,2) #letzter schritt auf zwei vektoren umziehen 
+            nn.Linear(128,2)
         )
 
 
@@ -71,13 +64,8 @@ class CNNClassification(nn.Module):
         labels = torch.tensor(labels).to(device)
 
         res = self(images)
-
-        print(res)
-        
-
+    
         _, preds = torch.max(res, dim=1)
-
-        print(preds)
 
         accuracy = torch.sum(preds == labels).item() / len(preds)
 
@@ -167,13 +155,13 @@ class CNNClassification(nn.Module):
 
 def apply_augmentation(image):
     augmentation = transforms.Compose([
-        transforms.RandomAffine(degrees=30, translate=(0.2, 0.2), scale=(0.8, 1.2), shear=15),  # Rotation, Verschiebung, Skalierung, Scherung
-        transforms.RandomHorizontalFlip(p=0.5),  # Horizontales Spiegeln
-        transforms.RandomVerticalFlip(p=0.2),  # Vertikales Spiegeln mit geringerer Wahrscheinlichkeit
+        #transforms.RandomAffine(degrees=30, translate=(0.2, 0.2), scale=(0.8, 1.2), shear=15),  # Rotation, Verschiebung, Skalierung, Scherung
+        #transforms.RandomHorizontalFlip(p=0.5),  # Horizontales Spiegeln
+        #transforms.RandomVerticalFlip(p=0.2),  # Vertikales Spiegeln mit geringerer Wahrscheinlichkeit
         #transforms.RandomResizedCrop(size=(40, 40), scale=(0.7, 1.0), ratio=(0.75, 1.33)),  # Zufälliger Ausschnitt und Skalierung
-        transforms.ColorJitter(brightness=0.5, contrast=0.5),  # Helligkeit und Kontrast variieren
-        transforms.GaussianBlur(kernel_size=3, sigma=(0.1, 2.0)),  # Leichte Unschärfe hinzufügen
-        transforms.RandomInvert(p=0.2),  # Zufälliges Invertieren von Pixelwerten
+        #transforms.ColorJitter(brightness=0.5, contrast=0.5),  # Helligkeit und Kontrast variieren
+        #transforms.GaussianBlur(kernel_size=3, sigma=(0.1, 2.0)),  # Leichte Unschärfe hinzufügen
+        #transforms.RandomInvert(p=0.2),  # Zufälliges Invertieren von Pixelwerten
     ])
     return augmentation(image)
 
@@ -192,12 +180,12 @@ def log_test_results(test_dataset, predictions, filename="test_results.csv"):
 def train_model(data_dir, device,epochs=5,modelname = "model.state"):
 
     trans = [
-        #transforms.Resize((40, 40)),  # Bildgröße ändern (optional)
+        transforms.Resize((224, 224)),  # Bildgröße ändern (optional)
         transforms.Grayscale(num_output_channels=1),  # In Graustufen umwandeln (optional)
         transforms.ToTensor()  # Wandelt das Bild in einen Tensor um
     ]
     train_dataset = ImageFolder(data_dir, transform=transforms.Compose(trans))
-    train_dl = DataLoader(train_dataset, batch_size=15, shuffle=True, num_workers=4, pin_memory=True)
+    train_dl = DataLoader(train_dataset, batch_size=16, shuffle=True, num_workers=4, pin_memory=True)
 
     model = CNNClassification()
 
@@ -215,7 +203,7 @@ def train_model(data_dir, device,epochs=5,modelname = "model.state"):
 
 def test_model(test_data_dir, device,modelname,logfile):
     trans = [
-        #transforms.Resize((40, 40)),
+        transforms.Resize((224, 224)),
         transforms.Grayscale(num_output_channels=1),
         transforms.ToTensor()
     ]
@@ -356,7 +344,7 @@ def pytorchmodel():
     test_data_dir = "Bilder/Pytorch/Test/"
      
 
-    model = "model50_EXTAUG.state"
+    model = "model30_NEWNET.state"
 
     logfile = model[:-6]+"_testlog.csv"
 
@@ -370,14 +358,14 @@ def pytorchmodel():
 
     print(f"Using device: {device}")
 
-    train_model(data_dir, device, epochs=50,modelname=model)
+    train_model(data_dir, device, epochs=30,modelname=model)
 
     test_model(test_data_dir, device,model,logfile)
 
     #Sorge dafür, dass alle Bilder, bei denen es nicht geklappt hat, wegsortiert werden. 
 
-    copy_misclassified_images(logfile,test_data_dir+"/maennlich",fehl_data_dir)
-    copy_misclassified_images(logfile,test_data_dir+"/weiblich",fehl_data_dir)
+    copy_misclassified_images(logfile,test_data_dir+"/bad",fehl_data_dir)
+    copy_misclassified_images(logfile,test_data_dir+"/good",fehl_data_dir)
 
 
 if __name__ == "__main__":
