@@ -1,0 +1,62 @@
+import os
+import numpy as np
+import tensorflow as tf
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.models import load_model
+from sklearn.metrics import classification_report, confusion_matrix
+
+# **Schritt 1: Setup der Variablen**
+MODEL_PATH = "models/mobilenet_v3.h5"  # Dein gespeichertes Modell
+TEST_FOLDER = "Bilder/test"  # Pfad zum Test-Datensatz
+IMAGE_SIZE = (224, 224)  # Bildgröße
+BATCH_SIZE = 15  # Batch-Größe
+
+# **Schritt 2: Laden des Modells**
+model = load_model(MODEL_PATH)
+print("✅ Modell erfolgreich geladen!")
+
+# **Schritt 3: Erstellung des DataFrames mit echten Labels**
+def create_test_dataframe(test_folder):
+    test_filenames = os.listdir(test_folder)
+    filepaths = [os.path.join(test_folder, fname) for fname in test_filenames]
+    labels = [1 if fname.lower().startswith("good") else 0 for fname in test_filenames]  # 0 = Good, 1 = Bad
+    return pd.DataFrame({"filename": test_filenames, "filepath": filepaths, "label": labels})
+
+test_df = create_test_dataframe(TEST_FOLDER)
+
+# **Schritt 4: Erstellen des Testgenerators**
+test_gen = ImageDataGenerator(rescale=1./255)
+test_generator = test_gen.flow_from_dataframe(
+    test_df,
+    TEST_FOLDER,
+    x_col='filename',
+    y_col=None,
+    class_mode=None,
+    target_size=IMAGE_SIZE,
+    batch_size=BATCH_SIZE,
+    shuffle=False
+  )
+
+# **Schritt 5: Vorhersagen generieren**
+predictions = model.predict(test_generator)
+predicted_labels = np.argmax(predictions, axis=-1)    # Falls das Modell eine einzelne Sigmoid-Ausgabe hat
+
+print(predicted_labels)
+
+# **Schritt 6: Erstellen der Confusion-Matrix**
+cm = confusion_matrix(test_df["label"], predicted_labels)
+
+# **Schritt 7: Darstellung der Confusion-Matrix**
+plt.figure(figsize=(6, 4))
+sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=["Good", "Bad"], yticklabels=["Good", "Bad"])
+plt.xlabel("Predicted")
+plt.ylabel("Actual")
+plt.title("Confusion Matrix")
+plt.show()
+
+# **Schritt 8: Ausgabe des Classification Reports**
+print(" **Classification Report:**")
+print(classification_report(test_df["label"], predicted_labels, target_names=["Good", "Bad"]))
