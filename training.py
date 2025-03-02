@@ -1,8 +1,10 @@
 import json
 import os
+import numpy as np
 import pycore.preprocessing.imageconversion as uic
 import pycore.preprocessing.filemanagement as ufm
 import pycore.training.model as tm
+
 
 #Nomenklatur: 
 
@@ -57,14 +59,14 @@ if __name__ == "__main__":
 
     # #aufsetzen des Base Modells
 
-    base,x,preds = tm.Setup_MobilNet(weights= cf["mobilnet"]["weights"],
-                                 include_top = cf["mobilnet"]["include_top"],
-                                 Density1= cf["mobilnet"]["density1"],
-                                 Density2= cf["mobilnet"]["density2"],
-                                 Density3= cf["mobilnet"]["density3"],
-                                 Density4= cf["mobilnet"]["density4"],
-                                 activationpreds= cf["mobilnet"]["activation_preds"],
-                                 activationx= cf["mobilnet"]["activation_x"],)
+    base,x,preds = tm.Setup_MobilNetV3Large(weights= cf["mobilnetv3"]["weights"],
+                                            include_top = cf["mobilnetv3"]["include_top"],
+                                            Density1= cf["mobilnetv3"]["density1"],
+                                            Density2= cf["mobilnetv3"]["density2"],
+                                            Density3= cf["mobilnetv3"]["density3"],
+                                            Density4= cf["mobilnetv3"]["density4"],
+                                            activationpreds= cf["mobilnetv3"]["activation_preds"],
+                                            activationx= cf["mobilnetv3"]["activation_x"],)
 
     # Data Augmentation und DataFlowGen
 
@@ -74,8 +76,9 @@ if __name__ == "__main__":
                             x_col="filename",
                             y_col="label",
                             target_size=(cf["imagecfg"]["IMG_W"],cf["imagecfg"]["IMG_H"]),
-                            batch_size=cf["batch"]["size"],
+                            batch_size=cf["batch2"]["size"],
                             config=cf,
+                            class_mode=cf["batch2"]["class_mode"],
                             shuffle=True)
 
     print("train Data Prepared.")
@@ -87,8 +90,9 @@ if __name__ == "__main__":
                             x_col="filename",
                             y_col="label",
                             target_size=(cf["imagecfg"]["IMG_W"],cf["imagecfg"]["IMG_H"]),
-                            batch_size=cf["batch"]["size"],
+                            batch_size=cf["batch2"]["size"],
                             config=cf,
+                            class_mode=cf["batch2"]["class_mode"],
                             shuffle=True)
 
     print("validation Data Prepared.")
@@ -98,10 +102,10 @@ if __name__ == "__main__":
 
     model = tm.get_Model(base_model=base,
                          preds=preds,
-                         optimizer=cf["model_compile"]["optimizer"],
-                         loss=cf["model_compile"]["loss"],
-                         metrics=[cf["model_compile"]["metrics"]],
-                         layers=cf["mobilnet"]["layers"])
+                         optimizer=cf["modelv3_compile"]["optimizer"],
+                         loss=cf["modelv3_compile"]["loss"],
+                         metrics=[cf["modelv3_compile"]["metrics"]],
+                         layers=cf["mobilnetv3"]["layers"])
 
     #callbacks
 
@@ -125,4 +129,4 @@ if __name__ == "__main__":
                         callbacks=callbacks
     )
 
-    model.save("models/mobilenet_v3.h5")
+    model.save("models/mobilenet_v3Largev2.keras")

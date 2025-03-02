@@ -1,7 +1,7 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {chapter}{Inhaltsverzeichnis}{V}{chapter*.5}%
-\contentsline {chapter}{Abbildungsverzeichnis}{VI}{chapter*.6}%
-\contentsline {chapter}{Listingverzeichnis}{VII}{chapter*.7}%
+\contentsline {chapter}{Inhaltsverzeichnis}{V}{chapter*.4}%
+\contentsline {chapter}{Abbildungsverzeichnis}{VII}{chapter*.5}%
+\contentsline {chapter}{Listingverzeichnis}{VIII}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Problemstellung und Ziel dieser Arbeit}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Theoretische Grundlagen}{2}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Machine Learning und Klassifikationsprobleme}{2}{section.2.1}%
@@ -9,17 +9,18 @@
 \contentsline {subsection}{\numberline {2.2.1}Anfragearten einer API}{5}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}FLASK}{6}{subsection.2.2.2}%
 \contentsline {chapter}{\numberline {3}Softwarekonzept}{8}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Architektur}{8}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Die Weboberfläche mittels Python Web API}{10}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Implementierung}{11}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Ablauf der Implementierung}{11}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Installation im Labor}{11}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Softwaretests}{12}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Metriken zur Evaluierung}{12}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Accuracy und Loss}{13}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Confusion Matrix und F1 Score}{14}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Reevaluierung des Modells}{15}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{16}{chapter.6}%
+\contentsline {section}{\numberline {3.1}Programmstruktur}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Konfiguration}{10}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Die Weboberfläche mittels Python Web API}{11}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Implementierung}{12}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Ablauf der Implementierung}{12}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Installation im Labor}{12}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Softwaretests}{13}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Metriken zur Evaluierung}{13}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Accuracy und Loss}{14}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Confusion Matrix und F1 Score}{15}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Reevaluierung des Modells}{16}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{17}{chapter.6}%
 \contentsline {chapter}{Literaturverzeichnis}{X}{chapter.6}%
 \contentsline {chapter}{\numberline {A}Anhang}{XII}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

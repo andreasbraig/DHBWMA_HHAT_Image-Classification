@@ -2,8 +2,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
-\usepackage{helvet} % Arial Schriftart
-\renewcommand{\familydefault}{\sfdefault} % Setzt die Standardschriftart auf sans-serif (Arial)
+%\usepackage{helvet} % Arial Schriftart
+%\renewcommand{\familydefault}{\sfdefault} % Setzt die Standardschriftart auf sans-serif (Arial)
 \usepackage[printonlyused]{acronym}
 \usepackage[onehalfspacing]{setspace}
 \usepackage[left=2.5cm,right=2.5cm,bottom=4cm,top=2.5cm]{geometry}
@@ -157,6 +157,23 @@
 	commentstyle=\color{gray}, % Kommentare in Grau
 	showstringspaces=false,
 	tabsize=4
+}
+
+% Listings-Style für Python anpassen
+\lstdefinestyle{python}{
+	language=Python,
+	basicstyle=\ttfamily\scriptsize,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	breaklines=true,
+	captionpos=b,
+	frame=single,
+	keywordstyle=\color{blue}\bfseries,
+	commentstyle=\color{green},
+	stringstyle=\color{orange},
+	showstringspaces=false,
+	tabsize=4,
+	morekeywords={self, None, True, False} % Weitere Schlüsselwörter hinzufügen
 }
 
 % Definiere die benutzerdefinierte Umgebung für Code

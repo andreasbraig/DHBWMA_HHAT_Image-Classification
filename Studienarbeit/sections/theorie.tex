@@ -1,7 +1,7 @@
 \chapter{Theoretische Grundlagen} \label{chap:theoretische_grundlagen}  % Theorie
 Zu Beginn dieser Studienarbeit werden die theoretischen Grundlagen erläutert, die für das Verständnis der späteren Kapitel notwendig sind. Dazu gehören die Funktionsweise von Machine Learning und Computer Vision, sowie die Grundlagen einer API.
 Wie bereits im Ersten Kapitel (siehe Kapitel \ref{chap:problemstellung_und_ziel_dieser_arbeit}) beschrieben, baut diese Studienarbeit auf der Arbeit des letzten Semesters auf. 
-Die theoretischen Grundlagen für Machine Learning und Computer Vision werden hier nut kurz erläutert, da sie bereits im letzten Semester ausführlich behandelt wurden.
+Die theoretischen Grundlagen für Machine Learning und Computer Vision werden hier nur kurz erläutert, da sie bereits im letzten Semester ausführlich behandelt wurden.
 
 Die Funktionsweise einer API wird in diesem Kapitel genauer erläutert, da sie eine zentrale Rolle in dieser Studienarbeit spielt. Mithilfe einer Web-API werden die Daten
 des Python programmes an die entwickelte Webanwendung übertragen.
@@ -41,8 +41,7 @@ Es gibt verschiedene CNN-Architekturen wie ResNet und MobileNet, die für spezif
 APIs stellen das Herzstück moderner Softwareentwicklung dar und ermöglichen es Programmen, miteinander zu kommunizieren und Daten auszutauschen. Dieser Datenaustausch ist wesentlich für vielfältige Anwendungen, wie etwa das Abrufen von Wetterdaten oder das Interagieren mit sozialen Netzwerken. In der Python Entwicklungsumgebung machen Bibliotheken wie requests oder http.client den Einstieg in die API-Entwicklung besonders zugänglich \cite{software_mittelstand_erste_nodate}. Die in dieser Studienarbeit verwendete FLASK Bibliothek ermöglicht es, eine komplextere API zu erstellen, die Daten aus dem Python Programm an die Webanwendung überträgt.
 
 Anwendungsprogrammierschnittstellen \ac{API} sind Software-Vermittler (\autoref{fig:api_design}) ihre Aufgabe besteht darin, Anwendungen die Kommunikation untereinander zu ermöglichen. 
-Diese subtilen Vermittler sind allgegenwärtig im täglichen Leben, ob bewusst wahrgenommen oder nicht. 
-Wenn man beispielsweise eine Sofortnachricht verschickt, nutzt man bereits eine \ac{API} \cite{pykes_programmieren_nodate}.
+Diese subtilen Vermittler sind allgegenwärtig im täglichen Leben, ob bewusst wahrgenommen oder nicht \cite{pykes_programmieren_nodate}.
 
 \begin{figure}[h]
     \centering
@@ -58,9 +57,9 @@ Die Eigenentwicklung solcher Funktionen würde erhebliche Ressourcen beanspruche
 \subsection{Anfragearten einer API} \label{subsec:anfragearten_einer_api}  % Theorie
 
 Die Grundbausteine einer \Ac{API} sind Anfragen (Requests) und Antworten (Responses). Diese basieren oft auf dem \ac{HTTP}-Protokoll, das die Grundlage des Internets bildet \cite{software_mittelstand_erste_nodate}. 
-\ac{HTTP}-Anfragen sind die Art und Weise, wie das Web funktioniert. Jedes Mal, wenn man zu einer Webseite navigiert, stellt der Browser mehrere Anfragen an den Server der Webseite. Der Server antwortet dann mit allen Daten, die für die Darstellung der Seite erforderlich sind, woraufhin der Browser die Seite rendert \cite{digital_ocean_llc_erste_nodate}.
+\ac{HTTP}-Anfragen sind die Art und Weise, wie das Web funktioniert. Jedes Mal, wenn man zu einer Webseite navigiert, stellt der Browser mehrere Anfragen an den Server der Webseite. Der Server antwortet dann mit allen Daten, die für die Darstellung der Seite erforderlich sind, woraufhin der Browser die Seite darstellt \cite{digital_ocean_llc_erste_nodate}.
 
-Der generische Prozess der \Ac{API}-Kommunikation lässt sich wie folgt beschreiben: Ein Client in dieser Studienarbeit der Browser, sendet Daten an eine Uniform Resource Locator \ac{URL}. Der Server unter dieser \ac{URL} liest die Daten, entscheidet, was damit zu tun ist. Intern wird das passende Python Skript ausgeführt und gibt eine Antwort an den Client zurück. Schließlich verarbeitet der Client die empfangenen Daten entsprechend seiner Programmlogik \cite{digital_ocean_llc_erste_nodate}.
+Der generische Prozess der \Ac{API}-Kommunikation lässt sich wie folgt beschreiben: Ein Client, in dieser Studienarbeit der Browser, sendet Daten an eine Uniform Resource Locator \ac{URL}. Der Server unter dieser \ac{URL} liest die Daten, entscheidet, was damit zu tun ist. Intern wird das passende Python Skript ausgeführt und gibt eine Antwort an den Client zurück. Schließlich verarbeitet der Client die empfangenen Daten entsprechend seiner Programmlogik \cite{digital_ocean_llc_erste_nodate}.
 
 Ein wesentlicher Teil der Anfrage ist die Hypertext Transfer Protocol \ac{HTTP}-Methode. Einige der gebräuchlichsten Methoden sind \cite{rodriguez_rest_2016}:
 \begin{itemize}
@@ -74,7 +73,7 @@ Diese Methoden bilden die Grundlage des Representational State Transfer \ac{REST
 
 \subsection{FLASK} \label{subsec:flask}  % Theorie
 
-Für diese Studienarbeit ist keine Umfängliche WEB-\ac{API} notwendig. Es soll lediglich eine einzige Hypertext Markup Language \ac{HTML} Datei von der Python Anwendung an den Browser übertragen werden. Es ist für diese Anforderung kein Größeres Framework wie Beispielsweise Django notwendig. FLASK ist ein Mikroframework für Python, das sich auf einfache und schnelle Entwicklung konzentriert. Es ist besonders gut geeignet für kleine bis mittelgroße Projekte, bei denen die Verwendung eines größeren Frameworks übertrieben wäre. FLASK bietet eine Vielzahl von Erweiterungen, die die Entwicklung von Webanwendungen erleichtern. Es ist einfach zu erlernen und bietet eine Vielzahl von Funktionen, die für die Entwicklung von Webanwendungen erforderlich sind.
+Für diese Studienarbeit ist keine Umfängliche WEB-\ac{API} notwendig. Es soll lediglich eine einzige \ac{HTML} Datei von der Python Anwendung an den Browser übertragen werden. Es ist für diese Anforderung kein Größeres Framework wie Beispielsweise Django notwendig. FLASK ist ein Mikroframework für Python, das sich auf einfache und schnelle Entwicklung konzentriert. Es ist besonders gut geeignet für kleine bis mittelgroße Projekte, bei denen die Verwendung eines größeren Frameworks übertrieben wäre. FLASK bietet eine Vielzahl von Erweiterungen, die die Entwicklung von Webanwendungen erleichtern. Es ist einfach zu erlernen und bietet eine Vielzahl von Funktionen, die für die Entwicklung von Webanwendungen erforderlich sind.
 
 \begin{figure}[h]
     \centering
@@ -87,5 +86,10 @@ FLASK Nutzt die \ac{WSGI} Schnittstelle von Python \cite{flask_welcome_nodate} u
 
 Eine Besondere Anforderung der im Folgenden vorgestellten Webanwendung liegt in der Übertragung der neu erstellten Fotos von der Kamera des FESTO \ac{cp-lab} an die 
 Webanwendung. Um eine einfachere Benutzbarkeit zu gewährleisten soll der Browser nicht jedes mal neu geladen werden müssen, wenn ein Foto geschossen und klassifiziert wird.
+
+Dies geschieht durch die Verwendung von Websockets. Websockets sind eine Technologie, die es ermöglicht, eine bidirektionale Verbindung zwischen einem Client und einem Server herzustellen.
+FLASK SocketIO ist eine Erweiterung für FLASK, die die Verwendung von Websockets in FLASK Anwendungen ermöglicht und wird in dieser Studienarbeit verwendet, um die Übertragung der Fotos zu realisieren. 
+Auf der gegenseite im HTML Code wird die Bibliothek SocketIO.js verwendet. 
+Diese Basiert auf der Programmiersprache JavaScript und ermöglicht die Kommunikation zwischen dem Browser und dem Server.
 
 Im Folgenden wird die neue Softwarearchitektur vorgestellt und auch die Implementierung der Webanwendung erläutert.

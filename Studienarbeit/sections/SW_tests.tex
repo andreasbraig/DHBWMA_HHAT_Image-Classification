@@ -1,9 +1,7 @@
 \chapter{Softwaretests} \label{chap:softwaretests}
 
 In diesem Kapitel wird auf die Evaluierungs- und Testvorgäne für die Sicherstellung der Güte der entwickelten Software eingegangen.
-Da es sich bei der entwickelten Software um ein Machine-Learning-Modell handelt, wird in diesem Kapitel auf die Evaluierung des Modells eingegangen. Die Funktionen des Interpretierten Python Skripts entwickeln keine neuen Algorithmen, die auf ihre Fehleranfälligkeit oder Korrektheit getestet werden müssen.
-
-Zunächst werden die Metriken eingeführt, mit denen ein Machine-Learning-Modell evaluiert wird. Anschließend wird auf die Evaluierung des Modells eingegangen.
+Da es sich bei der entwickelten Software um ein Machine-Learning-Modell handelt, wird in diesem Kapitel auf die Evaluierung des Modells eingegangen. Die Funktionen des interpretierten Python Skripts entwickeln keine neuen Algorithmen, die auf ihre Fehleranfälligkeit oder Korrektheit getestet werden müssen.
 
 \section{Metriken zur Evaluierung} \label{sec:metriken}
 
@@ -16,7 +14,7 @@ Um zu verstehen wie ein Machine Learning Modell evaluiert werden kann ist es zun
     \item \textbf{False Negative (FN)}: Die Anzahl der falsch klassifizierten negativen Instanzen.
 \end{itemize}
 
-Diese Wesentlichen Typen Teilen die Klassifizierten Daten nach dem Test in vier diskrete Kategorien ein. Diese Kategorien bilden die 
+Diese wesentlichen Typen teilen die Klassifizierten Daten nach dem Test in vier diskrete Kategorien ein. Diese Kategorien bilden die 
 in \autoref{sec:confusionmatrix} beschriebene Confusion Matrix. Mit Ihnen können aber auch die Einfacheren Werte Loss und Accuracy berechnet werden. Im Folgenden wird die Mathematik hinter den Methoden vorgestellt.
 
 \subsection{Accuracy und Loss} \label{sec:accuracy}
@@ -59,7 +57,7 @@ In jeder Epoche des Trainings werden beide Werte berechnet und stellen so die Ve
 
 \subsection{Confusion Matrix und F1 Score} \label{sec:confusionmatrix}
 
-Um nun eine Ebene tiefer in die Evaluationsmetriken zu gehen ist zunächst eine aufschlüsselung der Klassifizierten Daten notwendig. Die Confusion Matrix ist eine Tabelle, die die Anzahl der korrekten und falschen Klassifikationen für jede Klasse anzeigt. Die Confusion Matrix hat die folgende Form \cite{lipton_thresholding_2014}:
+Eine aussagekräftigere Methode zur Evaluierung ist der F1 Score. Um diesen nachzuvollziehen ist zunächst eine aufschlüsselung der Klassifizierten Daten notwendig. Die Confusion Matrix ist eine Tabelle, die die Anzahl der korrekten und falschen Klassifikationen für jede Klasse anzeigt. Die Confusion Matrix hat die folgende Form \cite{lipton_thresholding_2014}:
 
 \[
 \begin{array}{c|cc}
@@ -80,7 +78,7 @@ Aus dieser Matrix lassen sich nun weitere Metriken ableiten. Eine davon ist der 
     \text{F1} = \frac{2 TP}{2 TP + FP + FN }
 \end{equation}
 
-Beispielhafte Confusion Matri werden in \autoref{sec:reevaluierung} vorgestellt.
+Beispielhafte Confusion Matritzen werden in \autoref{sec:reevaluierung} vorgestellt.
 
 \section{Reevaluierung des Modells} \label{sec:reevaluierung}
 
@@ -88,3 +86,9 @@ In diesem Kapitel soll das Ergebnismodell der letzten Studienarbeit, \texttt{"Mo
 
 Da es sich bei Mobilnet und XX um vortrainierte Modelle von Tensorflow sind, soll auch ein selbstgeschriebenes Modell evaluiert werden. Dieses Modell \texttt{"Pytorchmodel"} wurde im Rahmen der Vorlesung Bildverarbeitung entwickelt und soll nun mit in die Tests einfließen. 
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Training_PyTorch.png}
+    \caption{Schematischer Aufbau der API Kommunikation}
+    \label{fig:Training_PyTorch}
+\end{figure}

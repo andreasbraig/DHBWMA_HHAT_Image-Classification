@@ -9,7 +9,7 @@ from tensorflow.keras.models import load_model
 from sklearn.metrics import classification_report, confusion_matrix
 
 # **Schritt 1: Setup der Variablen**
-MODEL_PATH = "models/mobilenet_v3.h5"  # Dein gespeichertes Modell
+MODEL_PATH = "models/mobilenet_v3Largev2.keras"  # Dein gespeichertes Modell
 TEST_FOLDER = "Bilder/test"  # Pfad zum Test-Datensatz
 IMAGE_SIZE = (224, 224)  # Bildgröße
 BATCH_SIZE = 15  # Batch-Größe
@@ -22,7 +22,7 @@ print("✅ Modell erfolgreich geladen!")
 def create_test_dataframe(test_folder):
     test_filenames = os.listdir(test_folder)
     filepaths = [os.path.join(test_folder, fname) for fname in test_filenames]
-    labels = [1 if fname.lower().startswith("good") else 0 for fname in test_filenames]  # 0 = Good, 1 = Bad
+    labels = [0 if fname.lower().startswith("bad") else 1 for fname in test_filenames]  # 0 = Good, 1 = Bad
     return pd.DataFrame({"filename": test_filenames, "filepath": filepaths, "label": labels})
 
 test_df = create_test_dataframe(TEST_FOLDER)
@@ -47,16 +47,18 @@ predicted_labels = np.argmax(predictions, axis=-1)    # Falls das Modell eine ei
 print(predicted_labels)
 
 # **Schritt 6: Erstellen der Confusion-Matrix**
+# **Confusion-Matrix berechnen**
 cm = confusion_matrix(test_df["label"], predicted_labels)
 
-# **Schritt 7: Darstellung der Confusion-Matrix**
+# **Confusion-Matrix visualisieren**
 plt.figure(figsize=(6, 4))
-sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=["Good", "Bad"], yticklabels=["Good", "Bad"])
-plt.xlabel("Predicted")
-plt.ylabel("Actual")
+sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=["Bad", "Good"], yticklabels=["Bad", "Good"])
+plt.xlabel("Vorhergesagt")  # Predicted
+plt.ylabel("Tatsächlich")   # Actual
 plt.title("Confusion Matrix")
 plt.show()
 
+
 # **Schritt 8: Ausgabe des Classification Reports**
 print(" **Classification Report:**")
-print(classification_report(test_df["label"], predicted_labels, target_names=["Good", "Bad"]))
+print(classification_report(test_df["label"], predicted_labels, target_names=["Bad", "Good"]))

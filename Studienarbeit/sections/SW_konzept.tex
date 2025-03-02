@@ -1,6 +1,6 @@
 \chapter{Softwarekonzept} \label{chap:Konzept}
 
-Der dieser Studienarbeit zu Grunde Liegende Code wurde in der letzten Studienarbeit in einer Cloud-Umgebung entwickelt. Als einfache testumgebung zur umsetzung einer Machbarkeitsstudie war dies ausreichend. 
+Der dieser Studienarbeit zu Grunde liegende Code wurde in der letzten Studienarbeit in einer Cloud-Umgebung entwickelt. Als einfache testumgebung zur umsetzung einer Machbarkeitsstudie war dies ausreichend. 
 Da in dieser Studienarbeit das Umsetzen einer Webvisualisierung der durch die FESTO \ac{cp-lab} aufgenommenen Daten im Vordergrund steht, ist es notwendig, die Software in eine lokale Umgebung zu verschieben. 
 Dies ermöglicht eine bessere Kontrolle über die Entwicklungsumgebung und die verwendeten Bibliotheken. 
 
@@ -8,10 +8,9 @@ Zusätzlich sollen alle einstellbaren Parameter zentral aufgeführt werden. Dies
 
 Die Realisierung beider Aufgaben wird in diesem Kapitel beschrieben
 
-\section{Architektur} \label{sec:architektur}
+\section{Programmstruktur} \label{sec:architektur}
 
-Erster Teil der Softwarearchitektur ist die Konzeption der Struktur. Die Struktur einer Software ist entscheidend für die Wartbarkeit und Erweiterbarkeit.
-Im Optimalfall ist Die Struktur so aufgebaut, dass sie einfach zu verstehen und zu warten ist.
+Erster Teil der Softwarekonzeption ist der Entwurf der Struktur. Die Struktur einer Software ist entscheidend für die Wartbarkeit und Erweiterbarkeit. Zwei wichtige Kriterien, deren Erhaltung im gesamten Designprozess berücksichtigt werden muss.
 
 \begin{figure}[H]
     \centering
@@ -21,26 +20,37 @@ Im Optimalfall ist Die Struktur so aufgebaut, dass sie einfach zu verstehen und 
 \end{figure}
 
 Im Rahmen dieser Studienarbeit gibt es keine externen Anforderungen an die Struktur. Daher wurde sich für eine vereinfachte \ac{MVC} Struktur entschieden (\autoref{fig:MVC_struktur}). Ziel dieser Struktur ist es die Software in drei Teile zu unterteilen.
-Diese drei Teile sollen eigenständige Aufgaben übernehmen und so verhindern, dass das Programm zu einem Monolithischen Codeblock wird.
+Diese drei Teile sollen eigenständige Aufgaben übernehmen und so verhindern, dass das Programm zu einem monolithischen Codeblock wird.
 
-Im \ac{MVC} Modell gibt es drei Teile:
-\begin{itemize}
-    \item \textbf{Model}: Der Model-Teil ist für die Datenverarbeitung zuständig. Er enthält die Datenstrukturen und die Logik, die die Daten verarbeitet. 
-    \item \textbf{View}: Der View-Teil ist für die Darstellung der Daten zuständig. Er enthält die Benutzeroberfläche und die Logik, die die Daten darstellt.
-    \item \textbf{Controller}: Der Controller-Teil ist für die Steuerung der Daten zuständig. Er enthält die Logik, die die Daten steuert und die Kommunikation zwischen Model und View koordiniert.
-\end{itemize}
+Der Model-Teil ist für die Datenverarbeitung zuständig und enthält die Datenstrukturen sowie die Logik, die die Daten verarbeitet. Der View-Teil ist für die Darstellung der Daten verantwortlich und umfasst die Benutzeroberfläche sowie die Logik, die die Daten darstellt. Der Controller-Teil steuert die Daten und koordiniert die Kommunikation zwischen Model und View, indem er die entsprechende Logik enthält.
 
-Die Vereinfachte Version dieser Struktur kombiniert die Funktionalitäten von View und Controller in der API \autoref{fig:flask} und trennt die Datenverarbeitung in einem eigenen Modul, dem Pycore Modul, welches die benötigten selbst entwickelten Bibliotheken zur Verfügung stellt. 
+Die vereinfachte Version dieser Struktur kombiniert die Funktionalitäten von View und Controller in der API. (Siehe \autoref{fig:flask}) und trennt die Datenverarbeitung in einem eigenen Modul, dem Pycore Modul, welches die benötigten selbst entwickelten Bibliotheken zur Verfügung stellt. 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Projektstruktur.png}
-    \caption{Struktur der Software}
+    \caption{Projektstruktur der Software im Dateiverzeichnis}
     \label{fig:Projektstruktur}
 \end{figure}
 
+Die in der Grafik \autoref{fig:Projektstruktur} dargestellte Dateistruktur repräsentiert ebenso die Struktur der Software. Die Funktionen werden in Bibliotheken im Pycore-Verzeichnis zusammengefasst. 
+Sämtliche Daten werden in einem ausgegliederten Verzeichnis innerhalb des Projektverzeichnisses abgelegt. 
 
-\begin{lstlisting}[style=json, label=lst:json_example, caption={Beispiel einer \ac{JSON}-Datei mit Pflanzendaten}]
+Im Projekthauptverzeichnis gibt es vier Python Skrpte, die ausgeführt werden können, um einzelne Teile der Software auszuführen.
+\texttt{api.py} Wird ausgeführt, um die Weboberfläche zu starten.
+\texttt{train.py} Wird ausgeführt, um das Modell zu trainieren.
+\texttt{evaluate\_model.py} Wird ausgeführt, um das Modell zu evaluieren und die in \autoref{sec:confusionmatrix}. Beschriebenen Werte zu erhalten. 
+\texttt{training\_prep.py} Kann ausgeführt werden um den Datensatz zu verarbeiten ohne das Modell zu trainieren.
+
+Diese Skripte laden den jeweilig benötigten Programmteil und die benötigten Parameter aus dem Pycore Verzeichnis, führen die entsprechenden Funktionen aus und legen die Ergebnisse im Dateisystem ab.
+
+
+\section{Konfiguration} \label{sec:konfiguration}
+
+Aus der Aufgabenstellung (siehe \autoref{sec:problemstellung_und_ziel_dieser_arbeit}) lässt sich ein weiterer Teil des Softwarekonzepts, die Einstellbarkeit, ableiten.
+Durch die Einstellbarkeit soll gewährleistet sein, dass die Software flexibel an die Anforderungen des Benutzers angepasst werden kann, ohne dass der Benutzer ein tiefes Verständnis der Software haben muss.
+
+\begin{lstlisting}[style=json, label=lst:json_example, caption={Beispiel einer \ac{JSON}-Datei mit Parametern des mobilnet Modells}]
     {
         "filepaths": {
             "good": "Bilder/Good_Pictures",
@@ -51,20 +61,29 @@ Die Vereinfachte Version dieser Struktur kombiniert die Funktionalitäten von Vi
             "test":"Bilder/test",
             "validate":"Bilder/validate",
             "new": "Bilder/new"
-        },
-        "mobilnet":{
-            "weights":"imagenet",
-            "include_top":false,
-            "density1": 1024,
-            "density2": 1024,
-            "density3": 512,
-            "density4": 2,
-            "activation_x": "relu",
-            "activation_preds": "softmax",
-            "layers":20
-
-        },
+        }
     }
 \end{lstlisting}
+
+Ziel ist es das der Benutzer eine einzige Datei öffnet und dort alle Einstellungen vornehmen kann. 
+Diese Datei soll im \ac{JSON}-Format vorliegen, da es ein weit verbreitetes Format ist und von vielen Programmiersprachen unterstützt wird \cite{gur_diskussion_2024}.
+
+Die Struktur der \ac{JSON}-Datei ist in \autoref{lst:json_example} dargestellt und wird in Pyton mittels des \texttt{json} Moduls eingelesen. Ein Beispiel für das Einlesen der Datei ist in \autoref{lst:json_read} dargestellt.
+
+Hier wird der Pfad zur Konfigurationsdatei festgelegt und die Datei wird eingelesen. Die Parameter werden dann an die erste Funktion übergeben, welche die Bilder in Graustufen umwandelt und in einem seperaten Verzeichnis ablegt (siehe \autoref{lst:json_read}). 
+
+\begin{lstlisting}[style=python, label=lst:json_read, caption={Einlesen der \ac{JSON}-Datei}]
+    import json
+
+    config_path = "pycore/setings.json"
+    cf = json.load(open(config_path, 'r'))
+
+    # Uebergabe der Parameter an die Funktionen
+    uic.folder_to_grayscale(cf["filepaths"]["good"],cf["filepaths"]["good_gray"])
+    uic.folder_to_grayscale(cf["filepaths"]["bad"],cf["filepaths"]["bad_gray"])
+
+\end{lstlisting}
+
+Möchte der Benutzer ein anderes Verzeichnis für die Bilder verwenden, so kann er dies in der \ac{JSON}-Datei ändern und die Software erneut ausführen, ohne zu wissen, wo die Funktion, welche den Datensatz generiert abliegt.
 
 \section{Die Weboberfläche mittels Python Web API} \label{sec:weboberflaeche}

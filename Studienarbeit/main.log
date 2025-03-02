@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  2 MAR 2025 16:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  2 MAR 2025 21:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -149,8 +149,6 @@ Package babel Info: Making " an active character on input line 122.
 ))) (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/locale/de/babel-ngerman.tex
 Package babel Info: Importing font and identification data for ngerman
 (babel)             from babel-de.ini. Reported on input line 11.
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/helvet.sty
-Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/acronym/acronym.sty
 Package: acronym 2020/04/17 v1.47 Support for acronyms (Tobias Oetiker)
  (/usr/local/texlive/2024/texmf-dist/tex/latex/bigfoot/suffix.sty
@@ -734,10 +732,10 @@ File: biblatex.cfg
 )
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2024-02-20 L3 programming layer (loader) 
- (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count436
 \l__pdf_internal_box=\box68
@@ -1134,10 +1132,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 10.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/t1phv.fd
-File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
-) (./main.aux (./sections/title.aux) (./sections/erklaerung.aux) (./sections/vorwort.aux) (./sections/abstract.aux) (./resources/directories/acronyms.aux) (./sections/einleitung.aux) (./sections/theorie.aux) (./sections/SW_konzept.aux) (./sections/SW_implementierung.aux) (./sections/SW_tests.aux) (./sections/fazit_ausblick.aux) (./sections/anhang.aux))
+ (./main.aux (./sections/title.aux) (./sections/erklaerung.aux) (./sections/vorwort.aux) (./sections/abstract.aux) (./resources/directories/acronyms.aux) (./sections/einleitung.aux) (./sections/theorie.aux) (./sections/SW_konzept.aux) (./sections/SW_implementierung.aux) (./sections/SW_tests.aux) (./sections/fazit_ausblick.aux) (./sections/anhang.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -1289,16 +1284,20 @@ Package pdftex.def Info: resources/images/ABB_Logo.png  used on input line 13.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd)) [1
 
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc} </usr/local/texlive/2024/texmf-dist/tex/latex/iodhbwm/dhbw-logo.png> <./resources/images/ABB_Logo.png>]
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} </usr/local/texlive/2024/texmf-dist/tex/latex/iodhbwm/dhbw-logo.png> <./resources/images/ABB_Logo.png>]
 \openout2 = `sections/erklaerung.aux'.
 
  (./sections/erklaerung.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--6
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/t1cmss.fd
+File: t1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--6
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
 
  []
 
@@ -1310,10 +1309,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--6
 ]
 \openout2 = `sections/vorwort.aux'.
 
- (./sections/vorwort.tex
-Package acronym Info: Label `acro:dhbw' newly defined as it shall be overridden
-although it is yet undefined on input line 2.
-) [2
+ (./sections/vorwort.tex) [2
 
 
 
@@ -1328,7 +1324,12 @@ although it is yet undefined on input line 2.
 
 ]) [4
 
-] (./main.toc)
+] (./main.toc
+Overfull \hbox (2.45354pt too wide) detected at line 4
+ []\T1/cmss/bx/n/12 VIII
+ []
+
+)
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
@@ -1336,11 +1337,11 @@ although it is yet undefined on input line 2.
 
 
 
-] (./main.lof)
+] [6] (./main.lof)
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [6
+ [7
 
 
 ] (./main.lol
@@ -1350,13 +1351,13 @@ although it is yet undefined on input line 5.
 \tf@lol=\write8
 \openout8 = `main.lol'.
 
- [7
+ [8
 
 
 ]
 \openout2 = `resources/directories/acronyms.aux'.
 
- (./resources/directories/acronyms.tex) [8
+ (./resources/directories/acronyms.tex) [9
 
 
 
@@ -1391,10 +1392,23 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
+
+LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <16> not available
+(Font)              size <17.28> substituted on input line 1.
+
+
+LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <16> not available
+(Font)              size <17.28> substituted on input line 1.
+
 Package acronym Info: Label `acro:PCB' newly defined as it shall be overridden
 although it is yet undefined on input line 3.
 Package acronym Info: Label `acro:CNN' newly defined as it shall be overridden
 although it is yet undefined on input line 3.
+
+Overfull \hbox (0.44174pt too wide) in paragraph at lines 3--5
+\T1/cmr/m/n/12 kon-troll-sys-te-me, ins-be-son-de-re in der Fer-ti-gung von elek-tro-ni-schen Bau-grup-pen wie [][][]Printed
+ []
+
 Package acronym Info: Label `acro:API' newly defined as it shall be overridden
 although it is yet undefined on input line 11.
 )
@@ -1424,14 +1438,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              that will remove this deprecated code.
 
 
-Overfull \hbox (2.59865pt too wide) in paragraph at lines 12--17
-[]\T1/phv/m/n/12 Bildverarbeitung be-schäf-tigt sich mit der Ma-ni-pu-la-ti-on und Ana-ly-se di-gi-ta-ler Bil-der durch
- []
-
-
-Overfull \hbox (3.17467pt too wide) in paragraph at lines 12--17
-\T1/phv/m/n/12 ent-we-der zur Bild-ver-bes-se-rung oder als Vor-ver-ar-bei-tungs-schrit-te für nach-fol-gen-de Ana-
- []
+LaTeX Warning: Reference `chap:problemstellung_und_ziel_dieser_arbeit' on page 2 undefined on input line 3.
 
 [2
 
@@ -1439,45 +1446,41 @@ Overfull \hbox (3.17467pt too wide) in paragraph at lines 12--17
 
 
 ]
-<resources/images/CNN.png, id=191, 752.8125pt x 308.15125pt>
+<resources/images/CNN.png, id=202, 752.8125pt x 308.15125pt>
 File: resources/images/CNN.png Graphic file (type png)
 <use resources/images/CNN.png>
 Package pdftex.def Info: resources/images/CNN.png  used on input line 26.
 (pdftex.def)             Requested size: 455.24411pt x 186.34978pt.
  [3 <./resources/images/CNN.png>]
-<resources/images/API.png, id=213, 963.6pt x 431.6125pt>
+<resources/images/API.png, id=224, 963.6pt x 431.6125pt>
 File: resources/images/API.png Graphic file (type png)
 <use resources/images/API.png>
-Package pdftex.def Info: resources/images/API.png  used on input line 49.
+Package pdftex.def Info: resources/images/API.png  used on input line 48.
 (pdftex.def)             Requested size: 455.24411pt x 203.91164pt.
  [4 <./resources/images/API.png (PNG copy)>]
 Package acronym Info: Label `acro:HTTP' newly defined as it shall be overridden
-although it is yet undefined on input line 60.
+although it is yet undefined on input line 59.
 Package acronym Info: Label `acro:URL' newly defined as it shall be overridden
-although it is yet undefined on input line 63.
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 67.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1phv.fd
-File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
-)
+although it is yet undefined on input line 62.
 Package acronym Info: Label `acro:REST' newly defined as it shall be overridden
-although it is yet undefined on input line 73.
+although it is yet undefined on input line 72.
 
-Overfull \hbox (27.45026pt too wide) in paragraph at lines 73--74
-[]\T1/phv/m/n/12 Diese Me-tho-den bil-den die Grund-la-ge des Re-pre-sen-ta-tio-nal State Trans-fer [][][]Representational
+Overfull \hbox (4.75896pt too wide) in paragraph at lines 72--73
+[]\T1/cmr/m/n/12 Diese Me-tho-den bil-den die Grund-la-ge des Re-pre-sen-ta-tio-nal State Trans-fer [][][]Representational
  []
 
-[5]
 Package acronym Info: Label `acro:HTML' newly defined as it shall be overridden
-although it is yet undefined on input line 77.
-<resources/images/FLASK.png, id=244, 963.6pt x 542.025pt>
+although it is yet undefined on input line 76.
+[5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+<resources/images/FLASK.png, id=255, 963.6pt x 542.025pt>
 File: resources/images/FLASK.png Graphic file (type png)
 <use resources/images/FLASK.png>
-Package pdftex.def Info: resources/images/FLASK.png  used on input line 81.
+Package pdftex.def Info: resources/images/FLASK.png  used on input line 80.
 (pdftex.def)             Requested size: 455.24411pt x 256.07507pt.
 Package acronym Info: Label `acro:WSGI' newly defined as it shall be overridden
-although it is yet undefined on input line 86.
+although it is yet undefined on input line 85.
 Package acronym Info: Label `acro:cp-lab' newly defined as it shall be overridden
-although it is yet undefined on input line 88.
+although it is yet undefined on input line 87.
  [6 <./resources/images/FLASK.png>]) [7]
 \openout2 = `sections/SW_konzept.aux'.
 
@@ -1494,29 +1497,35 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-<resources/images/MVC_struktur.png, id=261, 2569.6pt x 1174.3875pt>
+<resources/images/MVC_struktur.png, id=272, 2569.6pt x 1174.3875pt>
 File: resources/images/MVC_struktur.png Graphic file (type png)
 <use resources/images/MVC_struktur.png>
-Package pdftex.def Info: resources/images/MVC_struktur.png  used on input line 18.
+Package pdftex.def Info: resources/images/MVC_struktur.png  used on input line 17.
 (pdftex.def)             Requested size: 364.19667pt x 166.43805pt.
 Package acronym Info: Label `acro:MVC' newly defined as it shall be overridden
-although it is yet undefined on input line 23.
+although it is yet undefined on input line 22.
 [8
 
 
 
 
  <./resources/images/MVC_struktur.png>]
-<resources/images/Projektstruktur.png, id=276, 1117.17375pt x 702.625pt>
+<resources/images/Projektstruktur.png, id=286, 1117.17375pt x 702.625pt>
 File: resources/images/Projektstruktur.png Graphic file (type png)
 <use resources/images/Projektstruktur.png>
-Package pdftex.def Info: resources/images/Projektstruktur.png  used on input line 37.
+Package pdftex.def Info: resources/images/Projektstruktur.png  used on input line 31.
 (pdftex.def)             Requested size: 364.19667pt x 229.04729pt.
- [9 <./resources/images/Projektstruktur.png>]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 43.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 40.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)) [10]
+)
+Overfull \hbox (18.63846pt too wide) in paragraph at lines 39--44
+\T1/cmr/m/n/12 zu star-ten. \T1/pcr/m/n/12 train.py \T1/cmr/m/n/12 Wird aus-ge-führt, um das Mo-dell zu trai-nie-ren. \T1/pcr/m/n/12 evaluate_model.py
+ []
+
+[9 <./resources/images/Projektstruktur.png>] [10{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc}] (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
+)) [11]
 \openout2 = `sections/SW_implementierung.aux'.
 
  (./sections/SW_implementierung.tex
@@ -1532,7 +1541,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) [11
+) [12
 
 
 
@@ -1553,17 +1562,18 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-
-Overfull \hbox (5.31114pt too wide) in paragraph at lines 24--25
-\T1/phv/m/n/12 Die Ac-cu-ra-cy ist ei-ne der ein-fachs-ten Me-tri-ken zur Eva-lu-ie-rung ei-nes Machine-Learning-
- []
-
-[12
+[13
 
 
 
 
-] [13] [14]) [15]
+] [14] [15]
+<resources/images/Training_PyTorch.png, id=375, 739.563pt x 436.467pt>
+File: resources/images/Training_PyTorch.png Graphic file (type png)
+<use resources/images/Training_PyTorch.png>
+Package pdftex.def Info: resources/images/Training_PyTorch.png  used on input line 91.
+(pdftex.def)             Requested size: 455.24411pt x 268.67535pt.
+) [16 <./resources/images/Training_PyTorch.png>]
 \openout2 = `sections/fazit_ausblick.aux'.
 
  (./sections/fazit_ausblick.tex
@@ -1579,19 +1589,12 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) [16
+) [17
 
 
 
 
-]
-Overfull \hbox (3.02008pt too wide) in paragraph at lines 50--50
-\T1/phv/m/n/12 works,^^P Fin-bridge GmbH & Co KG. (8. Sep. 2022), Adres-se: [][]$https : / / www . ^^\nbridge .
- []
-
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 50.
-[10
+] [10
 
 
 
@@ -1621,6 +1624,14 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.28pt have occurred.
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -1628,18 +1639,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43670 strings out of 474116
- 869372 string characters out of 5743682
- 2050187 words of memory out of 5000000
- 65176 multiletter control sequences out of 15000+600000
- 609788 words of font info for 92 fonts, out of 8000000 for 9000
+ 43764 strings out of 474116
+ 870716 string characters out of 5743682
+ 2005187 words of memory out of 5000000
+ 65271 multiletter control sequences out of 15000+600000
+ 578540 words of font info for 80 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 108i,19n,107p,10983b,2726s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (28 pages, 580020 bytes).
+ 108i,20n,107p,10983b,2726s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on main.pdf (30 pages, 867120 bytes).
 PDF statistics:
- 549 PDF objects out of 1000 (max. 8388607)
- 477 compressed objects within 5 object streams
- 128 named destinations out of 1000 (max. 500000)
- 232 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 613 PDF objects out of 1000 (max. 8388607)
+ 518 compressed objects within 6 object streams
+ 127 named destinations out of 1000 (max. 500000)
+ 245 words of extra memory for PDF output out of 10000 (max. 10000000)
 
