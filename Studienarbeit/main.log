@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  2 MAR 2025 22:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  3 MAR 2025 12:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1515,9 +1515,7 @@ Package pdftex.def Info: resources/images/Projektstruktur.png  used on input lin
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 40.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [9 <./resources/images/Projektstruktur.png>] [10] (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2024/02/21 1.10 listings language file
-)) [11]
+) [9 <./resources/images/Projektstruktur.png>] [10]) [11]
 \openout2 = `sections/SW_implementierung.aux'.
 
  (./sections/SW_implementierung.tex
@@ -1639,15 +1637,15 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43840 strings out of 474116
- 871563 string characters out of 5743682
+ 43711 strings out of 474116
+ 870065 string characters out of 5743682
  2006187 words of memory out of 5000000
- 65344 multiletter control sequences out of 15000+600000
+ 65218 multiletter control sequences out of 15000+600000
  609788 words of font info for 92 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,19n,107p,10983b,2726s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (30 pages, 676636 bytes).
+Output written on main.pdf (30 pages, 676210 bytes).
 PDF statistics:
  571 PDF objects out of 1000 (max. 8388607)
  494 compressed objects within 5 object streams

@@ -9,7 +9,7 @@ from tensorflow.keras.models import load_model
 from sklearn.metrics import classification_report, confusion_matrix
 
 # **Schritt 1: Setup der Variablen**
-MODEL_PATH = "models/mobilenet_v3Largev2.keras"  # Dein gespeichertes Modell
+MODEL_PATH = "models/mobilenetv2.keras"  # Dein gespeichertes Modell
 TEST_FOLDER = "Bilder/test"  # Pfad zum Test-Datensatz
 IMAGE_SIZE = (224, 224)  # Bildgröße
 BATCH_SIZE = 15  # Batch-Größe

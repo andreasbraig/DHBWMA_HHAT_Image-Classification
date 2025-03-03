@@ -623,9 +623,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/helvetic/phvr8t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/courier/pcrr8t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrb8t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/courier/pcrb8t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrb8r.tfm

@@ -111,29 +111,12 @@
 
 \definecolor{XMLgreen}{HTML}{697821}
 
-\lstdefinelanguage{Kotlin}{
-	morekeywords={class, fun, val, var, return, if, else, for, while, in, throw, try, catch},
+\lstdefinelanguage{Python}{
+	morekeywords={class, def, val, return, if, else, for, while, in, throw, try, catch,import},
 	sensitive=true,
 	comment=[l][\%],
 	morecomment=[s][/*][*/],
 	morestring=[b]"
-}
-
-% Listings-Style für Kotlin anpassen
-\lstdefinestyle{kotlin}{
-	language=Kotlin,
-	basicstyle=\ttfamily\scriptsize,
-	numbers=left,
-	numberstyle=\tiny\color{gray},
-	breaklines=true,
-	captionpos=b,
-	frame=single,
-	keywordstyle=\color{blue}\bfseries,
-	commentstyle=\color{green},
-	stringstyle=\color{red},
-	showstringspaces=false,
-	tabsize=4,
-	morekeywords={@Composable, fun, val, var, Box, Modifier, Alignment, Text} % Weitere Schlüsselwörter hinzufügen
 }
 
 \lstdefinelanguage{json}{
@@ -156,6 +139,7 @@
 	keywordstyle=\color{red}\bfseries, % Schlüsselwörter in Rot und fett
 	commentstyle=\color{gray}, % Kommentare in Grau
 	showstringspaces=false,
+	stringstyle=\color{orange},
 	tabsize=4
 }
 
