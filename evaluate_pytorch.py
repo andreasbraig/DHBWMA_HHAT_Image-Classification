@@ -10,7 +10,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 from PIL import Image
 
 # **Schritt 1: Setup der Variablen**
-MODEL_PATH = "models/mymodel.pth"  # Dein gespeichertes PyTorch-Modell
+MODEL_PATH = "mobilenetv3_PT_Newset.pth"  # Dein gespeichertes PyTorch-Modell
 TEST_FOLDER = "Bilder/test"  # Pfad zum Test-Datensatz
 IMAGE_SIZE = (224, 224)  # Bildgröße
 BATCH_SIZE = 15  # Batch-Größe

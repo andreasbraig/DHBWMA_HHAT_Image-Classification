@@ -15,6 +15,7 @@
 \contentsline {chapter}{\numberline {4}Implementierung}{12}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Ablauf der Implementierung}{12}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Installation im Labor}{12}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Neuer Datzensatz}{12}{subsection.4.2.1}%
 \contentsline {chapter}{\numberline {5}Softwaretests}{13}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Metriken zur Evaluierung}{13}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Accuracy und Loss}{14}{subsection.5.1.1}%

@@ -5,7 +5,7 @@ import os
 import numpy as np
 import pandas as pd
 from PIL import Image  # Für Bildverarbeitung
-from tensorflow.keras.applications import MobileNetV3Large
+from tensorflow.keras.applications import MobileNetV3Large, MobileNetV3Small
 from tensorflow.keras.models import Model
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.callbacks import ReduceLROnPlateau, EarlyStopping
@@ -19,24 +19,13 @@ test_dir = "Bilder/test"
 # Bildparameter
 IMG_SIZE = (224, 224)
 BATCH_SIZE = 16
-MODEL_PATH = "models/best_modelv2.keras"
+MODEL_PATH = "models/mobilnetv3L.keras"
 
-# Funktion zur Konvertierung der Bilder in Graustufen
-def convert_to_grayscale(df):
-    new_filenames = []
-    for path in df["filename"]:
-        img = Image.open(path).convert("L")  # "L" steht für Graustufen
-        img = img.convert("RGB")  # Wieder in 3 Kanäle umwandeln für MobileNetV3
-        new_path = path.replace(".jpg", "_gray.jpg").replace(".png", "_gray.png")
-        img.save(new_path)
-        new_filenames.append(new_path)
-    df["filename"] = new_filenames
-    return df
 
 # Erstelle DataFrames für train, val, test
-df_train = convert_to_grayscale(pd.DataFrame([(os.path.join(train_dir, f), "good" if "Good" in f else "bad") for f in os.listdir(train_dir) if f.endswith(('.jpg', '.png'))], columns=["filename", "label"]))
-df_val = convert_to_grayscale(pd.DataFrame([(os.path.join(val_dir, f), "good" if "Good" in f else "bad") for f in os.listdir(val_dir) if f.endswith(('.jpg', '.png'))], columns=["filename", "label"]))
-df_test = convert_to_grayscale(pd.DataFrame([(os.path.join(test_dir, f), "good" if "Good" in f else "bad") for f in os.listdir(test_dir) if f.endswith(('.jpg', '.png'))], columns=["filename", "label"]))
+df_train = pd.DataFrame([(os.path.join(train_dir, f), "good" if "Good" in f else "bad") for f in os.listdir(train_dir) if f.endswith(('.jpg', '.png'))], columns=["filename", "label"])
+df_val = pd.DataFrame([(os.path.join(val_dir, f), "good" if "Good" in f else "bad") for f in os.listdir(val_dir) if f.endswith(('.jpg', '.png'))], columns=["filename", "label"])
+df_test = pd.DataFrame([(os.path.join(test_dir, f), "good" if "Good" in f else "bad") for f in os.listdir(test_dir) if f.endswith(('.jpg', '.png'))], columns=["filename", "label"])
 
 print(df_train.head(10))  
 print(df_train['label'].value_counts())  
@@ -89,40 +78,51 @@ test_generator = test_datagen.flow_from_dataframe(
     shuffle=False
 )
 
-print(train_generator.class_indices)
-print(val_generator.class_indices)
-print(test_generator.class_indices)
-
 # Modellaufbau
-base_model = MobileNetV3Large(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
+base_model = MobileNetV3Small(
+    input_shape=(224,224,3),
+    alpha=1.0,
+    minimalistic=False,
+    include_top=False,
+    weights="imagenet",
+    input_tensor=None,
+    classes=1000,
+    pooling=None,
+    dropout_rate=0.2,
+    classifier_activation='softmax',
+    include_preprocessing=True
+)
+
+print(base_model.output.shape)  
+
+
+x = base_model.output
+x = layers.GlobalAveragePooling2D()(x)
+x = layers.Dense(1024, "relu")(x)
+x = layers.Dense(1024, "relu")(x)
+x = layers.Dense(512, "relu")(x)
+preds = layers.Dense(2,"softmax")(x)
 
 # Fine-Tuning aktivieren: nur die letzten 50 Layer trainierbar machen
 base_model.trainable = True
 for layer in base_model.layers[:-50]:
     layer.trainable = False
 
-x = layers.GlobalAveragePooling2D()(base_model.output)
-x = layers.Dropout(0.3)(x)
-x = layers.Dense(128, activation='relu', kernel_regularizer=tf.keras.regularizers.l2(0.01))(x)
-x = layers.BatchNormalization()(x)
-x = layers.Dropout(0.2)(x)
-output = layers.Dense(1, activation='sigmoid')(x)
-
-model = Model(inputs=base_model.input, outputs=output)
+model = Model(inputs=base_model.input, outputs=preds)
 
 # Optimierung
-optimizer = Adam(learning_rate=1e-5)
-model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'])
+optimizer = Adam(learning_rate=0.001)
+model.compile(optimizer=optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
 
 # Callbacks
 lr_scheduler = ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=5, verbose=1)
-early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
+early_stopping = EarlyStopping(monitor='val_loss', patience=15, restore_best_weights=True)
 
 # Training
 model.fit(
     train_generator,
     validation_data=val_generator,
-    epochs=20,
+    epochs=60,
     callbacks=[lr_scheduler, early_stopping]
 )
 

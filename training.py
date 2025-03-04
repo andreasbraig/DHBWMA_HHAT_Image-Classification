@@ -129,4 +129,4 @@ if __name__ == "__main__":
                         callbacks=callbacks
     )
 
-    model.save("models/mobilenetv2.keras")
+    model.save(cf["model"]["path"])

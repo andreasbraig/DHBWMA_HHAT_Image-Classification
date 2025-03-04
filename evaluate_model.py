@@ -1,4 +1,5 @@
 import os
+import json
 import numpy as np
 import tensorflow as tf
 import pandas as pd
@@ -8,8 +9,12 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.models import load_model
 from sklearn.metrics import classification_report, confusion_matrix
 
+config_path = "pycore/setings.json"
+    
+cf = json.load(open(config_path, 'r'))
+
 # **Schritt 1: Setup der Variablen**
-MODEL_PATH = "models/mobilenetv2.keras"  # Dein gespeichertes Modell
+MODEL_PATH = cf["model"]["path"] #"models/mobilenetv2.keras"  # Dein gespeichertes Modell
 TEST_FOLDER = "Bilder/test"  # Pfad zum Test-Datensatz
 IMAGE_SIZE = (224, 224)  # Bildgröße
 BATCH_SIZE = 15  # Batch-Größe
@@ -22,7 +27,7 @@ print("✅ Modell erfolgreich geladen!")
 def create_test_dataframe(test_folder):
     test_filenames = os.listdir(test_folder)
     filepaths = [os.path.join(test_folder, fname) for fname in test_filenames]
-    labels = [0 if fname.lower().startswith("bad") else 1 for fname in test_filenames]  # 0 = Good, 1 = Bad
+    labels = [0 if fname.lower().startswith("Bad") else 1 for fname in test_filenames]  # 0 = Good, 1 = Bad
     return pd.DataFrame({"filename": test_filenames, "filepath": filepaths, "label": labels})
 
 test_df = create_test_dataframe(TEST_FOLDER)
