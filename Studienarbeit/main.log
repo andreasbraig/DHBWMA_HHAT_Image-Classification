@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  3 MAR 2025 20:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  7 MAR 2025 11:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1439,13 +1439,13 @@ Overfull \hbox (3.17467pt too wide) in paragraph at lines 12--17
 
 
 ]
-<resources/images/CNN.png, id=199, 752.8125pt x 308.15125pt>
+<resources/images/CNN.png, id=201, 752.8125pt x 308.15125pt>
 File: resources/images/CNN.png Graphic file (type png)
 <use resources/images/CNN.png>
 Package pdftex.def Info: resources/images/CNN.png  used on input line 26.
 (pdftex.def)             Requested size: 455.24411pt x 186.34978pt.
  [3 <./resources/images/CNN.png>]
-<resources/images/API.png, id=221, 963.6pt x 431.6125pt>
+<resources/images/API.png, id=223, 963.6pt x 431.6125pt>
 File: resources/images/API.png Graphic file (type png)
 <use resources/images/API.png>
 Package pdftex.def Info: resources/images/API.png  used on input line 48.
@@ -1469,7 +1469,7 @@ Overfull \hbox (27.45026pt too wide) in paragraph at lines 72--73
 [5]
 Package acronym Info: Label `acro:HTML' newly defined as it shall be overridden
 although it is yet undefined on input line 76.
-<resources/images/FLASK.png, id=251, 963.6pt x 542.025pt>
+<resources/images/FLASK.png, id=253, 963.6pt x 542.025pt>
 File: resources/images/FLASK.png Graphic file (type png)
 <use resources/images/FLASK.png>
 Package pdftex.def Info: resources/images/FLASK.png  used on input line 80.
@@ -1494,7 +1494,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-<resources/images/MVC_struktur.png, id=268, 2569.6pt x 1174.3875pt>
+<resources/images/MVC_struktur.png, id=270, 2569.6pt x 1174.3875pt>
 File: resources/images/MVC_struktur.png Graphic file (type png)
 <use resources/images/MVC_struktur.png>
 Package pdftex.def Info: resources/images/MVC_struktur.png  used on input line 17.
@@ -1507,7 +1507,7 @@ although it is yet undefined on input line 22.
 
 
  <./resources/images/MVC_struktur.png>]
-<resources/images/Projektstruktur.png, id=282, 1117.17375pt x 702.625pt>
+<resources/images/Projektstruktur.png, id=284, 1117.17375pt x 702.625pt>
 File: resources/images/Projektstruktur.png Graphic file (type png)
 <use resources/images/Projektstruktur.png>
 Package pdftex.def Info: resources/images/Projektstruktur.png  used on input line 31.
@@ -1563,7 +1563,7 @@ Overfull \hbox (5.31114pt too wide) in paragraph at lines 22--23
 
 
 ] [14] [15]
-<resources/images/Training_PyTorch.png, id=370, 739.563pt x 436.467pt>
+<resources/images/Training_PyTorch.png, id=372, 739.563pt x 436.467pt>
 File: resources/images/Training_PyTorch.png Graphic file (type png)
 <use resources/images/Training_PyTorch.png>
 Package pdftex.def Info: resources/images/Training_PyTorch.png  used on input line 91.
@@ -1618,10 +1618,15 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) [12
+
+Overfull \hbox (41.85158pt too wide) in paragraph at lines 27--28
+[]\T1/phv/m/n/12 Das Po-werS-hell Skript auf dem Desktop mit dem na-men \T1/pcr/m/n/12 Image_classification.ps1
+ []
+
+[12
 
 
-] (./main.aux (./sections/title.aux) (./sections/erklaerung.aux) (./sections/vorwort.aux) (./sections/abstract.aux) (./resources/directories/acronyms.aux) (./sections/einleitung.aux) (./sections/theorie.aux) (./sections/SW_konzept.aux) (./sections/SW_implementierung.aux) (./sections/SW_tests.aux) (./sections/fazit_ausblick.aux) (./sections/anhang.aux))
+]) [13] (./main.aux (./sections/title.aux) (./sections/erklaerung.aux) (./sections/vorwort.aux) (./sections/abstract.aux) (./resources/directories/acronyms.aux) (./sections/einleitung.aux) (./sections/theorie.aux) (./sections/SW_konzept.aux) (./sections/SW_implementierung.aux) (./sections/SW_tests.aux) (./sections/fazit_ausblick.aux) (./sections/anhang.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1637,18 +1642,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43714 strings out of 474116
- 870112 string characters out of 5743682
+ 43731 strings out of 474116
+ 870329 string characters out of 5743682
  2006187 words of memory out of 5000000
- 65220 multiletter control sequences out of 15000+600000
+ 65226 multiletter control sequences out of 15000+600000
  609788 words of font info for 92 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,19n,107p,10983b,2726s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (30 pages, 676383 bytes).
+Output written on main.pdf (31 pages, 681735 bytes).
 PDF statistics:
- 576 PDF objects out of 1000 (max. 8388607)
- 499 compressed objects within 5 object streams
- 128 named destinations out of 1000 (max. 500000)
- 253 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 601 PDF objects out of 1000 (max. 8388607)
+ 522 compressed objects within 6 object streams
+ 139 named destinations out of 1000 (max. 500000)
+ 261 words of extra memory for PDF output out of 10000 (max. 10000000)
 
