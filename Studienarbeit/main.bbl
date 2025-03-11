@@ -481,6 +481,28 @@
       \verb https://de.wikipedia.org/w/index.php?title=Model_View_Controller&oldid=248816402
       \endverb
     \endentry
+    \entry{noauthor_threading_nodate}{online}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Source code: Lib/threading.py This module constructs higher-level threading interfaces on top of the lower level\_thread module. {CPython} implementation detail: In {CPython}, due to the Global Interpre...}
+      \field{langid}{english}
+      \field{title}{threading — Thread-based parallelism}
+      \field{titleaddon}{Python documentation}
+      \field{urlday}{11}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:/Users/andreasbraig/Zotero/storage/ZS9HNDHQ/threading.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://docs.python.org/3/library/threading.html
+      \endverb
+      \verb{url}
+      \verb https://docs.python.org/3/library/threading.html
+      \endverb
+    \endentry
     \entry{ai_wiki_accuracy_2019}{online}{}
       \name{author}{1}{}{%
         {{hash=ccd676d989238b7d15eb9c39574f54d7}{%
@@ -574,7 +596,7 @@
       \verb{url}
       \verb http://arxiv.org/abs/1402.1892
       \endverb
-      \keyw{Computer Science - Information Retrieval,Computer Science - Machine Learning,Statistics - Machine Learning}
+      \keyw{Computer Science - Machine Learning,Statistics - Machine Learning,Computer Science - Information Retrieval}
     \endentry
   \enddatalist
 \endrefsection

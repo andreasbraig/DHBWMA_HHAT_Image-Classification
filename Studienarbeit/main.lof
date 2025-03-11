@@ -6,10 +6,12 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Erweiterung der API Darstellung auf Basis von FLASK}}{6}{figure.caption.19}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Schematische Darstellung der MVC Struktur \blx@tocontentsinit {0}\cite {noauthor_model_2024}}}{8}{figure.caption.22}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Projektstruktur der Software im Dateiverzeichnis}}{9}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Konzept der Parametergruppierung- und Verteilung auf das Programm}}{9}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Aufschlüsselung der API Funktionen}}{10}{figure.caption.25}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Projektstruktur der Software im Dateiverzeichnis}}{12}{figure.caption.26}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Schematischer Aufbau der API Kommunikation}}{16}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Schematischer Aufbau der API Kommunikation}}{19}{figure.caption.27}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

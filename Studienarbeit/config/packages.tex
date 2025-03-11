@@ -126,21 +126,28 @@
 	morestring=[b]",
 }
 
+\lstdefinelanguage{html}{
+    morekeywords={html, head, title, body, div, span, p, a, img, script, style, link, meta, h1, h2, h3, h4, h5, h6, ul, ol, li, table, tr, td, th, form, input, button, textarea, select, option},
+    sensitive=false,
+    morecomment=[s]{<!--}{-->},  % HTML-Kommentare
+    morestring=[b]"
+}
+
 % Listings-Style für JSON anpassen
 \lstdefinestyle{json}{
-	language=json,
-	basicstyle=\ttfamily\scriptsize,
-	numbers=left,
-	numberstyle=\tiny\color{gray},
-	breaklines=true,
-	captionpos=b,
-	frame=single,
-	stringstyle=\color{blue},
-	keywordstyle=\color{red}\bfseries, % Schlüsselwörter in Rot und fett
-	commentstyle=\color{gray}, % Kommentare in Grau
-	showstringspaces=false,
-	stringstyle=\color{orange},
-	tabsize=4
+    language=json,
+    basicstyle=\ttfamily\scriptsize,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    breaklines=true,
+    captionpos=b,
+    frame=single,
+    keywordstyle=\color{red}\bfseries,  % Schlüsselwörter in Rot und fett
+    commentstyle=\color{gray},          % Kommentare in Grau
+    stringstyle=\color{orange},         % Strings in Orange
+    showstringspaces=false,
+    tabsize=4,
+    aboveskip=0.5cm   % Abstand über dem Listing
 }
 
 % Listings-Style für Python anpassen
@@ -157,7 +164,25 @@
 	stringstyle=\color{orange},
 	showstringspaces=false,
 	tabsize=4,
-	morekeywords={self, None, True, False} % Weitere Schlüsselwörter hinzufügen
+	morekeywords={self, None, True, False}, % Weitere Schlüsselwörter hinzufügen
+	aboveskip=0.5cm
+}
+
+% Listings-Style für HTML anpassen
+\lstdefinestyle{html}{
+    language=html,
+    basicstyle=\ttfamily\scriptsize,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    breaklines=true,
+    captionpos=b,
+    frame=single,
+    keywordstyle=\color{blue}\bfseries,  % Schlüsselwörter in Blau und fett
+    commentstyle=\color{green},          % HTML-Kommentare in Grün
+    stringstyle=\color{orange},          % Strings in Orange
+    showstringspaces=false,
+    tabsize=4,
+    aboveskip=0.5cm   % Abstand über dem Listing
 }
 
 % Definiere die benutzerdefinierte Umgebung für Code

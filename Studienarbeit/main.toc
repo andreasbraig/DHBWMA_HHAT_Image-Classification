@@ -10,18 +10,20 @@
 \contentsline {subsection}{\numberline {2.2.2}FLASK}{6}{subsection.2.2.2}%
 \contentsline {chapter}{\numberline {3}Softwarekonzept}{8}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Programmstruktur}{8}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Konfiguration}{10}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Die Weboberfläche mittels Python Web API}{11}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Implementierung}{12}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Ablauf der Implementierung}{12}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Installation im Labor}{12}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Neuer Datzensatz}{12}{subsection.4.2.1}%
-\contentsline {chapter}{\numberline {5}Softwaretests}{13}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Metriken zur Evaluierung}{13}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Accuracy und Loss}{14}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Confusion Matrix und F1 Score}{15}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Reevaluierung des Modells}{16}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{17}{chapter.6}%
+\contentsline {section}{\numberline {3.2}Konfiguration der Programmparameter}{9}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Die Weboberfläche mittels Python Web API}{10}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Implementierung}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Umzug auf lokale Programmierung}{11}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Einpflegen der JSON Parameter}{13}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Entwicklung der API}{14}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Installation im Labor}{15}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Neuer Datzensatz}{15}{subsection.4.4.1}%
+\contentsline {chapter}{\numberline {5}Softwaretests}{16}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Metriken zur Evaluierung}{16}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Accuracy und Loss}{17}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Confusion Matrix und F1 Score}{18}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Reevaluierung des Modells}{19}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{20}{chapter.6}%
 \contentsline {chapter}{Literaturverzeichnis}{X}{chapter.6}%
 \contentsline {chapter}{\numberline {A}Anhang}{XII}{appendix.A}%
 \contentsline {subsection}{\numberline {.1}Anleitung zur Verwendung}{XII}{subsection.A.0.1}%
