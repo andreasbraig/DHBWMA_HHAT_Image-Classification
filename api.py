@@ -88,4 +88,4 @@ if __name__ == '__main__':
     watchdog_thread = threading.Thread(target=start_watchdog, daemon=True)
     watchdog_thread.start()
 
-    socketio.run(app, host="127.0.0.1", port=5000,debug=True,use_reloader=False)
+    socketio.run(app, host="127.0.0.1", port=5000,debug=True, use_reloader=True)

@@ -10,8 +10,10 @@
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Aufschlüsselung der API Funktionen}}{10}{figure.caption.25}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Projektstruktur der Software im Dateiverzeichnis}}{12}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Darstellung der Weboberfläche im Zustand ohne Klassifikation eines aktuellen Werkstückes.}}{16}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Gegenüberstellung der alten und neuen \ac {PCB}s}}{17}{figure.caption.31}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Schematischer Aufbau der API Kommunikation}}{20}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Schematischer Aufbau der API Kommunikation}}{22}{figure.caption.32}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

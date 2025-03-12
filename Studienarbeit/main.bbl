@@ -503,6 +503,69 @@
       \verb https://docs.python.org/3/library/threading.html
       \endverb
     \endentry
+    \entry{python_software_foundation_venv_nodate}{online}{}
+      \name{author}{1}{}{%
+        {{hash=9688a568902e4b07b60557b566bdd820}{%
+           family={Foundation},
+           familyi={F\bibinitperiod},
+           given={Python\bibnamedelima Software},
+           giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{9688a568902e4b07b60557b566bdd820}
+      \strng{fullhash}{9688a568902e4b07b60557b566bdd820}
+      \strng{bibnamehash}{9688a568902e4b07b60557b566bdd820}
+      \strng{authorbibnamehash}{9688a568902e4b07b60557b566bdd820}
+      \strng{authornamehash}{9688a568902e4b07b60557b566bdd820}
+      \strng{authorfullhash}{9688a568902e4b07b60557b566bdd820}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Source code: Lib/venv/ The venv module supports creating lightweight “virtual environments”, each with their own independent set of Python packages installed in their site directories. A virtual en...}
+      \field{langid}{english}
+      \field{title}{venv — Creation of virtual environments}
+      \field{titleaddon}{Python documentation}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:/Users/andreasbraig/Zotero/storage/7RWX83F3/venv.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://docs.python.org/3/library/venv.html
+      \endverb
+      \verb{url}
+      \verb https://docs.python.org/3/library/venv.html
+      \endverb
+    \endentry
+    \entry{sensopart_industriesensorik_gmbh_visor_2019}{article}{}
+      \name{author}{1}{}{%
+        {{hash=78b34712f26612cb20750f7b5add1aac}{%
+           family={{GmbH}},
+           familyi={G\bibinitperiod},
+           given={{SensoPart}\bibnamedelima Industriesensorik},
+           giveni={S\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{78b34712f26612cb20750f7b5add1aac}
+      \strng{fullhash}{78b34712f26612cb20750f7b5add1aac}
+      \strng{bibnamehash}{78b34712f26612cb20750f7b5add1aac}
+      \strng{authorbibnamehash}{78b34712f26612cb20750f7b5add1aac}
+      \strng{authornamehash}{78b34712f26612cb20750f7b5add1aac}
+      \strng{authorfullhash}{78b34712f26612cb20750f7b5add1aac}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{month}{1}
+      \field{title}{{VISOR} Benutzerhandbuch}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb VISOR Benutzerhandbuch.pdf:/Users/andreasbraig/Zotero/storage/HJPXDZN5/VISOR Benutzerhandbuch.pdf:application/pdf
+      \endverb
+    \endentry
     \entry{ai_wiki_accuracy_2019}{online}{}
       \name{author}{1}{}{%
         {{hash=ccd676d989238b7d15eb9c39574f54d7}{%
@@ -565,8 +628,8 @@
       \strng{authorbibnamehash}{8b25a21775241ceb40ae7bbde7d3aa25}
       \strng{authornamehash}{8b25a21775241ceb40ae7bbde7d3aa25}
       \strng{authorfullhash}{8b25a21775241ceb40ae7bbde7d3aa25}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper provides new insight into maximizing F1 scores in the context of binary classification and also in the context of multilabel classification. The harmonic mean of precision and recall, F1 score is widely used to measure the success of a binary classifier when one class is rare. Micro average, macro average, and per instance average F1 scores are used in multilabel classification. For any classifier that produces a real-valued output, we derive the relationship between the best achievable F1 score and the decision-making threshold that achieves this optimum. As a special case, if the classifier outputs are well-calibrated conditional probabilities, then the optimal threshold is half the optimal F1 score. As another special case, if the classifier is completely uninformative, then the optimal behavior is to classify all examples as positive. Since the actual prevalence of positive examples typically is low, this behavior can be considered undesirable. As a case study, we discuss the results, which can be surprising, of applying this procedure when predicting 26,853 labels for Medline documents.}

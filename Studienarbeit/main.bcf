@@ -2388,10 +2388,12 @@
     <bcf:citekey order="23" intorder="1">noauthor_model_2024</bcf:citekey>
     <bcf:citekey order="24" intorder="1">gur_diskussion_2024</bcf:citekey>
     <bcf:citekey order="25" intorder="1">noauthor_threading_nodate</bcf:citekey>
-    <bcf:citekey order="26" intorder="1">ai_wiki_accuracy_2019</bcf:citekey>
-    <bcf:citekey order="27" intorder="1">ai_wiki_accuracy_2019</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">lipton_thresholding_2014</bcf:citekey>
-    <bcf:citekey order="29" intorder="1">lipton_thresholding_2014</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">python_software_foundation_venv_nodate</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">sensopart_industriesensorik_gmbh_visor_2019</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">ai_wiki_accuracy_2019</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">ai_wiki_accuracy_2019</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">lipton_thresholding_2014</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">lipton_thresholding_2014</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
