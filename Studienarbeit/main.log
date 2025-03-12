@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  11 MAR 2025 21:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  12 MAR 2025 17:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1439,13 +1439,13 @@ Overfull \hbox (3.17467pt too wide) in paragraph at lines 12--17
 
 
 ]
-<resources/images/CNN.png, id=214, 752.8125pt x 308.15125pt>
+<resources/images/CNN.png, id=216, 752.8125pt x 308.15125pt>
 File: resources/images/CNN.png Graphic file (type png)
 <use resources/images/CNN.png>
 Package pdftex.def Info: resources/images/CNN.png  used on input line 26.
 (pdftex.def)             Requested size: 455.24411pt x 186.34978pt.
  [3 <./resources/images/CNN.png>]
-<resources/images/API.png, id=236, 963.6pt x 431.6125pt>
+<resources/images/API.png, id=238, 963.6pt x 431.6125pt>
 File: resources/images/API.png Graphic file (type png)
 <use resources/images/API.png>
 Package pdftex.def Info: resources/images/API.png  used on input line 48.
@@ -1469,7 +1469,7 @@ Overfull \hbox (27.45026pt too wide) in paragraph at lines 72--73
 [5]
 Package acronym Info: Label `acro:HTML' newly defined as it shall be overridden
 although it is yet undefined on input line 76.
-<resources/images/FLASK.png, id=266, 963.6pt x 542.025pt>
+<resources/images/FLASK.png, id=268, 963.6pt x 542.025pt>
 File: resources/images/FLASK.png Graphic file (type png)
 <use resources/images/FLASK.png>
 Package pdftex.def Info: resources/images/FLASK.png  used on input line 80.
@@ -1494,7 +1494,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-<resources/images/MVC_struktur.png, id=284, 2569.6pt x 1174.3875pt>
+<resources/images/MVC_struktur.png, id=286, 2569.6pt x 1174.3875pt>
 File: resources/images/MVC_struktur.png Graphic file (type png)
 <use resources/images/MVC_struktur.png>
 Package pdftex.def Info: resources/images/MVC_struktur.png  used on input line 14.
@@ -1511,13 +1511,13 @@ LaTeX Font Info:    Trying to load font information for T1+pcr on input line 24.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-<resources/images/Parameterverteilung.png, id=300, 712.6625pt x 362.35374pt>
+<resources/images/Parameterverteilung.png, id=302, 712.6625pt x 362.35374pt>
 File: resources/images/Parameterverteilung.png Graphic file (type png)
 <use resources/images/Parameterverteilung.png>
 Package pdftex.def Info: resources/images/Parameterverteilung.png  used on input line 33.
 (pdftex.def)             Requested size: 364.19667pt x 185.17393pt.
  [9 <./resources/images/Parameterverteilung.png>]
-<resources/images/API_Python_func.png, id=310, 963.6pt x 542.025pt>
+<resources/images/API_Python_func.png, id=312, 963.6pt x 542.025pt>
 File: resources/images/API_Python_func.png Graphic file (type png)
 <use resources/images/API_Python_func.png>
 Package pdftex.def Info: resources/images/API_Python_func.png  used on input line 49.
@@ -1544,12 +1544,12 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 
 ]
-<resources/images/Projektstruktur.png, id=332, 1117.17375pt x 702.625pt>
+<resources/images/Projektstruktur.png, id=333, 1117.17375pt x 702.625pt>
 File: resources/images/Projektstruktur.png Graphic file (type png)
 <use resources/images/Projektstruktur.png>
 Package pdftex.def Info: resources/images/Projektstruktur.png  used on input line 29.
 (pdftex.def)             Requested size: 364.19667pt x 229.04729pt.
- [12 <./resources/images/Projektstruktur.png>] [13] [14]) [15]
+ [12 <./resources/images/Projektstruktur.png>] [13] [14] [15]) [16]
 \openout2 = `sections/SW_tests.aux'.
 
  (./sections/SW_tests.tex
@@ -1570,18 +1570,18 @@ Overfull \hbox (5.31114pt too wide) in paragraph at lines 22--23
 \T1/phv/m/n/12 Die Ac-cu-ra-cy ist ei-ne der ein-fachs-ten Me-tri-ken zur Eva-lu-ie-rung ei-nes Machine-Learning-
  []
 
-[16
+[17
 
 
 
 
-] [17] [18]
-<resources/images/Training_PyTorch.png, id=445, 739.563pt x 436.467pt>
+] [18] [19]
+<resources/images/Training_PyTorch.png, id=450, 739.563pt x 436.467pt>
 File: resources/images/Training_PyTorch.png Graphic file (type png)
 <use resources/images/Training_PyTorch.png>
 Package pdftex.def Info: resources/images/Training_PyTorch.png  used on input line 91.
 (pdftex.def)             Requested size: 455.24411pt x 268.67535pt.
-) [19 <./resources/images/Training_PyTorch.png>]
+) [20 <./resources/images/Training_PyTorch.png>]
 \openout2 = `sections/fazit_ausblick.aux'.
 
  (./sections/fazit_ausblick.tex
@@ -1597,7 +1597,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) [20
+) [21
 
 
 
@@ -1655,18 +1655,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43871 strings out of 474116
- 872672 string characters out of 5743682
+ 43878 strings out of 474116
+ 872776 string characters out of 5743682
  2055187 words of memory out of 5000000
- 65333 multiletter control sequences out of 15000+600000
+ 65338 multiletter control sequences out of 15000+600000
  609788 words of font info for 92 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,19n,107p,10983b,2726s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (34 pages, 778900 bytes).
+Output written on main.pdf (35 pages, 779978 bytes).
 PDF statistics:
- 687 PDF objects out of 1000 (max. 8388607)
- 602 compressed objects within 7 object streams
- 172 named destinations out of 1000 (max. 500000)
- 287 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 695 PDF objects out of 1000 (max. 8388607)
+ 609 compressed objects within 7 object streams
+ 174 named destinations out of 1000 (max. 500000)
+ 295 words of extra memory for PDF output out of 10000 (max. 10000000)
 
