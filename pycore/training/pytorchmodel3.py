@@ -325,19 +325,19 @@ def pytorchmodel():
 
 
 
-    # resize_images(input_folder="Bilder/Pytorch/Source/Bad_Pictures",
-    #               output_folder="Bilder/Pytorch/Learn/bad")
+    # resize_images(input_folder="Bilder/Source/Dataset2/Bad_Pictures",
+    #                output_folder="Bilder/Pytorch/Learn/bad")
     
-    # resize_images(input_folder="Bilder/Pytorch/Source/Good_Pictures",
-    #               output_folder="Bilder/Pytorch/Learn/good")
+    # resize_images(input_folder="Bilder/Source/Dataset2/Good_Pictures",
+    #                output_folder="Bilder/Pytorch/Learn/good")
 
     # split_data(source="Bilder/Pytorch/Learn/bad",
-    #            destination1="Bilder/Pytorch/Test/bad",
-    #            destination2="Bilder/Pytorch/Learn/bad")
+    #             destination1="Bilder/Pytorch/Test/bad",
+    #             destination2="Bilder/Pytorch/Learn/bad")
     
     # split_data(source="Bilder/Pytorch/Learn/good",
-    #            destination1="Bilder/Pytorch/Test/good",
-    #            destination2="Bilder/Pytorch/Learn/good")
+    #             destination1="Bilder/Pytorch/Test/good",
+    #             destination2="Bilder/Pytorch/Learn/good")
     
 
     data_dir = "Bilder/Pytorch/Learn"
@@ -356,9 +356,9 @@ def pytorchmodel():
     if not os.path.exists(data_dir):
         print(f"Fehler: Der Ordner {data_dir} existiert nicht!")
 
-    print(f"Using device: {device}")
+    # print(f"Using device: {device}")
 
-    train_model(data_dir, device, epochs=30,modelname=model)
+    # train_model(data_dir, device, epochs=30,modelname=model)
 
     test_model(test_data_dir, device,model,logfile)
 

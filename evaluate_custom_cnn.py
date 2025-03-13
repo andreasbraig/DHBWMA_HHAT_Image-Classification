@@ -7,6 +7,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 from torchvision.datasets import ImageFolder
 from torchvision import transforms
 from torch.utils.data import DataLoader
+from pycore.training.pytorchmodel3 import CNNClassification
 
 # Modellpfad und Testdaten
 MODEL_PATH = "model30_NEWNET.state"
