@@ -88,6 +88,6 @@
         "rescale": 0.00392156862745098 
     },
     "model":{
-        "path": "models/mobilenet_Newset_v2.keras"
+        "path": "models/mobilenet_Newset_v1.keras"
     }
 }
