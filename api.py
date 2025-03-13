@@ -27,6 +27,13 @@ def load_model():
     print("Modell geladen")
     model_loaded_event.set()
 
+def load_custom():
+    global model
+    print("Lade Modell...")
+    model = cls.get_Custom_Model(cf["model"]["custom"])
+    print("Modell geladen")
+    model_loaded_event.set()
+
 def update_latest_image(image_path,):
     print("new image Detected")
     global latest_image
@@ -36,6 +43,7 @@ def update_latest_image(image_path,):
     img = uic.preprocess_image(image_path)
 
     result = cls.classify_image(img,model)
+    #result = cls.classify_image(img,model,"cpu")
 
     socketio.emit('classification_result', {'result':result})
 
