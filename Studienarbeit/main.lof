@@ -13,7 +13,8 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Darstellung der Weboberfläche im Zustand ohne Klassifikation eines aktuellen \ac {PCB}s.}}{16}{figure.caption.30}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Gegenüberstellung der alten und neuen \ac {PCB}s}}{17}{figure.caption.31}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Schematischer Aufbau der API Kommunikation}}{22}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Vergleich der Modelle anhand des gemittelten F1 Scores über beide Klassen}}{22}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Vergleich der Modelle anhand der Confusion Matrizen}}{23}{figure.caption.33}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

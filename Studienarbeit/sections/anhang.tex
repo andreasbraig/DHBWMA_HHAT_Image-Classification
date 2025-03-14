@@ -5,7 +5,7 @@
 
 \chapter{Anhang}
 	
-\subsection{Anleitung zur Verwendung} \label{subsec:anleitung_zur_verwendung}
+\section{Anleitung zur Verwendung} \label{subsec:anleitung_zur_verwendung}
 
 Nach der korrekten Installation des Programmes, welche in Kapitel \ref{sec:installation} beschrieben ist, kann das Programm wie folgt verwendet werden:
 Die Installation ist zum Zeitpunkt der Übergabe dieser Arbeit bereits auf dem FESTO-PC erfolgt. 
@@ -29,7 +29,9 @@ Um das Programm auszuführen, bitte der folgenden Anleitung folgen:
     \item Wenn mit der VISOR Kamera der FESTO \ac{cp-lab} Kamera Fotos Archiviert werden, sollten diese auf der Website mit Klassifizierungsergebnis dargestellt werden. 
 \end{enumerate}
 
-Im Folgenden wird erklärt, wie Fotos mit der VISOR Kamera Archiviert werden können:
+Im Folgenden wird in zwei Methoden erklärt, wie Fotos mit der VISOR Kamera Archiviert werden können:
+
+\subsection{Manuelle Archivierung}
 
 \begin{enumerate} 
     \item Die FESTO \ac{cp-lab} Anlage muss mit Strom und Druckluft versorgt sein.
@@ -42,3 +44,107 @@ Im Folgenden wird erklärt, wie Fotos mit der VISOR Kamera Archiviert werden kö
     \texttt{D:/Repo/DHBWMA\_HHAT\_Image-Classification/Bilder/new}
 
 \end{enumerate}
+
+\subsection{Automatische Archivierung}
+
+Für diese Methode wurde in der \texttt{MES 4} Software der FESTO \ac{cp-lab} Anlage eine neue Order mit einem neuen Buffer erstellt, welcher den Job für die Kamera enthält. 
+
+\begin{enumerate} 
+    \item Die FESTO \ac{cp-lab} Anlage muss mit Strom und Druckluft versorgt sein.
+    \item Die Software MES 4 auf dem FESTO-PC starten.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{Anleitung_Lab/Buffer_datei.png}
+    \end{figure}
+    \item In der MES 4 Software einen neuen Buffer Laden dieser ist mit dem Namen \texttt{Demo\_Buffer} versehen.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{Anleitung_Lab/Buffer_fertig.png}
+    \end{figure}
+    \item Der Buffer sollte jetzt mit Pinken Boxen gefüllt sein.
+    \item Über das \texttt{Planned Orders} Menü eine neue Order Importieren. Diese liegt unter \texttt{C:/Users/Festo/Desktop/ML Pictures} ab.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{Anleitung_Lab/Order.png}
+    \end{figure}
+
+    \item Die Order sollte jetzt in der MES 4 Software sichtbar sein und muss gestartet werden.
+    \item Nun sollte die Kamera Fotos aufnehmen und diese in folgenden Ordner ablegen:
+    
+    \texttt{D:/Repo/DHBWMA\_HHAT\_Image-Classification/Bilder/new}
+
+    \item Zur Kontrolle kann auf dem HMI der Kamerastation der aktuell ausgewählte Job betrachtet werden. Dieser sollte 7 sein.
+
+\end{enumerate}
+
+\section{Performance der Modelle} \label{sec:performance_der_modelle}
+
+\subsection{Pytorch Custom CNN}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{\textbf{Label}} & \multicolumn{3}{c|}{\textbf{F1-Score}} & \textbf{Support} \\
+\cline{2-4}
+                               & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \\
+\hline
+Bad                           & 1.00 & 0.96 & 0.98 & 47 \\
+Good                          & 0.97 & 1.00 & 0.98 & 58 \\
+\hline
+\textbf{Accuracy}             & & & 0.98 & 105 \\
+\hline
+\textbf{Macro avg}            & 0.98 & 0.98 & 0.98 & 105 \\
+\hline
+\textbf{Weighted avg}         & 0.98 & 0.98 & 0.98 & 105 \\
+\hline
+\end{tabular}
+\caption{Performance der Custom CNN (PyTorch) Modell}
+\end{table}
+
+\subsection{MobileNet V3 (TensorFlow)}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{\textbf{Label}} & \multicolumn{3}{c|}{\textbf{F1-Score}} & \textbf{Support} \\
+\cline{2-4}
+                               & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \\
+\hline
+Bad                           & 0.44 & 1.00 & 0.61 & 46 \\
+Good                          & 0.00 & 0.00 & 0.00 & 59 \\
+\hline
+\textbf{Accuracy}             & & & 0.44 & 105 \\
+\hline
+\textbf{Macro avg}            & 0.22 & 0.50 & 0.30 & 105 \\
+\hline
+\textbf{Weighted avg}         & 0.19 & 0.44 & 0.27 & 105 \\
+\hline
+\end{tabular}
+\caption{Performance der MobileNet V3 (TensorFlow) Modell}
+\end{table}
+
+\subsection{MobileNet V1 (TensorFlow)}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{\textbf{Label}} & \multicolumn{3}{c|}{\textbf{F1-Score}} & \textbf{Support} \\
+\cline{2-4}
+                               & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \\
+\hline
+Bad                           & 0.87 & 0.72 & 0.79 & 46 \\
+Good                          & 0.81 & 0.92 & 0.86 & 59 \\
+\hline
+\textbf{Accuracy}             & & & 0.83 & 105 \\
+\hline
+\textbf{Macro avg}            & 0.84 & 0.82 & 0.82 & 105 \\
+\hline
+\textbf{Weighted avg}         & 0.83 & 0.83 & 0.83 & 105 \\
+\hline
+\end{tabular}
+\caption{Performance der MobileNet V1 (TensorFlow) Modell}
+\end{table}

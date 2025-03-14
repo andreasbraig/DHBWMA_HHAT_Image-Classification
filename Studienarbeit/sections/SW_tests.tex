@@ -82,17 +82,34 @@ Beispielhafte Confusion Matritzen werden in \autoref{sec:reevaluierung} vorgeste
 
 \section{Reevaluierung des Modells} \label{sec:reevaluierung}
 
-In diesem Kapitel soll das Ergebnismodell der letzten Studienarbeit, \texttt{"Mobilenet"} erneut Evaluiert werden. Diesmal mithilfe der neuen Metrinken (\autoref{sec:confusionmatrix}) und anhand eines neuen Datensatzes von PCBs (siehe \autoref{subsec:neuer_datzensatz}).
+In diesem Kapitel soll das Ergebnismodell der letzten Studienarbeit, MobileNet V1 erneut Evaluiert werden. Diesmal mithilfe der neuen Metrinken (\autoref{sec:confusionmatrix}) und anhand eines neuen Datensatzes von PCBs (siehe \autoref{subsec:neuer_datzensatz}).
 
-Da es sich bei Mobilnet und MobilenetV3 um vortrainierte Modelle von Tensorflow sind, soll auch ein selbstgeschriebenes Modell evaluiert werden. Dieses Modell \texttt{"Pytorchmodel"} wurde im Rahmen der Vorlesung Bildverarbeitung entwickelt und soll nun mit in die Tests einfließen. 
+Für diese Reevaluierung wurden mehrere Modelle getestet. In dieser Arbeit werden drei Vertreter dieser Testreihe vorgestellt. Die Ergebnisse der Reevaluierung sind in \autoref{fig:vergleichsdiagramme} dargestellt.
+Da es sich bei Mobilnet V1 und MobilenetV3 um vortrainierte Modelle von Tensorflow handelt, soll auch ein selbstgeschriebenes Modell evaluiert werden. Dieses Modell "Custom \ac{CNN}"  wurde im Rahmen der Vorlesung Bildverarbeitung entwickelt und fließt mit in diese Tests ein. 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=1\textwidth]{Training_PyTorch.png}
-    \caption{Schematischer Aufbau der API Kommunikation}
-    \label{fig:Training_PyTorch}
+    \includegraphics[width=1\textwidth]{Vergleichsdiagramme.png}
+    \caption{Vergleich der Modelle anhand des gemittelten F1 Scores über beide Klassen}
+    \label{fig:vergleichsdiagramme}
 \end{figure}
 
--Ergebnisse Vorstellen zwischen Selbstgeschriebenen Pytorch, Mobilenet und Mobilenet V3
+Die besten Ergebnisse liefert das Custom \ac{CNN}, während Mobilenet Version3 auch nach mehreren Optimierungsversuchen schlecht abschneidet.
+Dies ist \autoref{fig:vergleichsdiagramme} zu entnehmen. Hier sind die gemittelten F1 Scores über beide Klassen für die verschiedenen Modelle dargestellt ist. Berechnungsgrundlage ist die in \autoref{sec:confusionmatrix} vorgestellte Confusion Matrix.
 
-test
+Ein detaillierter Vergleich der Modelle zeigt, dass das Custom \ac{CNN} auch in allen anderen Metriken überlegen ist. Aus Gründen der Übersichtlichkeit enfallen die genauen Tabellen mit allen Daten. Die Tabellen mit allen Werten sind dem Anhang \autoref{sec:performance_der_modelle} zu entnehmen. MobileNet V1 liefert dennoch gute Ergebnisse und ist aufgrund der Einfachheit der Integration und der guten Ergebnisse nicht zu vernachlässigen. 
+
+Für die folgenden Betrachtungen wurd MobileNet V3 ausgeschlossen. Seine schlechten Ergebnisse lassen auf eine schlechte Anpassung an den Datensatz oder falsche Einstellung schließen.
+Im Direkten Vergleich haben sowohl das Custom CNN als auch MobileNet V1 tendenziell mehr Probleme mit False Positive Klassifikationen. Dies ist in \autoref{fig:alle_cms} zu sehen.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{AlleCMs.png}
+    \caption{Vergleich der Modelle anhand der Confusion Matrizen}
+    \label{fig:alle_cms}
+\end{figure}
+
+Diese gemeinsamen Probleme lassen sich in diesem Fall auf den Datensatz zurückführen. Die falsch Positiv Klassifizierten Bilder sind ebenfalls für den Menschen nur schwer zu klassifizieren, da ein stück Leiterbahn fehlt oder eine schlecht belichtete Komponente fehlt (\ac{PCB}s siehe \autoref{fig:PCBs} Rechts). In den Praxistests während des Probebetriebs im Labor hat sich gezeigt, dass MobileNet V1 in allen beobachteten Fällen in der Lage ist eine korrekte Klassifikation durchzuführen.
+
+Zusammenfassend lässt sich sagen, dass das Custom CNN in allen getesteten Metriken überlegen ist. Aufgrund der zeitlichen Einschränkungen und der bestehenden Programmpipeline wird jedoch weiterhin MobileNet V1 verwendet. Dieses Modell liefert gute Ergebnisse und ist einfacher zu integrieren.
+
