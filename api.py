@@ -43,7 +43,7 @@ def update_latest_image(image_path,):
     img = uic.preprocess_image(image_path)
 
     result = cls.classify_image(img,model)
-    #result = cls.classify_image(img,model,"cpu")
+    #result = cls.classify_Custom_CNN(image_path,model,"cpu")
 
     socketio.emit('classification_result', {'result':result})
 
