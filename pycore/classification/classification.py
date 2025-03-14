@@ -55,40 +55,15 @@ def classify_Custom_CNN(image_path, model, device):
         transforms.ToTensor()
     ])
     
-    #print(image_path)
-    # # Bild laden und transformieren
-    # if isinstance(image_path, np.ndarray):
-    #     image = Image.fromarray(image_path)
-    # else:
-    #     image = Image.open(image_path).convert("RGB")
+    image = Image.open(image_path).convert("RGB")
 
-    if isinstance(image_path, np.ndarray):
-        # Entferne überflüssige Dimensionen
-        image = image_path.squeeze()  # z. B. (1, 1, 224, 3) → (224, 224, 3)
 
-        # Stelle sicher, dass das Format stimmt
-        if image.shape[0] in [1, 3]:  # Falls das erste Dimension ist die Farbkanäle sind
-            image = np.transpose(image, (1, 2, 0))  # (C, H, W) → (H, W, C)
-
-        # Skaliere Werte von [0,1] zu [0,255] und konvertiere zu `uint8`
-        image = (image * 255).astype(np.uint8)
-
-        # Falls das Bild nur einen Kanal hat, um RGB zu erzeugen
-        if image.shape[-1] == 1:
-            image = np.squeeze(image, axis=-1)
-
-        # Konvertiere in `PIL.Image`
-        image = Image.fromarray(image)
-
-    else:
-        image = Image.open(image_path).convert("RGB")
 
     # Transformation anwenden
     image = transform(image)
     image = image.to(device)
-    
-    print(image)
 
+    print(image.shape)  # Ausgabe: torch.Size([4, 3, 224, 224])
     # Modell auf Evaluierungsmodus setzen
     model.eval()
     

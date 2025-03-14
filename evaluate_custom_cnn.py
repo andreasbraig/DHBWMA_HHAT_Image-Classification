@@ -10,7 +10,7 @@ from torch.utils.data import DataLoader
 from pycore.training.pytorchmodel3 import CNNClassification
 
 # Modellpfad und Testdaten
-MODEL_PATH = "model30_NEWNET.state"
+MODEL_PATH = "models/model30_NEWNET.state"
 TEST_FOLDER = "Bilder/Pytorch/Test/"
 IMAGE_SIZE = (224, 224)
 BATCH_SIZE = 15
