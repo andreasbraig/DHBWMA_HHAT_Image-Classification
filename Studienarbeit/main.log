@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  14 MAR 2025 21:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  14 MAR 2025 21:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1681,30 +1681,35 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              that will remove this deprecated code.
 
 
-Overfull \hbox (41.85158pt too wide) in paragraph at lines 27--28
-[]\T1/phv/m/n/12 Das Po-werS-hell Skript auf dem Desktop mit dem na-men \T1/pcr/m/n/12 Image_classification.ps1
+Overfull \hbox (25.17166pt too wide) in paragraph at lines 13--15
+[]\T1/phv/m/n/12 Der Quell-co-de ist je-der-zeit un-ter fol-gen-der URL er-reich-bar: [][]$https : / / github . com / andreasbraig /
+ []
+
+
+Overfull \hbox (43.84361pt too wide) in paragraph at lines 32--33
+[]\T1/phv/m/n/12 Das Po-werS-hell Skript auf dem Desktop mit dem Na-men \T1/pcr/m/n/12 Image_classification.ps1
  []
 
 [12
 
 
 ]
-<resources/images/Anleitung_Lab/Buffer_datei.png, id=606, 741.52031pt x 727.21687pt>
+<resources/images/Anleitung_Lab/Buffer_datei.png, id=607, 741.52031pt x 727.21687pt>
 File: resources/images/Anleitung_Lab/Buffer_datei.png Graphic file (type png)
 <use resources/images/Anleitung_Lab/Buffer_datei.png>
-Package pdftex.def Info: resources/images/Anleitung_Lab/Buffer_datei.png  used on input line 57.
+Package pdftex.def Info: resources/images/Anleitung_Lab/Buffer_datei.png  used on input line 62.
 (pdftex.def)             Requested size: 318.66948pt x 312.5196pt.
  [13]
-<resources/images/Anleitung_Lab/Buffer_fertig.png, id=619, 898.10532pt x 613.54219pt>
+<resources/images/Anleitung_Lab/Buffer_fertig.png, id=621, 898.10532pt x 613.54219pt>
 File: resources/images/Anleitung_Lab/Buffer_fertig.png Graphic file (type png)
 <use resources/images/Anleitung_Lab/Buffer_fertig.png>
-Package pdftex.def Info: resources/images/Anleitung_Lab/Buffer_fertig.png  used on input line 62.
+Package pdftex.def Info: resources/images/Anleitung_Lab/Buffer_fertig.png  used on input line 67.
 (pdftex.def)             Requested size: 318.66948pt x 217.70134pt.
  [14 <./resources/images/Anleitung_Lab/Buffer_datei.png> <./resources/images/Anleitung_Lab/Buffer_fertig.png>]
-<resources/images/Anleitung_Lab/Order.png, id=630, 1280.53406pt x 752.0597pt>
+<resources/images/Anleitung_Lab/Order.png, id=632, 1280.53406pt x 752.0597pt>
 File: resources/images/Anleitung_Lab/Order.png Graphic file (type png)
 <use resources/images/Anleitung_Lab/Order.png>
-Package pdftex.def Info: resources/images/Anleitung_Lab/Order.png  used on input line 69.
+Package pdftex.def Info: resources/images/Anleitung_Lab/Order.png  used on input line 74.
 (pdftex.def)             Requested size: 318.66948pt x 187.1538pt.
  [15 <./resources/images/Anleitung_Lab/Order.png>]) [16] (./main.aux (./sections/title.aux) (./sections/erklaerung.aux) (./sections/vorwort.aux) (./sections/abstract.aux) (./resources/directories/acronyms.aux) (./sections/einleitung.aux) (./sections/theorie.aux) (./sections/SW_konzept.aux) (./sections/SW_implementierung.aux) (./sections/SW_tests.aux) (./sections/fazit_ausblick.aux) (./sections/anhang.aux))
  ***********
@@ -1726,10 +1731,10 @@ Here is how much of TeX's memory you used:
  1143 hyphenation exceptions out of 8191
  108i,20n,107p,10983b,2726s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (42 pages, 2871547 bytes).
+Output written on main.pdf (42 pages, 2871871 bytes).
 PDF statistics:
- 850 PDF objects out of 1000 (max. 8388607)
- 744 compressed objects within 8 object streams
+ 852 PDF objects out of 1000 (max. 8388607)
+ 746 compressed objects within 8 object streams
  212 named destinations out of 1000 (max. 500000)
  373 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4,32 +4,37 @@
 \renewcommand*{\sectionmark}[1]{\markright{Anhang \thesection: #1}}
 
 \chapter{Anhang}
-	
+    
 \section{Anleitung zur Verwendung} \label{subsec:anleitung_zur_verwendung}
 
-Nach der korrekten Installation des Programmes, welche in Kapitel \ref{sec:installation} beschrieben ist, kann das Programm wie folgt verwendet werden:
+Nach der korrekten Installation des Programms, welches in Kapitel \ref{sec:installation} beschrieben ist, kann das Programm wie folgt verwendet werden:
 Die Installation ist zum Zeitpunkt der Übergabe dieser Arbeit bereits auf dem FESTO-PC erfolgt. 
 
+Der Quellcode ist jederzeit unter folgender URL erreichbar: 
+\url{https://github.com/andreasbraig/DHBWMA_HHAT_Image-Classification}
 
-Zunächst sollte auf folgende Punkte geachtet werden:
+Im Branch main befindet sich die Version zum Zeitpunkt der Abgabe.
+
+\textbf{Zunächst sollte auf folgende Punkte geachtet werden:}
 \begin{itemize}
-    \item Die Installation ist auf dem FESTO-PC erfolgt. Das Passwort ist bei frau \BetreuerDHBW \ zu erfragen.
-    \item Die Verwendete Python Version ist 3.12.9.
+    \item Die Installation ist auf dem FESTO-PC erfolgt. Das Passwort ist bei Frau \BetreuerDHBW \ zu erfragen.
+    \item Die verwendete Python Version ist 3.12.9.
     \item Alle verwendeten Bibliotheken sind in der requirements.txt Datei aufgelistet.
     \item Das Programmverzeichnis mit allen Daten liegt unter: 
     
     \texttt{D:/Repo/DHBWMA\_HHAT\_Image-Classification}
 \end{itemize}
 
-Um das Programm auszuführen, bitte der folgenden Anleitung folgen:
+
+\textbf{Um das Programm auszuführen, bitte der folgenden Anleitung folgen:}
 
 \begin{enumerate}
-    \item Das PowerShell Skript auf dem Desktop mit dem namen \texttt{Image\_classification.ps1} ausführen
-    \item Sobald in Powershell die URL \texttt{http://127.0.0.1:5000} angezeigt wird, kann die Webseite im Browser geöffnet werden.
-    \item Wenn mit der VISOR Kamera der FESTO \ac{cp-lab} Kamera Fotos Archiviert werden, sollten diese auf der Website mit Klassifizierungsergebnis dargestellt werden. 
+    \item Das PowerShell Skript auf dem Desktop mit dem Namen \texttt{Image\_classification.ps1} ausführen.
+    \item Sobald in PowerShell die URL \texttt{http://127.0.0.1:5000} angezeigt wird, kann die Webseite im Browser geöffnet werden.
+    \item Wenn mit der VISOR Kamera der FESTO \ac{cp-lab} Kamera Fotos archiviert werden, sollten diese auf der Website mit Klassifizierungsergebnis dargestellt werden. 
 \end{enumerate}
 
-Im Folgenden wird in zwei Methoden erklärt, wie Fotos mit der VISOR Kamera Archiviert werden können:
+Im Folgenden wird in zwei Methoden erklärt, wie Fotos mit der VISOR Kamera archiviert werden können:
 
 \subsection{Manuelle Archivierung}
 
@@ -38,7 +43,7 @@ Im Folgenden wird in zwei Methoden erklärt, wie Fotos mit der VISOR Kamera Arch
     \item Auf dem FESTO-PC die Visor Software starten.
     \item Zunächst Config öffnen, das Passwort ist \texttt{Admin} für den Benutzer \texttt{admin}.
     \item Dieses Fenster kann direkt wieder geschlossen werden. (die Einstellungen sind bereits gespeichert, also \texttt{Yes} drücken)
-    \item Im Visor Fenster auf \texttt{View} Klicken und unten links \texttt{Archiving} durch klicken aktivieren.
+    \item Im Visor Fenster auf \texttt{View} klicken und unten links \texttt{Archiving} durch Klicken aktivieren.
     \item Nun sollte die Kamera Fotos aufnehmen und diese in folgenden Ordner ablegen:
     
     \texttt{D:/Repo/DHBWMA\_HHAT\_Image-Classification/Bilder/new}
@@ -56,13 +61,13 @@ Für diese Methode wurde in der \texttt{MES 4} Software der FESTO \ac{cp-lab} An
         \centering
         \includegraphics[width=0.7\textwidth]{Anleitung_Lab/Buffer_datei.png}
     \end{figure}
-    \item In der MES 4 Software einen neuen Buffer Laden dieser ist mit dem Namen \texttt{Demo\_Buffer} versehen.
+    \item In der MES 4 Software einen neuen Buffer laden, dieser ist mit dem Namen \texttt{Demo\_Buffer} versehen.
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.7\textwidth]{Anleitung_Lab/Buffer_fertig.png}
     \end{figure}
-    \item Der Buffer sollte jetzt mit Pinken Boxen gefüllt sein.
-    \item Über das \texttt{Planned Orders} Menü eine neue Order Importieren. Diese liegt unter \texttt{C:/Users/Festo/Desktop/ML Pictures} ab.
+    \item Der Buffer sollte jetzt mit pinken Boxen gefüllt sein.
+    \item Über das \texttt{Planned Orders} Menü eine neue Order importieren. Diese liegt unter \texttt{C:/Users/Festo/Desktop/ML Pictures} ab.
 
     \begin{figure}[H]
         \centering
