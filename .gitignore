@@ -4,4 +4,6 @@
 
 *.state
 
+.venv
+
 /Bilder

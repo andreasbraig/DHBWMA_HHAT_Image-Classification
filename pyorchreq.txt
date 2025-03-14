@@ -12,7 +12,6 @@ Flask==2.3.3
 Flask-RESTful==0.3.10
 Flask-SocketIO==5.5.1
 flatbuffers==25.1.21
-fonttools==4.55.6
 gast==0.6.0
 google-pasta==0.2.0
 grpcio==1.70.0
