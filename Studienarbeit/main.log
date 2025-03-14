@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  14 MAR 2025 21:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  14 MAR 2025 22:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1448,12 +1448,12 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              that will remove this deprecated code.
 
 
-Overfull \hbox (2.59865pt too wide) in paragraph at lines 12--17
+Overfull \hbox (2.59865pt too wide) in paragraph at lines 13--18
 []\T1/phv/m/n/12 Bildverarbeitung be-schäf-tigt sich mit der Ma-ni-pu-la-ti-on und Ana-ly-se di-gi-ta-ler Bil-der durch
  []
 
 
-Overfull \hbox (3.17467pt too wide) in paragraph at lines 12--17
+Overfull \hbox (3.17467pt too wide) in paragraph at lines 13--18
 \T1/phv/m/n/12 ent-we-der zur Bild-ver-bes-se-rung oder als Vor-ver-ar-bei-tungs-schrit-te für nach-fol-gen-de Ana-
  []
 
@@ -1466,42 +1466,42 @@ Overfull \hbox (3.17467pt too wide) in paragraph at lines 12--17
 <resources/images/CNN.png, id=252, 752.8125pt x 308.15125pt>
 File: resources/images/CNN.png Graphic file (type png)
 <use resources/images/CNN.png>
-Package pdftex.def Info: resources/images/CNN.png  used on input line 26.
+Package pdftex.def Info: resources/images/CNN.png  used on input line 27.
 (pdftex.def)             Requested size: 455.24411pt x 186.34978pt.
  [3 <./resources/images/CNN.png>]
 <resources/images/API.png, id=274, 963.6pt x 431.6125pt>
 File: resources/images/API.png Graphic file (type png)
 <use resources/images/API.png>
-Package pdftex.def Info: resources/images/API.png  used on input line 48.
+Package pdftex.def Info: resources/images/API.png  used on input line 49.
 (pdftex.def)             Requested size: 455.24411pt x 203.91164pt.
  [4 <./resources/images/API.png (PNG copy)>]
 Package acronym Info: Label `acro:HTTP' newly defined as it shall be overridden
-although it is yet undefined on input line 59.
+although it is yet undefined on input line 60.
 Package acronym Info: Label `acro:URL' newly defined as it shall be overridden
-although it is yet undefined on input line 62.
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 66.
+although it is yet undefined on input line 63.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 67.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
 Package acronym Info: Label `acro:REST' newly defined as it shall be overridden
-although it is yet undefined on input line 72.
+although it is yet undefined on input line 73.
 
-Overfull \hbox (27.45026pt too wide) in paragraph at lines 72--73
+Overfull \hbox (27.45026pt too wide) in paragraph at lines 73--74
 []\T1/phv/m/n/12 Diese Me-tho-den bil-den die Grund-la-ge des Re-pre-sen-ta-tio-nal State Trans-fer [][][]Representational
  []
 
 [5]
 Package acronym Info: Label `acro:HTML' newly defined as it shall be overridden
-although it is yet undefined on input line 76.
+although it is yet undefined on input line 77.
 <resources/images/FLASK.png, id=305, 963.6pt x 542.025pt>
 File: resources/images/FLASK.png Graphic file (type png)
 <use resources/images/FLASK.png>
-Package pdftex.def Info: resources/images/FLASK.png  used on input line 80.
+Package pdftex.def Info: resources/images/FLASK.png  used on input line 81.
 (pdftex.def)             Requested size: 455.24411pt x 256.07507pt.
 Package acronym Info: Label `acro:WSGI' newly defined as it shall be overridden
-although it is yet undefined on input line 85.
+although it is yet undefined on input line 86.
 Package acronym Info: Label `acro:cp-lab' newly defined as it shall be overridden
-although it is yet undefined on input line 87.
+although it is yet undefined on input line 88.
  [6 <./resources/images/FLASK.png>]) [7]
 \openout2 = `sections/SW_konzept.aux'.
 
@@ -1535,13 +1535,13 @@ LaTeX Font Info:    Trying to load font information for T1+pcr on input line 24.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-<resources/images/Parameterverteilung.png, id=338, 712.6625pt x 362.35374pt>
+<resources/images/Parameterverteilung.png, id=340, 712.6625pt x 362.35374pt>
 File: resources/images/Parameterverteilung.png Graphic file (type png)
 <use resources/images/Parameterverteilung.png>
 Package pdftex.def Info: resources/images/Parameterverteilung.png  used on input line 33.
 (pdftex.def)             Requested size: 364.19667pt x 185.17393pt.
  [9 <./resources/images/Parameterverteilung.png>]
-<resources/images/API_Python_func.png, id=348, 963.6pt x 542.025pt>
+<resources/images/API_Python_func.png, id=354, 963.6pt x 542.025pt>
 File: resources/images/API_Python_func.png Graphic file (type png)
 <use resources/images/API_Python_func.png>
 Package pdftex.def Info: resources/images/API_Python_func.png  used on input line 49.
@@ -1568,7 +1568,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 
 ]
-<resources/images/Projektstruktur.png, id=369, 1117.17375pt x 702.625pt>
+<resources/images/Projektstruktur.png, id=375, 1117.17375pt x 702.625pt>
 File: resources/images/Projektstruktur.png Graphic file (type png)
 <use resources/images/Projektstruktur.png>
 Package pdftex.def Info: resources/images/Projektstruktur.png  used on input line 29.
@@ -1581,13 +1581,13 @@ although it is yet undefined on input line 133.
 Package acronym Info: Label `acro:SPS' newly defined as it shall be overridden
 although it is yet undefined on input line 133.
  [15]
-<resources/images/Web-Ohne_Bild.png, id=459, 1514.65875pt x 464.73625pt>
+<resources/images/Web-Ohne_Bild.png, id=465, 1514.65875pt x 464.73625pt>
 File: resources/images/Web-Ohne_Bild.png Graphic file (type png)
 <use resources/images/Web-Ohne_Bild.png>
 Package pdftex.def Info: resources/images/Web-Ohne_Bild.png  used on input line 141.
 (pdftex.def)             Requested size: 455.24411pt x 139.67723pt.
  [16 <./resources/images/Web-Ohne_Bild.png>]
-<resources/images/PCBs.png, id=474, 959.585pt x 297.11pt>
+<resources/images/PCBs.png, id=480, 959.585pt x 297.11pt>
 File: resources/images/PCBs.png Graphic file (type png)
 <use resources/images/PCBs.png>
 Package pdftex.def Info: resources/images/PCBs.png  used on input line 164.
@@ -1619,13 +1619,13 @@ Overfull \hbox (5.31114pt too wide) in paragraph at lines 22--23
 
 
 ] [20] [21]
-<resources/images/Vergleichsdiagramme.png, id=525, 578.16pt x 361.35pt>
+<resources/images/Vergleichsdiagramme.png, id=531, 578.16pt x 361.35pt>
 File: resources/images/Vergleichsdiagramme.png Graphic file (type png)
 <use resources/images/Vergleichsdiagramme.png>
 Package pdftex.def Info: resources/images/Vergleichsdiagramme.png  used on input line 92.
 (pdftex.def)             Requested size: 455.24411pt x 284.52603pt.
  [22 <./resources/images/Vergleichsdiagramme.png>]
-<resources/images/AlleCMs.png, id=537, 947.54pt x 277.53688pt>
+<resources/images/AlleCMs.png, id=543, 947.54pt x 277.53688pt>
 File: resources/images/AlleCMs.png Graphic file (type png)
 <use resources/images/AlleCMs.png>
 Package pdftex.def Info: resources/images/AlleCMs.png  used on input line 107.
@@ -1646,12 +1646,12 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-[24
+) [24
 
 
 
 
-]) [25]
+]
 Overfull \hbox (3.02008pt too wide) in paragraph at lines 50--50
 \T1/phv/m/n/12 works,^^P Fin-bridge GmbH & Co KG. (8. Sep. 2022), Adres-se: [][]$https : / / www . ^^\nbridge .
  []
@@ -1694,19 +1694,19 @@ Overfull \hbox (43.84361pt too wide) in paragraph at lines 32--33
 
 
 ]
-<resources/images/Anleitung_Lab/Buffer_datei.png, id=607, 741.52031pt x 727.21687pt>
+<resources/images/Anleitung_Lab/Buffer_datei.png, id=611, 741.52031pt x 727.21687pt>
 File: resources/images/Anleitung_Lab/Buffer_datei.png Graphic file (type png)
 <use resources/images/Anleitung_Lab/Buffer_datei.png>
 Package pdftex.def Info: resources/images/Anleitung_Lab/Buffer_datei.png  used on input line 62.
 (pdftex.def)             Requested size: 318.66948pt x 312.5196pt.
  [13]
-<resources/images/Anleitung_Lab/Buffer_fertig.png, id=621, 898.10532pt x 613.54219pt>
+<resources/images/Anleitung_Lab/Buffer_fertig.png, id=625, 898.10532pt x 613.54219pt>
 File: resources/images/Anleitung_Lab/Buffer_fertig.png Graphic file (type png)
 <use resources/images/Anleitung_Lab/Buffer_fertig.png>
 Package pdftex.def Info: resources/images/Anleitung_Lab/Buffer_fertig.png  used on input line 67.
 (pdftex.def)             Requested size: 318.66948pt x 217.70134pt.
  [14 <./resources/images/Anleitung_Lab/Buffer_datei.png> <./resources/images/Anleitung_Lab/Buffer_fertig.png>]
-<resources/images/Anleitung_Lab/Order.png, id=632, 1280.53406pt x 752.0597pt>
+<resources/images/Anleitung_Lab/Order.png, id=636, 1280.53406pt x 752.0597pt>
 File: resources/images/Anleitung_Lab/Order.png Graphic file (type png)
 <use resources/images/Anleitung_Lab/Order.png>
 Package pdftex.def Info: resources/images/Anleitung_Lab/Order.png  used on input line 74.
@@ -1716,25 +1716,34 @@ Package pdftex.def Info: resources/images/Anleitung_Lab/Order.png  used on input
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44072 strings out of 474116
- 877447 string characters out of 5743682
+ 44071 strings out of 474116
+ 877440 string characters out of 5743682
  2070498 words of memory out of 5000000
  65491 multiletter control sequences out of 15000+600000
  609788 words of font info for 92 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,20n,107p,10983b,2726s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (42 pages, 2871871 bytes).
+Output written on main.pdf (41 pages, 2871307 bytes).
 PDF statistics:
- 852 PDF objects out of 1000 (max. 8388607)
- 746 compressed objects within 8 object streams
- 212 named destinations out of 1000 (max. 500000)
+ 856 PDF objects out of 1000 (max. 8388607)
+ 751 compressed objects within 8 object streams
+ 211 named destinations out of 1000 (max. 500000)
  373 words of extra memory for PDF output out of 10000 (max. 10000000)
 

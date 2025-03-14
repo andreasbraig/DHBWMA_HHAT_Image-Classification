@@ -1,4 +1,5 @@
 \chapter{Theoretische Grundlagen} \label{chap:theoretische_grundlagen}  % Theorie
+
 In diesem Abschnitt werden die theoretischen Grundlagen erläutert, die für das Verständnis der späteren Kapitel notwendig sind. Dazu gehören die Funktionsweise von Machine Learning und Computer Vision, sowie die Grundlagen einer API.
 Wie bereits im Ersten Kapitel (siehe Kapitel \ref{chap:problemstellung_und_ziel_dieser_arbeit}) beschrieben, baut diese Studienarbeit auf der Arbeit des letzten Semesters auf. 
 Die theoretischen Grundlagen für Machine Learning und Computer Vision werden hier nur kurz erläutert, da sie bereits im letzten Semester ausführlich behandelt wurden.
@@ -7,7 +8,7 @@ Die Funktionsweise einer API wird in diesem Kapitel genauer erläutert, da sie e
 des Python programmes an die entwickelte Webanwendung übertragen.
 
 \section{Machine Learning und Klassifikationsprobleme} \label{sec:ml_cv}  % Theorie
-Grundlegend, bevor die Datensätze in Form von Bildern durch Convoliutional Neural Networks \ac{CNN} analysiert werden können, müssen die Daten verarbeitet werden.
+Grundlegend, bevor die Datensätze in Form von Bildern durch Convolutional Neural Networks \ac{CNN} analysiert werden können, müssen die Daten verarbeitet werden.
 
 Bildverarbeitung beschäftigt sich mit der Manipulation und Analyse digitaler Bilder durch Algorithmen und bildet die Grundlage für komplexere Verfahren. 
 Ein digitales Bild wird als mehrdimensionale Matrix gespeichert, wobei farbige Bilder als dreidimensionale Tensoren 
@@ -82,7 +83,7 @@ Für diese Studienarbeit ist keine Umfängliche WEB-\ac{API} notwendig. Es soll 
     \label{fig:flask}
 \end{figure}
 
-FLASK Nutzt die \ac{WSGI} Schnittstelle von Python \cite{flask_welcome_nodate} und  \autoref{fig:flask} und Stellt in Verbindung mit der in dieser Studienarbeit Verwendeten Waitress Bibliothek den Webserver zur Verfügung.
+FLASK nutzt die \ac{WSGI} Schnittstelle von Python \cite{flask_welcome_nodate} und \autoref{fig:flask} und stellt in Verbindung mit der in dieser Studienarbeit verwendeten Waitress Bibliothek den Webserver zur Verfügung.
 
 Eine Besondere Anforderung der im Folgenden vorgestellten Webanwendung liegt in der Übertragung der neu erstellten Fotos von der Kamera des FESTO \ac{cp-lab} an die 
 Webanwendung. Um eine einfachere Benutzbarkeit zu gewährleisten soll der Browser nicht jedes mal neu geladen werden müssen, wenn ein Foto geschossen und klassifiziert wird.

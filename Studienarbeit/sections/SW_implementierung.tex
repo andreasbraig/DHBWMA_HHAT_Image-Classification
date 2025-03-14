@@ -1,6 +1,6 @@
 \chapter{Implementierung} \label{chap:implementierung}
 
-Nachdem im letzten Kapitel (siehe \autoref{chap:Konzept}) das Konzept der Lösung der Aufgabenstellung beschrieben wurde, wird in diesem Kapitel die Implementierung der Software beschrieben.
+Nachdem im letzten Kapitel (siehe \autoref{chap:Konzept}) das Konzept zur Lösung der Aufgabenstellung beschrieben wurde, wird in diesem Kapitel die Implementierung der Software erläutert.
 Ziel ist es, alle beschriebenen Aufgabenteile in Python umzusetzen und eine Software zu entwickeln, die in der Lage ist, die Anforderungen der Aufgabenstellung zu erfüllen. Ausschnitte aus dieser Software sind im Kapitel des Konzepts bereits beschrieben und werden hier weiter ausgeführt.
 
 Die Implementierung erfolgt in mehreren Schritten:
@@ -45,7 +45,7 @@ Keines dieser Skripte ist über die Webanwendung zu erreichen, da sie nur für d
 
 \section{Einpflegen der JSON-Parameter} \label{subsec:json_parameter}
 
-Die Umsetzung des Konzeptes der Konfiguration der Programmparameter (siehe \autoref{sec:konfiguration}) erfolgt in Python mittels einer \ac{JSON}-Datei.
+Die Umsetzung des Konzepts zur Konfiguration der Programmparameter (siehe \autoref{sec:konfiguration}) erfolgt in Python mittels einer \ac{JSON}-Datei.
 Diese Datei enthält alle Parameter, die für die Software benötigt werden.
 
 \begin{lstlisting}[style=json, label=lst:json_example, caption={Beispiel einer \ac{JSON}-Datei mit Parametern des mobilnet Modells}]
@@ -79,7 +79,7 @@ Die Struktur der \ac{JSON}-Datei ist in \autoref{lst:json_example} dargestellt u
 
 In diesem Codeausschnitt wird der Pfad zur Konfigurationsdatei festgelegt (Zeile 3) und die Datei wird eingelesen (Zeile 4). Die Parameter werden dann an die erste Funktion übergeben, welche die Bilder in Graustufen umwandelt und in einem separaten Verzeichnis ablegt (Zielverzeichnis siehe \autoref{lst:json_read}). Die Syntax für das Anwählen des Parameters ist \texttt{cf["filepaths"]["good"]}, wobei \texttt{cf} die Variable ist, in der die \ac{JSON}-Datei eingelesen wurde. Die \ac{JSON}-Datei wird als Array eingelesen, wobei der Zugriff auf die einzelnen Parameter über den Schlüssel in Textform erfolgt. In diesem Fall wird der Pfad zum Ordner mit den guten Bildern über den Schlüssel \texttt{"good"} angesprochen, während \texttt{"filepaths"} den Zugriff auf die passende Sektion des Arrays ermöglicht.
 
-Angenommen der Benutzer wünscht ein anderes Verzeichnis für die Bilder, so kann er dies in der \ac{JSON}-Datei ändern und die Software erneut ausführen, ohne zu wissen, wo die Funktion, welche den Datensatz generiert, abliegt. 
+Angenommen, der Benutzer wünscht ein anderes Verzeichnis für die Bilder, so kann er dies in der \ac{JSON}-Datei ändern und die Software erneut ausführen, ohne zu wissen, wo die Funktion, die den Datensatz generiert, abgelegt ist. 
 Der gesamte Code dieses Projekts wurde nach diesem Schema aufgebaut, um eine einfache und einheitliche Konfiguration zu gewährleisten.
 
 \section{Entwicklung der API} \label{subsec:entwicklung_der_api}

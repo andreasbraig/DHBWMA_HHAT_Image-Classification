@@ -1,17 +1,17 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'main.blg'
-[37] biber-darwin:340> INFO - === Fri Mar 14, 2025, 21:30:33
-[47] Biber.pm:419> INFO - Reading 'main.bcf'
-[94] Biber.pm:979> INFO - Found 17 citekeys in bib section 0
-[101] Biber.pm:4419> INFO - Processing section 0
-[109] Biber.pm:4610> INFO - Looking for bibtex file 'resources/directories/bibliography.bib' for section 0
-[113] bibtex.pm:1713> INFO - LaTeX decoding ...
-[172] bibtex.pm:1519> INFO - Found BibTeX data source 'resources/directories/bibliography.bib'
-[243] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[244] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[244] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
-[244] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
-[253] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[259] bbl.pm:763> INFO - Output to main.bbl
-[259] Biber.pm:131> WARN - ISBN '978-3-8348-2605-3 978-3-8348-2606-0' in entry 'suse_bildverarbeitung_2014' is invalid - run biber with '--validate_datamodel' for details.
-[259] Biber.pm:133> INFO - WARNINGS: 1
+[40] biber-darwin:340> INFO - === Fri Mar 14, 2025, 22:19:42
+[50] Biber.pm:419> INFO - Reading 'main.bcf'
+[98] Biber.pm:979> INFO - Found 17 citekeys in bib section 0
+[105] Biber.pm:4419> INFO - Processing section 0
+[112] Biber.pm:4610> INFO - Looking for bibtex file 'resources/directories/bibliography.bib' for section 0
+[117] bibtex.pm:1713> INFO - LaTeX decoding ...
+[174] bibtex.pm:1519> INFO - Found BibTeX data source 'resources/directories/bibliography.bib'
+[246] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[246] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[246] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
+[246] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
+[255] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[261] bbl.pm:763> INFO - Output to main.bbl
+[261] Biber.pm:131> WARN - ISBN '978-3-8348-2605-3 978-3-8348-2606-0' in entry 'suse_bildverarbeitung_2014' is invalid - run biber with '--validate_datamodel' for details.
+[261] Biber.pm:133> INFO - WARNINGS: 1

@@ -1,15 +1,15 @@
 \chapter{Problemstellung und Ziel dieser Arbeit} \label{chap:problemstellung_und_ziel_dieser_arbeit}
 
-Die zunehmende Automatisierung industrieller Prozesse erfordert zuverlässige Qualitätskontrollsysteme, insbesondere in der Fertigung von elektronischen Baugruppen wie \acp{PCB}. Im letzten Semester wurde in einer Machbarkeitsstudie untersucht ob ein KI-basiertes System umsetzbar ist, welches mittels TensorFlow \acp{CNN} 
-Defekte auf \acp{PCB} erkennt. Dieses System basiert auf einer Online-Implementierung Benutzeroberfläche. 
+Die zunehmende Automatisierung industrieller Prozesse erfordert zuverlässige Qualitätskontrollsysteme, insbesondere in der Fertigung von elektronischen Baugruppen wie \acp{PCB}. Im letzten Semester wurde in einer Machbarkeitsstudie untersucht, ob ein KI-basiertes System umsetzbar ist, welches mittels TensorFlow \acp{CNN} 
+Defekte auf \acp{PCB} erkennt. Dieses System basiert auf einer Online-Implementierung der Benutzeroberfläche. 
 
-Aktuell bestehen drei zentrale Herausforderungen: Erstens bietet die Online- Implementierung keine lokale Kontrolle über Parameter oder Daten, was die Flexibilität limitiert. Zweitens fehlt eine intuitive Schnittstelle zur Visualisierung von 
-Klassifizierungsergebnissen, was die Benutzerinteraktion erschwert. Drittens soll die Leistung der bisher verwendeten \ac{CNN}-Architektur evaluiert werden und weitere Architekturen oder Optimierungstechniken sollen getestet werden, um die
+Aktuell bestehen drei zentrale Herausforderungen: Erstens bietet die Online Implementierung keine lokale Kontrolle über Parameter oder Daten, was die Flexibilität limitiert. Zweitens fehlt eine intuitive Schnittstelle zur Visualisierung von 
+Klassifizierungsergebnissen, was die Benutzerinteraktion erschwert. Drittens soll die Leistung der bisher verwendeten \ac{CNN}-Architektur evaluiert werden, und weitere Architekturen oder Optimierungstechniken sollen getestet werden, um die
 Erkennungsgenauigkeit zu verbessern. Hierfür stehen eine Reihe neuer \ac{PCB}s zur Verfügung, die in einer zu dieser Arbeit parallelen Studienarbeit entwickelt wurden.
 
 Ziel dieser Arbeit ist es, die bestehende Lösung in eine lokale Anwendung zu überführen, die folgende Kernkomponenten integriert: Eine zentrale Parametrisierung. Diese ermöglicht die flexible Steuerung aller Modell- und Systemparameter, während eine 
-modularisierte Codebasis die Wartbarkeit und Wiederverwendbarkeit des Python-Codes verbessert. Zusätzlich soll eine Webanwendung mit einer Python \ac{API} entwickelt werden, die eine Darstellung in echtzeit von \acp{PCB} Klassifizierungsergebnissen bietet. 
+modularisierte Codebasis die Wartbarkeit und Wiederverwendbarkeit des Python-Codes verbessert. Zusätzlich soll eine Webanwendung mit einer Python \ac{API} entwickelt werden, die eine Darstellung in Echtzeit von \acp{PCB}-Klassifizierungsergebnissen bietet. 
 Parallel erfolgt eine systematische Modellre-Evaluation, bei der das aktuelle \ac{CNN} mit alternativen Architekturen oder Optimierungstechniken verglichen wird.
 
 Durch diese Maßnahmen soll die Darstellung der industriellen Anwendbarkeit im FESTO CP Lab gestärkt werden. 
-Die neue Webvisualisierung soll greifbar machen, was bildverarbeitende Qualitätskontrolle bedeutet, indem sie in echtzeit Analyse und Ergebnisse der \acp{PCB} anschaulich darstellt. Benutzer können direkt sehen, dass Defekte erkannt und klassifiziert werden, was die Transparenz und Nachvollziehbarkeit des gesamten Prozesses erhöht.
+Die neue Webvisualisierung soll greifbar machen, was bildverarbeitende Qualitätskontrolle bedeutet, indem sie in Echtzeit Analyse und Ergebnisse der \acp{PCB} anschaulich darstellt. Benutzer können direkt sehen, dass Defekte erkannt und klassifiziert werden, was die Transparenz und Nachvollziehbarkeit des gesamten Prozesses erhöht.
