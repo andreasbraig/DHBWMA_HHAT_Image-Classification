@@ -27,25 +27,25 @@ def load_model():
     print("Modell geladen")
     model_loaded_event.set()
 
-def load_custom():
-    global model
-    print("Lade Modell...")
-    model = cls.get_Custom_Model(cf["model"]["custom"])
-    print("Modell geladen")
-    model_loaded_event.set()
-
 def update_latest_image(image_path,):
     print("new image Detected")
     global latest_image
     latest_image = image_path
-    socketio.emit('update_image', {'image_url': '/latest_image'})
 
-    img = uic.preprocess_image(image_path)
+    print(image_path[-4:])
 
-    result = cls.classify_image(img,model)
-    #result = cls.classify_Custom_CNN(image_path,model,"cpu")
+    if image_path[-4:]==".jpg":
 
-    socketio.emit('classification_result', {'result':result})
+        time.sleep(1)
+        socketio.emit('update_image', {'image_url': '/latest_image'})
+
+        img = uic.preprocess_image(image_path)
+
+        result = cls.classify_image(img,model)
+
+        socketio.emit('classification_result', {'result':result})
+    else: 
+        print(image_path, "iat kein Bild!")
 
     #print(result)
 
@@ -55,7 +55,7 @@ class NewFileHandler(FileSystemEventHandler):
             update_latest_image(event.src_path)
 
 def folder_monitor():
-    path_to_watch = cf['filepaths']['bad']  # Pfad zum zu überwachenden Ordner kommt aus JSON
+    path_to_watch = cf['filepaths']['new']  # Pfad zum zu überwachenden Ordner kommt aus JSON
 
     event_handler = NewFileHandler()
     observer = Observer()
@@ -95,5 +95,5 @@ if __name__ == '__main__':
 
     watchdog_thread = threading.Thread(target=start_watchdog, daemon=True)
     watchdog_thread.start()
-
-    socketio.run(app, host="127.0.0.1", port=5000,debug=True, use_reloader=True)
+    
+    socketio.run(app, host="127.0.0.1", port=5000,debug=False,use_reloader=False)

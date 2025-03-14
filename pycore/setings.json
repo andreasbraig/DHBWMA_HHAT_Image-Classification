@@ -31,25 +31,9 @@
         "activation_preds": "softmax",
         "layers":20
     },
-    "mobilnetv3": {
-        "weights": "imagenet",
-        "include_top": false,
-        "density1": 512,
-        "density2": 256,
-        "density3": 128,
-        "density4": 1,
-        "activation_x": "relu",
-        "activation_preds": "sigmoid",
-        "layers": -30
-    },
     "model_compile":{
         "optimizer":"Adam",
         "loss":"categorical_crossentropy",
-        "metrics": "accuracy"
-    },
-    "modelv3_compile":{
-        "optimizer":"Adam",
-        "loss":"binary_crossentropy",
         "metrics": "accuracy"
     },
     "callbacks":{
@@ -66,12 +50,6 @@
         "x_col":"filename",
         "class_mode":"categorical"
     },
-    "batch2":{
-        "size":15,
-        "y_col":"label",
-        "x_col":"filename",
-        "class_mode":"binary"
-    },  
     "train_augmentation": {
         "rotation_range": 20,
         "rescale": 0.00392156862745098,  
@@ -88,7 +66,6 @@
         "rescale": 0.00392156862745098 
     },
     "model":{
-        "path": "models/mobilenet_Newset_v1.keras",
-        "custom": "models/model30_NEWNET.state"
+        "path": "models/mobilenet_Newset_v1.keras"
     }
 }

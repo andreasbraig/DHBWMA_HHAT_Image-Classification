@@ -52,7 +52,7 @@ def make_df(images):
 
 #Ab hier imagedatagen
 
-def data_gen(mode, df, filepath, x_col, y_col, target_size, batch_size, class_mode, config,shuffle=True,):
+def data_gen(mode, df, filepath, x_col, y_col, target_size, batch_size, config,shuffle=True,):
     """
     Erstellt einen ImageDataGenerator basierend auf den Parametern aus einer JSON-Datei.
     
@@ -74,7 +74,7 @@ def data_gen(mode, df, filepath, x_col, y_col, target_size, batch_size, class_mo
     datagen = ImageDataGenerator(**config[mode])
 
     # Bestimme den class_mode
-    #class_mode = 'categorical' if y_col else None
+    class_mode = 'categorical' if y_col else None
 
     print(df)
 
