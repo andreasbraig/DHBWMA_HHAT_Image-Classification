@@ -4,13 +4,11 @@ In diesem Abschnitt werden die theoretischen Grundlagen erläutert, die für das
 Wie bereits im Ersten Kapitel (siehe Kapitel \ref{chap:problemstellung_und_ziel_dieser_arbeit}) beschrieben, baut diese Studienarbeit auf der Arbeit des letzten Semesters auf. 
 Die theoretischen Grundlagen für Machine Learning und Computer Vision werden hier nur kurz erläutert, da sie bereits im letzten Semester ausführlich behandelt wurden.
 
-Die Funktionsweise einer API wird in diesem Kapitel genauer erläutert, da sie eine zentrale Rolle in dieser Studienarbeit spielt. Mithilfe einer Web-API werden die Daten
-des Python programmes an die entwickelte Webanwendung übertragen.
+
 
 \section{Machine Learning und Klassifikationsprobleme} \label{sec:ml_cv}  % Theorie
-Grundlegend, bevor die Datensätze in Form von Bildern durch Convolutional Neural Networks \ac{CNN} analysiert werden können, müssen die Daten verarbeitet werden.
 
-Bildverarbeitung beschäftigt sich mit der Manipulation und Analyse digitaler Bilder durch Algorithmen und bildet die Grundlage für komplexere Verfahren. 
+Bildverarbeitung beschäftigt sich mit der Manipulation und Analyse digitaler Bilder durch Algorithmen und bildet die Grundlage für komplexere Verfahren. Eine Bildverarbeitung erfolgt auch als Grundlage für die Computer Vision.
 Ein digitales Bild wird als mehrdimensionale Matrix gespeichert, wobei farbige Bilder als dreidimensionale Tensoren 
 dargestellt werden, deren Dimensionen Höhe, Breite und Farbkanäle repräsentieren. 
 Diese Repräsentation ermöglicht die Anwendung verschiedener Transformationen wie Filterung, Kontrastverbesserung oder geometrische Verzerrungen, die 
@@ -42,7 +40,7 @@ Es gibt verschiedene CNN-Architekturen wie ResNet und MobileNet, die für spezif
 APIs stellen das Herzstück moderner Softwareentwicklung dar und ermöglichen es Programmen, miteinander zu kommunizieren und Daten auszutauschen. Dieser Datenaustausch ist wesentlich für vielfältige Anwendungen, wie etwa das Abrufen von Wetterdaten oder das Interagieren mit sozialen Netzwerken innerhalb einer fremden Anwendung. In der Python Entwicklungsumgebung machen Bibliotheken wie "requests" oder "http.client" den Einstieg in die API-Entwicklung besonders zugänglich \cite{software_mittelstand_erste_nodate}. Die in dieser Studienarbeit verwendete FLASK Bibliothek ermöglicht es, eine komplexere API zu erstellen, die Daten aus dem Python Programm an die Webanwendung überträgt.
 
 Anwendungsprogrammierschnittstellen \ac{API} sind Software-Vermittler (\autoref{fig:api_design}) ihre Aufgabe besteht darin, Anwendungen die Kommunikation untereinander zu ermöglichen. 
-Diese subtilen Vermittler sind allgegenwärtig im täglichen Leben, ob bewusst wahrgenommen oder nicht \cite{pykes_programmieren_nodate}.
+Diese Vermittler sind allgegenwärtig im täglichen Leben, ob bewusst wahrgenommen oder nicht \cite{pykes_programmieren_nodate}.
 
 \begin{figure}[h]
     \centering
@@ -85,7 +83,7 @@ Für diese Studienarbeit ist keine Umfängliche WEB-\ac{API} notwendig. Es soll 
 
 FLASK nutzt die \ac{WSGI} Schnittstelle von Python \cite{flask_welcome_nodate} und \autoref{fig:flask} und stellt in Verbindung mit der in dieser Studienarbeit verwendeten Waitress Bibliothek den Webserver zur Verfügung.
 
-Eine Besondere Anforderung der im Folgenden vorgestellten Webanwendung liegt in der Übertragung der neu erstellten Fotos von der Kamera des FESTO \ac{cp-lab} an die 
+Eine besondere Anforderung der im Folgenden vorgestellten Webanwendung liegt in der Übertragung der neu erstellten Fotos von der Kamera des FESTO \ac{cp-lab} an die 
 Webanwendung. Um eine einfachere Benutzbarkeit zu gewährleisten soll der Browser nicht jedes mal neu geladen werden müssen, wenn ein Foto geschossen und klassifiziert wird.
 
 Dies geschieht durch die Verwendung von Websockets. Websockets sind eine Technologie, die es ermöglicht, eine bidirektionale Verbindung zwischen einem Client und einem Server herzustellen.
