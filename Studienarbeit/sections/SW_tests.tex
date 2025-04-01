@@ -1,11 +1,11 @@
 \chapter{Softwaretests} \label{chap:softwaretests}
 
-In diesem Kapitel wird auf die Evaluierungs- und Testvorgäne für die Sicherstellung der Güte der entwickelten Software eingegangen.
+In diesem Kapitel wird auf die Evaluierungs- und Testvorgänge für die Sicherstellung der Güte der entwickelten Software eingegangen.
 Da es sich bei der entwickelten Software um ein Machine-Learning-Modell handelt, wird in diesem Kapitel auf die Evaluierung des Modells eingegangen. Die Funktionen des interpretierten Python Skripts entwickeln keine neuen Algorithmen, die auf ihre Fehleranfälligkeit oder Korrektheit getestet werden müssen.
 
 \section{Metriken zur Evaluierung} \label{sec:metriken}
 
-Um zu verstehen wie ein Machine Learning Modell evaluiert werden kann ist es zunächst wichtig die Arten von Kriterien nachzuvollzihen, die für die binäre Klassifikation notwendig sind. Im Folgenden wird allgemein von Instanzen gesprochen, es handelt sich dabei um die Bilder, der PCBs die klassifiziert werden sollen.
+Um zu verstehen wie ein Machine Learning Modell evaluiert werden kann ist es zunächst wichtig die Arten von Kriterien nachzuvollziehen, die für die binäre Klassifikation notwendig sind. Im Folgenden wird allgemein von Instanzen gesprochen, es handelt sich dabei um die Bilder, der PCBs, die klassifiziert werden sollen.
 
 \begin{itemize}
     \item \textbf{True Positive (TP)}: Die Anzahl der korrekt klassifizierten positiven Instanzen.
@@ -15,7 +15,7 @@ Um zu verstehen wie ein Machine Learning Modell evaluiert werden kann ist es zun
 \end{itemize}
 
 Diese wesentlichen Typen teilen die Klassifizierten Daten nach dem Test in vier diskrete Kategorien ein. Diese Kategorien bilden die 
-in \autoref{sec:confusionmatrix} beschriebene Confusion Matrix. Mit Ihnen können aber auch die Einfacheren Werte Loss und Accuracy berechnet werden. Im Folgenden wird die Mathematik hinter den Methoden vorgestellt.
+in \autoref{sec:confusionmatrix} beschriebene Confusion Matrix. Mit Ihnen können aber auch die einfacheren Werte Loss und Accuracy berechnet werden. Im Folgenden wird die Mathematik hinter den Methoden vorgestellt.
 
 \subsection{Accuracy und Loss} \label{sec:accuracy}
 
@@ -33,7 +33,7 @@ Bezug auf die in \autoref{sec:metriken} beschriebenen Kategorien, kann die Accur
 
 Die Accuracy wird typischerweise in Prozent angegeben und liegt zwischen 0 und 100\%. Sie ermöglicht eine schnelle Einschätzung der Modellgüte. Allerdings kann die Accuracy irreführend sein, da sie die Anzahl der falsch klassifizierten Instanzen nicht berücksichtigt. Ein Modell, das alle Instanzen als negativ klassifiziert, könnte eine hohe Accuracy aufweisen, obwohl es nicht leistungsfähig ist.
 
-Dennoch ist die Accuracy einfacher zu Interpretieren als der hier vorgestellte Loss. Der Loss ist eine Metrik, die die Güte eines Modells anhand der Wahrscheinlichkeiten der Klassifikationen bewertet. 
+Dennoch ist die Accuracy einfacher zu interpretieren als der hier vorgestellte Loss. Der Loss ist eine Metrik, die die Güte eines Modells anhand der Wahrscheinlichkeiten der Klassifikationen bewertet. 
 Für binäre Klassifikationen wird der Binary Crossentropy Loss verwendet, der wie folgt berechnet wird 
 \cite{ai_wiki_accuracy_2019}:
 
@@ -57,7 +57,7 @@ In jeder Epoche des Trainings werden beide Werte berechnet und stellen so die Ve
 
 \subsection{Confusion Matrix und F1 Score} \label{sec:confusionmatrix}
 
-Eine aussagekräftigere Methode zur Evaluierung ist der F1 Score. Um diesen nachzuvollziehen ist zunächst eine aufschlüsselung der Klassifizierten Daten notwendig. Die Confusion Matrix ist eine Tabelle, die die Anzahl der korrekten und falschen Klassifikationen für jede Klasse anzeigt. Die Confusion Matrix hat die folgende Form \cite{lipton_thresholding_2014}:
+Eine aussagekräftigere Methode zur Evaluierung ist der F1 Score. Um diesen nachzuvollziehen ist zunächst eine Aufschlüsselung der klassifizierten Daten notwendig. Die Confusion Matrix ist eine Tabelle, die die Anzahl der korrekten und falschen Klassifikationen für jede Klasse anzeigt. Die Confusion Matrix hat die folgende Form \cite{lipton_thresholding_2014}:
 
 \[
 \begin{array}{c|cc}
@@ -78,38 +78,42 @@ Aus dieser Matrix lassen sich nun weitere Metriken ableiten. Eine davon ist der 
     \text{F1} = \frac{2 TP}{2 TP + FP + FN }
 \end{equation}
 
-Beispielhafte Confusion Matritzen werden in \autoref{sec:reevaluierung} vorgestellt.
+Der F1 Score liegt zwischen 0 und 1, wobei 1 die beste Leistung darstellt. Ein hoher F1 Score deutet darauf hin, dass das Modell sowohl eine hohe Precision als auch einen hohen Recall aufweist. 
+Dies sagt aus, wie gut das Modell in der Lage ist, positive Instanzen korrekt zu klassifizieren.
+Beispielhafte Confusion Matritzen und F1 Scores werden in \autoref{sec:reevaluierung} vorgestellt.
 
 \section{Reevaluierung des Modells} \label{sec:reevaluierung}
 
 In diesem Kapitel soll das Ergebnismodell der letzten Studienarbeit, MobileNet V1 erneut Evaluiert werden. Diesmal mithilfe der neuen Metrinken (\autoref{sec:confusionmatrix}) und anhand eines neuen Datensatzes von PCBs (siehe \autoref{subsec:neuer_datzensatz}).
 
-Für diese Reevaluierung wurden mehrere Modelle getestet. In dieser Arbeit werden drei Vertreter dieser Testreihe vorgestellt. Die Ergebnisse der Reevaluierung sind in \autoref{fig:vergleichsdiagramme} dargestellt.
-Da es sich bei Mobilnet V1 und MobilenetV3 um vortrainierte Modelle von Tensorflow handelt, soll auch ein selbstgeschriebenes Modell evaluiert werden. Dieses Modell "Custom \ac{CNN}"  wurde im Rahmen der Vorlesung Bildverarbeitung entwickelt und fließt mit in diese Tests ein. 
-
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Vergleichsdiagramme.png}
     \caption{Vergleich der Modelle anhand des gemittelten F1 Scores über beide Klassen}
     \label{fig:vergleichsdiagramme}
 \end{figure}
 
-Die besten Ergebnisse liefert das Custom \ac{CNN}, während Mobilenet Version3 auch nach mehreren Optimierungsversuchen schlecht abschneidet.
+Für diese Reevaluierung wurden mehrere Modelle getestet. In dieser Arbeit werden drei Vertreter dieser Testreihe vorgestellt. Die Ergebnisse der Reevaluierung sind in \autoref{fig:vergleichsdiagramme} dargestellt.
+Da es sich bei Mobilenet V1 und Mobilenet V3 um vortrainierte Modelle von Tensorflow handelt, soll auch ein selbstgeschriebenes Modell evaluiert werden. Dieses Modell ''Custom \ac{CNN}''  wurde im Rahmen einer anderen Veranstaltung entwickelt und fließt mit in diese Tests ein. 
+
+Die besten Ergebnisse liefert das Custom \ac{CNN}, während Mobilenet Version 3 auch nach mehreren Optimierungsversuchen schlecht abschneidet.
 Dies ist \autoref{fig:vergleichsdiagramme} zu entnehmen. Hier sind die gemittelten F1 Scores über beide Klassen für die verschiedenen Modelle dargestellt ist. Berechnungsgrundlage ist die in \autoref{sec:confusionmatrix} vorgestellte Confusion Matrix.
 
-Ein detaillierter Vergleich der Modelle zeigt, dass das Custom \ac{CNN} auch in allen anderen Metriken überlegen ist. Aus Gründen der Übersichtlichkeit enfallen die genauen Tabellen mit allen Daten. Die Tabellen mit allen Werten sind dem Anhang \autoref{sec:performance_der_modelle} zu entnehmen. MobileNet V1 liefert dennoch gute Ergebnisse und ist aufgrund der Einfachheit der Integration und der guten Ergebnisse nicht zu vernachlässigen. 
+Ein detaillierter Vergleich der Modelle zeigt, dass das Custom \ac{CNN} auch in allen anderen Metriken überlegen ist. Aus Gründen der Übersichtlichkeit enfallen die genauen Tabellen mit allen Daten. Die vollständigen Repräsentationen sind dem Anhang \autoref{sec:performance_der_modelle} zu entnehmen. MobileNet V1 liefert ebenfalls gute Ergebnisse und ist aufgrund der Einfachheit der Integration und der guten Ergebnisse nicht zu vernachlässigen. 
 
-Für die folgenden Betrachtungen wurd MobileNet V3 ausgeschlossen. Seine schlechten Ergebnisse lassen auf eine schlechte Anpassung an den Datensatz oder falsche Einstellung schließen.
+Für die folgenden Betrachtungen wurde MobileNet V3 ausgeschlossen. Seine schlechten Ergebnisse lassen auf eine schlechte Anpassung an den Datensatz oder falsche Einstellung schließen.
 Im Direkten Vergleich haben sowohl das Custom CNN als auch MobileNet V1 tendenziell mehr Probleme mit False Positive Klassifikationen. Dies ist in \autoref{fig:alle_cms} zu sehen.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{AlleCMs.png}
     \caption{Vergleich der Modelle anhand der Confusion Matrizen}
     \label{fig:alle_cms}
 \end{figure}
 
-Diese gemeinsamen Probleme lassen sich in diesem Fall auf den Datensatz zurückführen. Die falsch Positiv Klassifizierten Bilder sind ebenfalls für den Menschen nur schwer zu klassifizieren, da ein stück Leiterbahn fehlt oder eine schlecht belichtete Komponente fehlt (\ac{PCB}s siehe \autoref{fig:PCBs} Rechts). In den Praxistests während des Probebetriebs im Labor hat sich gezeigt, dass MobileNet V1 in allen beobachteten Fällen in der Lage ist eine korrekte Klassifikation durchzuführen.
+Diese gemeinsamen Probleme lassen sich in diesem Fall auf den Datensatz zurückführen. 
+Die falsch Positiv Klassifizierten Bilder sind ebenfalls für den Menschen nur schwer zu klassifizieren, da ein stück Leiterbahn fehlt oder eine schlecht belichtete Komponente fehlt (\ac{PCB}s siehe \autoref{fig:PCBs} Rechts). 
+In den Praxistests während des Probebetriebs im Labor hat sich gezeigt, dass MobileNet V1 in allen beobachteten Fällen in der Lage ist eine korrekte Klassifikation durchzuführen.
 
-Zusammenfassend lässt sich sagen, dass das Custom CNN in allen getesteten Metriken überlegen ist. Aufgrund der zeitlichen Einschränkungen und der bestehenden Programmpipeline wird jedoch weiterhin MobileNet V1 verwendet. Dieses Modell liefert gute Ergebnisse und ist einfacher zu integrieren.
+Zusammenfassend lässt sich sagen, dass das Custom CNN in allen getesteten Metriken überlegen ist. Aufgrund der bestehenden zeitlichen Einschränkungen und der bestehenden Programmpipeline wird jedoch weiterhin MobileNet V1 verwendet. Eine neu trainierte Version mit dem aktuellen Datensatz ersetzt fortan dass Modell der Machbarkeitsstudie.
 

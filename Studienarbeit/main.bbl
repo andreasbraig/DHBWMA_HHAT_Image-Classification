@@ -19,6 +19,40 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{kropatsch_einfuhrung_nodate}{article}{}
+      \name{author}{3}{}{%
+        {{hash=7481d97cb8a13e5f103b3f2ddb70738f}{%
+           family={Kropatsch},
+           familyi={K\bibinitperiod},
+           given={Walter\bibnamedelima G},
+           giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=3aa5206805bfb8ebf273b497acf646a2}{%
+           family={Artner},
+           familyi={A\bibinitperiod},
+           given={N},
+           giveni={N\bibinitperiod}}}%
+        {{hash=b75bc816752c13a53cd1764fb5a1777d}{%
+           family={Gobel},
+           familyi={G\bibinitperiod},
+           given={M},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{65de080d920456e99d76221611098cd1}
+      \strng{fullhash}{65de080d920456e99d76221611098cd1}
+      \strng{bibnamehash}{65de080d920456e99d76221611098cd1}
+      \strng{authorbibnamehash}{65de080d920456e99d76221611098cd1}
+      \strng{authornamehash}{65de080d920456e99d76221611098cd1}
+      \strng{authorfullhash}{65de080d920456e99d76221611098cd1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{title}{Einfu¨hrung in Visual Computing {II}: Grundlagen der Digitalen Bildverarbeitung Skriptum zur Vorlesung}
+      \verb{file}
+      \verb Kropatsch et al. - Einfu¨hrung in Visual Computing II Grundlagen der.pdf:/Users/andreasbraig/Zotero/storage/PLZMWSK2/Kropatsch et al. - Einfu¨hrung in Visual Computing II Grundlagen der.pdf:application/pdf
+      \endverb
+    \endentry
     \entry{finbridgede_computer_2022}{online}{}
       \name{author}{1}{}{%
         {{hash=81f761acf5aa13c5aae5a6a807995b98}{%
@@ -31,8 +65,8 @@
       \strng{authorbibnamehash}{81f761acf5aa13c5aae5a6a807995b98}
       \strng{authornamehash}{81f761acf5aa13c5aae5a6a807995b98}
       \strng{authorfullhash}{81f761acf5aa13c5aae5a6a807995b98}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Wie funktioniert ein Convolutional Neural Network ({CNN}) für Computer Vision? Im ersten Teil haben wir vorgestellt, was die wichtigsten Anwendungen für Computer Vision für das Finanzwesen sind. Dazu zählen u.a. die Re-Digitalisierung von Dokumenten oder die Verifizierung von biometrischen Daten u}
@@ -70,8 +104,8 @@
       \strng{authorbibnamehash}{ff97a9fdede09eaf6e1c8ec9f6a61dd5}
       \strng{authornamehash}{ff97a9fdede09eaf6e1c8ec9f6a61dd5}
       \strng{authorfullhash}{ff97a9fdede09eaf6e1c8ec9f6a61dd5}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Erfahren Sie mehr über revolutionäre neuronale Netzwerke, deren Verbindung zu Deep Learning und Computervision und ihren Wert in der Zukunft.}
@@ -93,8 +127,8 @@
       \endverb
     \endentry
     \entry{noauthor_machine_nodate-1}{online}{}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labeltitlesource}{title}
       \field{abstract}{Erfahre, wie Machine Learning Regression Geschäftsentscheidungen unterstützt. Erfahre mehr über die verschiedenen Regressionstypen und wann du sie verwenden solltest.}
       \field{langid}{german}
@@ -139,8 +173,8 @@
       \strng{authorbibnamehash}{e5df264e9f26a417144f1c623c96c72b}
       \strng{authornamehash}{e5df264e9f26a417144f1c623c96c72b}
       \strng{authorfullhash}{e5df264e9f26a417144f1c623c96c72b}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{isbn}{978-3-8348-2605-3 978-3-8348-2606-0}
@@ -376,8 +410,8 @@
       \strng{authorbibnamehash}{9784e91c7b2657917226bc82afdd6789}
       \strng{authornamehash}{9784e91c7b2657917226bc82afdd6789}
       \strng{authorfullhash}{9784e91c7b2657917226bc82afdd6789}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Welcome to Flask — Flask Documentation (3.1.x)}
@@ -580,8 +614,8 @@
       \strng{authorbibnamehash}{ccd676d989238b7d15eb9c39574f54d7}
       \strng{authornamehash}{ccd676d989238b7d15eb9c39574f54d7}
       \strng{authorfullhash}{ccd676d989238b7d15eb9c39574f54d7}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{17}
