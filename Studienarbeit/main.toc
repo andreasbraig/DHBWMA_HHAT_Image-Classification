@@ -10,14 +10,14 @@
 \contentsline {subsection}{\numberline {2.2.2}FLASK}{6}{subsection.2.2.2}%
 \contentsline {chapter}{\numberline {3}Softwarekonzept}{8}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Programmstruktur}{8}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Konfiguration der Programmparameter}{9}{section.3.2}%
+\contentsline {section}{\numberline {3.2}Konfiguration der Programmparameter}{10}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Die Weboberfläche mittels Python Web API}{10}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Implementierung}{12}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Umzug auf lokale Programmierung}{12}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Einpflegen der JSON-Parameter}{14}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Entwicklung der API}{15}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Installation im Labor}{16}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Aufgetretene Probleme}{17}{subsection.4.4.1}%
+\contentsline {section}{\numberline {4.4}Installation im Labor}{17}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Aufgetretene Probleme}{18}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Neuer Datensatz}{18}{subsection.4.4.2}%
 \contentsline {chapter}{\numberline {5}Softwaretests}{20}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Metriken zur Evaluierung}{20}{section.5.1}%

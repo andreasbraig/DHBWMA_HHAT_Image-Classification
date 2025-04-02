@@ -11,7 +11,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Projektstruktur der Software im Dateiverzeichnis}}{13}{figure.caption.26}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Darstellung der Weboberfläche im Zustand ohne Klassifikation eines aktuellen \ac {PCB}s.}}{17}{figure.caption.30}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Gegenüberstellung der alten und neuen \ac {PCB}s}}{18}{figure.caption.31}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Gegenüberstellung der alten und neuen \ac {PCB}s}}{19}{figure.caption.31}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Vergleich der Modelle anhand des gemittelten F1 Scores über beide Klassen}}{23}{figure.caption.32}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Vergleich der Modelle anhand der Confusion Matrizen}}{24}{figure.caption.33}%

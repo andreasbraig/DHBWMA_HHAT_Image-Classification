@@ -12,7 +12,7 @@ Der erster Teil der Softwarekonzeption ist der Entwurf der neuen Programmstruktu
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{MVC_struktur.png}
+    \includegraphics[width=1\textwidth]{MVC_struktur.png}
     \caption{Schematische Darstellung der MVC Struktur \cite{noauthor_model_2024}} 
     \label{fig:MVC_struktur}
 \end{figure}
@@ -20,9 +20,11 @@ Der erster Teil der Softwarekonzeption ist der Entwurf der neuen Programmstruktu
 Für das neue Programm gibt es keine spezifischen Anforderungen an die Struktur. Daher wird eine vereinfachte \ac{MVC} Struktur gewählt (\autoref{fig:MVC_struktur}). Ziel dieser Struktur ist es, die Software in drei Teile zu unterteilen.
 Diese drei Teile sollen eigenständige Aufgaben übernehmen und so verhindern, dass das Programm zu einem monolithischen Codeblock wird.
 
-Der Model-Teil ist für die (Bild-) Datenverarbeitung zuständig und enthält die Datenstrukturen sowie die Logik, die die Daten verarbeitet. Der View-Teil ist für die Darstellung der Daten verantwortlich und umfasst die Benutzeroberfläche sowie die Logik, welche die Daten darstellt. Der Controller-Teil steuert die Daten und koordiniert die Kommunikation zwischen Model und View, indem er die entsprechende Logik enthält.
+Der Model-Teil ist für die Datenverarbeitung zuständig und enthält alle Datenstrukturen sowie die Logik, die die Daten verarbeitet. Der View-Teil ist für die Darstellung der Daten verantwortlich und umfasst die Benutzeroberfläche sowie die Logik, welche die Daten darstellt. Der Controller-Teil steuert die Daten und koordiniert die Kommunikation zwischen Model und View, indem er die entsprechende Logik enthält.
 
-Die vereinfachte Version der \ac{MVC} Struktur kombiniert die Funktionalitäten von View und Controller in der \ac{API} (siehe \autoref{fig:MVC_struktur}) und trennt die Datenverarbeitung in ein eigenes Modul ab. Dieses eigene Modul wird im Programmcode \texttt{Pycore} genannt und enthält die Funktionen, welche die Daten für das neuronale Netzwerk aufbereiten und das Klassifikationsergebnis zur Verfügung stellen.
+Bei diesem Projekt handelt es sich um eine vergleichsweise kleine Anwendung. Aus diesem Grund wird die \ac{MVC} Struktur vereinfacht. Diese vereinfachte Version der \ac{MVC} Struktur kombiniert die Funktionalitäten von View und Controller in der \ac{API} (siehe \autoref{fig:MVC_struktur}) und trennt die Datenverarbeitung in ein eigenes Modul ab. Dieses eigene Modul wird im Programmcode \texttt{Pycore} genannt und enthält die Funktionen, welche die Daten für das neuronale Netzwerk aufbereiten und das Klassifikationsergebnis zur Verfügung stellen.
+
+\newpage
 
 \section{Konfiguration der Programmparameter} \label{sec:konfiguration}
 
@@ -31,7 +33,7 @@ Durch die Einstellbarkeit musst gewährleistet sein, dass die Software flexibel 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Parameterverteilung.png}
+    \includegraphics[width=0.9\textwidth]{Parameterverteilung.png}
     \caption{Konzept der Parametergruppierung- und Verteilung auf das Programm} 
     \label{fig:json_example}
 \end{figure}
@@ -43,14 +45,17 @@ Diese Datei soll im \ac{JSON}-Format vorliegen, da es ein weit verbreitetes Form
 \section{Die Weboberfläche mittels Python Web API} \label{sec:weboberflaeche}
 
 Als letzter Teil des Softwarekonzepts wird die Weboberfläche betrachtet. 
-Das zentrale Element des neuen Programmentwurfs, etabliert das Interface zwischen Benutzer und Programm. Es ermöglicht neue Bilder des FESTO \ac{cp-lab} darzustellen, zu klassifizieren und die Ergebnisse auf seiner Weboberfläche zu visualisieren.
-Zusätzlich koordiniert sie die Überwachung des Ordners für neue Bilder und führt bei einem neuen Bild die Klassifikation dieser Bilder in defekt oder nicht defekt durch.
+Dieses zentrale Element des neuen Programmentwurfs, etabliert das Interface zwischen Benutzer und Programm.
+Wie in der \autoref{fig:Api_funktionen} zu sehen, ist dieses Interface in bidirektionaler Form.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{API_Python_func.png}
+    \includegraphics[width=0.9\textwidth]{API_Python_func.png}
     \caption{Aufschlüsselung der API Funktionen} 
     \label{fig:Api_funktionen}
 \end{figure}
+
+Die \ac{API} ermöglicht es neue Bilder des FESTO \ac{cp-lab} darzustellen, zu klassifizieren und die Ergebnisse auf seiner Weboberfläche zu visualisieren.
+Zusätzlich koordiniert sie die Überwachung des Ordners für neue Bilder und führt bei einem neuen Bild die Klassifikation dieser Bilder in defekt oder nicht defekt durch.
 
 

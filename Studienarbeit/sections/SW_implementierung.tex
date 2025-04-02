@@ -16,7 +16,7 @@ In den folgenden Kapiteln werden die einzelnen Schritte genauer beschrieben.
 
 \section{Umzug auf lokale Programmierung} \label{subsec:umzug_auf_lokale_programmierung}
 
-Die Struktur dieser Implementierung folgt der Konzeption der Programmstruktur nach dem MVC-Prinzip \autoref{fig:MVC_struktur}, welches in \autoref{sec:architektur} beschrieben ist.
+Die Struktur dieser Implementierung folgt der Konzeption der Programmstruktur nach dem MVC-Prinzip, welches in \autoref{sec:architektur} beschrieben ist.
 Dieses Modell trennt die Datenverarbeitung, die Darstellung und die Steuerung der Software in drei verschiedene Module auf.
 Die Datenverarbeitung wird in einem eigenen Modul abgetrennt. Darstellung und Steuerung sind in der API zusammengefasst.
 
@@ -122,6 +122,8 @@ Diese Seite enthält ein JavaScript, welches die Verbindung zum Websocket des Py
 \end{lstlisting}
 
 Sobald ein neues Bild in den Ordner \texttt{Bilder/new} gelegt wird, wird ein Event ausgelöst, welches sowohl eine Klassifizierung herbeiführt als auch das Bild mittels Websocket an das JavaScript-Backend der Weboberfläche sendet. 
+
+\newpage
 
 \section{Installation im Labor} \label{sec:installation}
 
