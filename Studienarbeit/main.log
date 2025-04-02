@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  2 APR 2025 13:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.14)  2 APR 2025 20:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1561,21 +1561,21 @@ Package pdftex.def Info: resources/images/Projektstruktur.png  used on input lin
 (pdftex.def)             Requested size: 364.19667pt x 229.04729pt.
  [13 <./resources/images/Projektstruktur.png>] [14] [15] [16]
 Package acronym Info: Label `acro:USB' newly defined as it shall be overridden
-although it is yet undefined on input line 131.
+although it is yet undefined on input line 132.
 Package acronym Info: Label `acro:PC' newly defined as it shall be overridden
-although it is yet undefined on input line 134.
+although it is yet undefined on input line 135.
 Package acronym Info: Label `acro:SPS' newly defined as it shall be overridden
-although it is yet undefined on input line 134.
-<resources/images/Web-Ohne_Bild.png, id=473, 1514.65875pt x 464.73625pt>
+although it is yet undefined on input line 135.
+<resources/images/Web-Ohne_Bild.png, id=476, 1514.65875pt x 464.73625pt>
 File: resources/images/Web-Ohne_Bild.png Graphic file (type png)
 <use resources/images/Web-Ohne_Bild.png>
-Package pdftex.def Info: resources/images/Web-Ohne_Bild.png  used on input line 142.
+Package pdftex.def Info: resources/images/Web-Ohne_Bild.png  used on input line 143.
 (pdftex.def)             Requested size: 455.24411pt x 139.67723pt.
  [17 <./resources/images/Web-Ohne_Bild.png>]
-<resources/images/PCBs.png, id=488, 959.585pt x 297.11pt>
+<resources/images/PCBs.png, id=491, 959.585pt x 297.11pt>
 File: resources/images/PCBs.png Graphic file (type png)
 <use resources/images/PCBs.png>
-Package pdftex.def Info: resources/images/PCBs.png  used on input line 165.
+Package pdftex.def Info: resources/images/PCBs.png  used on input line 166.
 (pdftex.def)             Requested size: 455.24411pt x 140.95644pt.
  [18]) [19 <./resources/images/PCBs.png>]
 \openout2 = `sections/SW_tests.aux'.
@@ -1604,16 +1604,16 @@ Overfull \hbox (5.31114pt too wide) in paragraph at lines 22--23
 
 
 ] [21] [22]
-<resources/images/Vergleichsdiagramme.png, id=537, 578.16pt x 361.35pt>
+<resources/images/Vergleichsdiagramme.png, id=540, 578.16pt x 361.35pt>
 File: resources/images/Vergleichsdiagramme.png Graphic file (type png)
 <use resources/images/Vergleichsdiagramme.png>
 Package pdftex.def Info: resources/images/Vergleichsdiagramme.png  used on input line 91.
 (pdftex.def)             Requested size: 455.24411pt x 284.52603pt.
  [23 <./resources/images/Vergleichsdiagramme.png>]
-<resources/images/AlleCMs.png, id=551, 947.54pt x 277.53688pt>
+<resources/images/AlleCMs.png, id=554, 947.54pt x 277.53688pt>
 File: resources/images/AlleCMs.png Graphic file (type png)
 <use resources/images/AlleCMs.png>
-Package pdftex.def Info: resources/images/AlleCMs.png  used on input line 109.
+Package pdftex.def Info: resources/images/AlleCMs.png  used on input line 110.
 (pdftex.def)             Requested size: 455.24411pt x 133.33899pt.
  [24 <./resources/images/AlleCMs.png>]) [25]
 \openout2 = `sections/fazit_ausblick.aux'.
@@ -1690,19 +1690,19 @@ Overfull \hbox (43.84361pt too wide) in paragraph at lines 32--33
 
 
 ]
-<resources/images/Anleitung_Lab/Buffer_datei.png, id=625, 741.52031pt x 727.21687pt>
+<resources/images/Anleitung_Lab/Buffer_datei.png, id=628, 741.52031pt x 727.21687pt>
 File: resources/images/Anleitung_Lab/Buffer_datei.png Graphic file (type png)
 <use resources/images/Anleitung_Lab/Buffer_datei.png>
 Package pdftex.def Info: resources/images/Anleitung_Lab/Buffer_datei.png  used on input line 62.
 (pdftex.def)             Requested size: 318.66948pt x 312.5196pt.
  [13]
-<resources/images/Anleitung_Lab/Buffer_fertig.png, id=639, 898.10532pt x 613.54219pt>
+<resources/images/Anleitung_Lab/Buffer_fertig.png, id=642, 898.10532pt x 613.54219pt>
 File: resources/images/Anleitung_Lab/Buffer_fertig.png Graphic file (type png)
 <use resources/images/Anleitung_Lab/Buffer_fertig.png>
 Package pdftex.def Info: resources/images/Anleitung_Lab/Buffer_fertig.png  used on input line 67.
 (pdftex.def)             Requested size: 318.66948pt x 217.70134pt.
  [14 <./resources/images/Anleitung_Lab/Buffer_datei.png> <./resources/images/Anleitung_Lab/Buffer_fertig.png>]
-<resources/images/Anleitung_Lab/Order.png, id=650, 1280.53406pt x 752.0597pt>
+<resources/images/Anleitung_Lab/Order.png, id=653, 1280.53406pt x 752.0597pt>
 File: resources/images/Anleitung_Lab/Order.png Graphic file (type png)
 <use resources/images/Anleitung_Lab/Order.png>
 Package pdftex.def Info: resources/images/Anleitung_Lab/Order.png  used on input line 74.
@@ -1727,10 +1727,10 @@ Here is how much of TeX's memory you used:
  1143 hyphenation exceptions out of 8191
  108i,20n,107p,10983b,2726s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (42 pages, 2876352 bytes).
+Output written on main.pdf (42 pages, 2876756 bytes).
 PDF statistics:
- 875 PDF objects out of 1000 (max. 8388607)
- 767 compressed objects within 8 object streams
+ 878 PDF objects out of 1000 (max. 8388607)
+ 770 compressed objects within 8 object streams
  214 named destinations out of 1000 (max. 500000)
  373 words of extra memory for PDF output out of 10000 (max. 10000000)
 

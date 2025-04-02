@@ -96,13 +96,14 @@ In diesem Kapitel soll das Ergebnismodell der letzten Studienarbeit, MobileNet V
 Für diese Reevaluierung wurden mehrere Modelle getestet. In dieser Arbeit werden drei Vertreter dieser Testreihe vorgestellt. Die Ergebnisse der Reevaluierung sind in \autoref{fig:vergleichsdiagramme} dargestellt.
 Da es sich bei Mobilenet V1 und Mobilenet V3 um vortrainierte Modelle von Tensorflow handelt, soll auch ein selbstgeschriebenes Modell evaluiert werden. Dieses Modell ''Custom \ac{CNN}''  wurde im Rahmen einer anderen Veranstaltung entwickelt und fließt mit in diese Tests ein. 
 
-Die besten Ergebnisse liefert das Custom \ac{CNN}, während Mobilenet Version 3 auch nach mehreren Optimierungsversuchen schlecht abschneidet.
+Die besten Ergebnisse liefert das Custom \ac{CNN}, während Mobilenet V3 auch nach mehreren Optimierungsversuchen schlecht abschneidet.
 Dies ist \autoref{fig:vergleichsdiagramme} zu entnehmen. Hier sind die gemittelten F1 Scores über beide Klassen für die verschiedenen Modelle dargestellt ist. Berechnungsgrundlage ist die in \autoref{sec:confusionmatrix} vorgestellte Confusion Matrix.
 
-Ein detaillierter Vergleich der Modelle zeigt, dass das Custom \ac{CNN} auch in allen anderen Metriken überlegen ist. Aus Gründen der Übersichtlichkeit enfallen die genauen Tabellen mit allen Daten. Die vollständigen Repräsentationen sind dem Anhang \autoref{sec:performance_der_modelle} zu entnehmen. MobileNet V1 liefert ebenfalls gute Ergebnisse und ist aufgrund der Einfachheit der Integration und der guten Ergebnisse nicht zu vernachlässigen. 
+Aus Gründen der Übersichtlichkeit enfallen die genauen Tabellen mit allen Daten. Die vollständigen Repräsentationen sind dem Anhang \autoref{sec:performance_der_modelle} zu entnehmen.
+Ein detaillierter Vergleich der Modelle zeigt, dass das Custom \ac{CNN} auch in allen anderen Metriken überlegen ist.  MobileNet V1 liefert ebenfalls gute Ergebnisse und ist aufgrund der Einfachheit der Integration und der guten Ergebnisse nicht zu vernachlässigen. 
 
 Für die folgenden Betrachtungen wurde MobileNet V3 ausgeschlossen. Seine schlechten Ergebnisse lassen auf eine schlechte Anpassung an den Datensatz oder falsche Einstellung schließen.
-Im Direkten Vergleich haben sowohl das Custom CNN als auch MobileNet V1 tendenziell mehr Probleme mit False Positive Klassifikationen. Dies ist in \autoref{fig:alle_cms} zu sehen.
+Im direkten Vergleich haben sowohl das Custom CNN als auch MobileNet V1 tendenziell mehr Probleme mit False Positive Klassifikationen. Dies ist in \autoref{fig:alle_cms} zu sehen.
 
 \begin{figure}[H]
     \centering
@@ -111,9 +112,10 @@ Im Direkten Vergleich haben sowohl das Custom CNN als auch MobileNet V1 tendenzi
     \label{fig:alle_cms}
 \end{figure}
 
-Diese gemeinsamen Probleme lassen sich in diesem Fall auf den Datensatz zurückführen. 
-Die falsch Positiv Klassifizierten Bilder sind ebenfalls für den Menschen nur schwer zu klassifizieren, da ein stück Leiterbahn fehlt oder eine schlecht belichtete Komponente fehlt (\ac{PCB}s siehe \autoref{fig:PCBs} Rechts). 
+Bei genauerer Analyse der Klassifikationsergebnisse zeigt sich, dass die falsch Positiv klassifizierten Bilder in der Regel auch von Menschen als defekt klassifiziert werden. Die Fehler sind in der Regel sehr klein und nicht sofort sichtbar.
+In den meisten Fällen handelt es sich hier um ein fehlendes Stück Leiterbahn oder eine schlecht belichtete Komponente, welche nicht erkannt werden kann. (\ac{PCB}s siehe \autoref{fig:PCBs} Rechts)
+Diese gemeinsamen, modellübergreifenden Probleme lassen sich in diesem Fall auf den Datensatz zurückführen. 
 In den Praxistests während des Probebetriebs im Labor hat sich gezeigt, dass MobileNet V1 in allen beobachteten Fällen in der Lage ist eine korrekte Klassifikation durchzuführen.
 
-Zusammenfassend lässt sich sagen, dass das Custom CNN in allen getesteten Metriken überlegen ist. Aufgrund der bestehenden zeitlichen Einschränkungen und der bestehenden Programmpipeline wird jedoch weiterhin MobileNet V1 verwendet. Eine neu trainierte Version mit dem aktuellen Datensatz ersetzt fortan dass Modell der Machbarkeitsstudie.
+Zusammenfassend lässt sich sagen, dass das Custom CNN zwar in allen getesteten Metriken überlegen ist, Aufgrund der bestehenden zeitlichen Einschränkungen und der bestehenden Programmpipeline wird jedoch weiterhin MobileNet V1 verwendet. Eine neu trainierte Version mit dem aktuellen Datensatz ersetzt fortan dass Modell der Machbarkeitsstudie und dient Studenten und Mitarbeitern als Grundlage für ihre Arbeiten.
 

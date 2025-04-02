@@ -76,7 +76,7 @@ Die Struktur der \ac{JSON}-Datei ist in \autoref{lst:json_example} dargestellt u
 
 \end{lstlisting}
 
-In diesem Codeausschnitt wird der Pfad zur Konfigurationsdatei festgelegt (Zeile 3) und die Datei wird eingelesen (Zeile 4). Die Parameter werden dann an die erste Funktion übergeben, welche die Bilder in Graustufen umwandelt und in einem separaten Verzeichnis ablegt (Zielverzeichnis siehe \autoref{lst:json_read}). Die Syntax für das Abrufen des Parameters ist \texttt{cf["filepaths"]["good"]}, wobei \texttt{cf} die Variable ist, in der die \ac{JSON}-Datei eingelesen wurde. Die \ac{JSON}-Datei wird als Array eingelesen, wobei der Zugriff auf die einzelnen Parameter über den Schlüssel in Textform erfolgt. In diesem Fall wird der Pfad zum Ordner mit den guten Bildern über den Schlüssel \texttt{"good"} angesprochen, während \texttt{"filepaths"} den Zugriff auf die passende Sektion des Arrays ermöglicht.
+In diesem Codeausschnitt wird der Pfad zur Konfigurationsdatei festgelegt (Zeile 3) und die Datei wird eingelesen (Zeile 4). Die Parameter werden dann an die erste Funktion übergeben, welche die Bilder in Graustufen umwandelt und in einem separaten Verzeichnis ablegt (Zielverzeichnis siehe \autoref{lst:json_read}). Die Syntax für das Abrufen des Parameters ist \texttt{cf["filepaths"]["good"]}, wobei \texttt{cf} die Variable ist, in der die \ac{JSON}-Datei eingelesen wurde. Die \ac{JSON}-Datei wird als Array eingelesen, der Zugriff auf die einzelnen Parameter erfgolgt über den Schlüssel in Textform. In diesem Fall wird der Pfad zum Ordner mit den guten Bildern über den Schlüssel \texttt{"good"} angesprochen, während \texttt{"filepaths"} den Zugriff auf die passende Sektion des Arrays ermöglicht.
 
 Angenommen, der Benutzer wünscht ein anderes Verzeichnis für die Bilder, so kann er dies in der \ac{JSON}-Datei ändern und die Software erneut ausführen, ohne zu wissen, wo die Funktion, die den Datensatz generiert, abgelegt ist. 
 Der gesamte Code dieses Projekts wurde nach diesem Schema aufgebaut, um eine einfache und einheitliche Konfiguration zu gewährleisten.
@@ -86,7 +86,7 @@ Der gesamte Code dieses Projekts wurde nach diesem Schema aufgebaut, um eine ein
 In diesem Abschnitt wird die Entwicklung der API beschrieben, welche die Kommunikation zwischen der Weboberfläche und der Backend-Logik der Software ermöglicht. 
 Es wird sichergestellt, dass die Entwicklung dem Konzept der Aufgabenstellung \autoref{sec:weboberflaeche} entspricht.
 
-Hierfür werden in zwei verschiedenen Threads zwei Funktionen ausgeführt. Die erste Funktion lädt das trainierte Modell in den Zwischenspeicher, um es für die Klassifizierung nutzbar zu machen (Zeile 3 \autoref{lst:api_exec}). Im zweiten Thread wird der Watchdog gestartet, welcher den Ordner für neue Bilder überwacht und bei neuen Bildern die Klassifizierung startet (Zeile 6). 
+In der \ac{API} werden in zwei verschiedenen Threads zwei Funktionen ausgeführt. Die erste Funktion lädt das trainierte Modell in den Zwischenspeicher, um es für die Klassifizierung schnell abrufbar zu machen (Zeile 3 \autoref{lst:api_exec}). Im zweiten Thread wird der Watchdog gestartet, welcher den Ordner für neue Bilder überwacht und bei neuen Bildern die Klassifizierung startet (Zeile 6). 
 
 
 \begin{lstlisting}[style=python, label=lst:api_exec, caption={Start der Weboberfläche und der Threads in der api.py}]
@@ -121,7 +121,8 @@ Diese Seite enthält ein JavaScript, welches die Verbindung zum Websocket des Py
 
 \end{lstlisting}
 
-Sobald ein neues Bild in den Ordner \texttt{Bilder/new} gelegt wird, wird ein Event ausgelöst, welches sowohl eine Klassifizierung herbeiführt als auch das Bild mittels Websocket an das JavaScript-Backend der Weboberfläche sendet. 
+Sobald ein neues Bild in den Ordner \texttt{Bilder/new} gelegt wird, wird ein Event ausgelöst, welches sowohl eine Klassifizierung herbeiführt als auch das Bild mittels Websocket an das JavaScript-Backend der Weboberfläche sendet.
+Der JavaScript Code aus der Weboberfläche ist in \autoref{lst:weboberflaeche} dargestellt. Es handelt sich hier um einen simplen Ausschnitt, der die Verbindung zum Websocket herstellt und die empfangenen Daten an die \ac{HTML}-Seite weitergibt. 
 
 \newpage
 
@@ -167,6 +168,6 @@ Parallel zu dieser Studienarbeit wurde eine weitere Studienarbeit durchgeführt,
     \label{fig:PCBs}
 \end{figure}
 
-Wie auch auf der \autoref{fig:PCBs} zu sehen ist, bieten die neuen PCBs (Rechts) weit mehr Details und sind daher komplexer als die \ac{PCB}s, die für die Machbarkeitsstudie verwendet wurden (Links). 
+Wie auch auf der \autoref{fig:PCBs} zu sehen ist, bieten die neuen PCBs (Rechts) weit mehr Details als die \ac{PCB}s, die für die Machbarkeitsstudie verwendet wurden (Links). 
 Dies führt zu mehr Möglichkeiten, die Grenzen des Modells zu testen und die Klassifikation zu verbessern. Die Reevaluierung des Modells mit den neuen Daten wird in \autoref{sec:reevaluierung} beschrieben.
 

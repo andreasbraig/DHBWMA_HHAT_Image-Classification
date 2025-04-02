@@ -1,6 +1,6 @@
 \chapter{Softwarekonzept} \label{chap:Konzept}
 
-Diese Studienarbeit liegt der in der letzten Studienarbeit beschriebene Code zugrunde.
+Dieser Studienarbeit liegt der in der letzten Studienarbeit beschriebene Code zugrunde.
 Zentraler Fokus des neuen Softwarekonzepts liegt auf der Präsentierbarkeit und Wiederverwendbarkeit dieser Machbarkeitsstudie als Anwendung für das \ac{cp-lab}.
 
 Um die Aufgabenstellung aus \autoref{chap:problemstellung_und_ziel_dieser_arbeit} zu erfüllen, ist es unumgänglich die Online-Implementierung durch eine lokale Anwendung zu ersetzen.
@@ -20,7 +20,7 @@ Der erster Teil der Softwarekonzeption ist der Entwurf der neuen Programmstruktu
 Für das neue Programm gibt es keine spezifischen Anforderungen an die Struktur. Daher wird eine vereinfachte \ac{MVC} Struktur gewählt (\autoref{fig:MVC_struktur}). Ziel dieser Struktur ist es, die Software in drei Teile zu unterteilen.
 Diese drei Teile sollen eigenständige Aufgaben übernehmen und so verhindern, dass das Programm zu einem monolithischen Codeblock wird.
 
-Der Model-Teil ist für die Datenverarbeitung zuständig und enthält alle Datenstrukturen sowie die Logik, die die Daten verarbeitet. Der View-Teil ist für die Darstellung der Daten verantwortlich und umfasst die Benutzeroberfläche sowie die Logik, welche die Daten darstellt. Der Controller-Teil steuert die Daten und koordiniert die Kommunikation zwischen Model und View, indem er die entsprechende Logik enthält.
+Allgemein beschrieben ist der Model-Teil für die Datenverarbeitung zuständig und enthält alle Datenstrukturen sowie die Logik, die die Daten verarbeitet. Der View-Teil ist für die Darstellung der Daten verantwortlich und umfasst die Benutzeroberfläche sowie die Logik, welche die Daten darstellt. Der Controller-Teil steuert die Daten und koordiniert die Kommunikation zwischen Model und View, indem er die entsprechende Logik enthält.
 
 Bei diesem Projekt handelt es sich um eine vergleichsweise kleine Anwendung. Aus diesem Grund wird die \ac{MVC} Struktur vereinfacht. Diese vereinfachte Version der \ac{MVC} Struktur kombiniert die Funktionalitäten von View und Controller in der \ac{API} (siehe \autoref{fig:MVC_struktur}) und trennt die Datenverarbeitung in ein eigenes Modul ab. Dieses eigene Modul wird im Programmcode \texttt{Pycore} genannt und enthält die Funktionen, welche die Daten für das neuronale Netzwerk aufbereiten und das Klassifikationsergebnis zur Verfügung stellen.
 
